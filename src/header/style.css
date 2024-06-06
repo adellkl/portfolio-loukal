@@ -158,7 +158,7 @@
 .the_menu {
     padding-top: 20vh;
     padding-bottom: 20vh;
-    padding-left: 0;
+    padding-left: 18vh;
 }
 
 @media (min-width: 992px) {
@@ -168,6 +168,7 @@
     .the_menu {
         padding-top: 10vh;
         padding-bottom: 10vh;
+        padding-left: 10vh;
     }
 }
 
@@ -181,6 +182,22 @@
     padding: 4px 0px;
     text-decoration: none;
     font-family: Marcellus;
+}
+
+.the_menu .menu_item>a::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background: var(--text-color-2); /* Change la couleur selon tes besoins */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+.the_menu .menu_item>a:hover::before {
+    width: 100%;
 }
 
 .the_menu .menu_item>a:hover {
