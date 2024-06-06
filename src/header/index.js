@@ -46,6 +46,12 @@ const Headermain = () => {
                   <li className="menu_item">
                   <Link onClick={handleToggle} to="/contact" className="my-3"> Me contact</Link>
                   </li>
+                  <li className="menu_item">
+  <a onClick={handleToggle} href="https://www.canva.com/design/DAGHXbCmYOY/P10YOW6gG9xxsJIMJ3txtA/view?utm_content=DAGHXbCmYOY&utm_campaign=designshare&utm_medium=link&utm_source=editor" className="my-3" target="_blank" rel="noopener noreferrer">
+    curriculum vitae
+  </a>
+</li>
+
                  
                 </ul>
               </div>

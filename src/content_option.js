@@ -1,3 +1,6 @@
+import Figma from "../src/assets/images/Figma.png"
+import Clone from "../src/assets/images/Clone.png"
+
 const logotext = "A.Loukal";
 const meta = {
     title: "Adel Loukal",
@@ -17,7 +20,7 @@ const introdata = {
 
 const dataabout = {
     title: "A propos de moi",
-    aboutme: "Jeune passionnée d'informatique et de design, actuellement en BUT MMI, spécialisation développement web et dispositifs interactifs. En alternance chez ISCOM Paris.",
+    aboutme: "Jeune passionné d'informatique et de design, actuellement en BUT MMI, spécialisation développement web et dispositifs interactifs, en alternance chez ISCOM Paris.",
 };
 const worktimeline = [{
         jobtitle: "Développeur front-end ",
@@ -71,24 +74,24 @@ const services = [{
   
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
+const dataportfolio = [
+    {
+        img: require("../src/assets/images/Figma.png"),
         description: "Maquette et prototypage ISCOM Talent.",
         link: "https://www.figma.com/proto/EB2NXGZIzJlLeboP9cPWUo/ISCOM-Talent?node-id=555-4246&t=e0bL8NgCfYxG8nBX-0&scaling=scale-down&page-id=86%3A5531&starting-point-node-id=555%3A4246&show-proto-sidebar=1&content-scaling=fixed",
     },
     {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "Projet universitaire en groupe de Trois, Nunjucks, Javascript, SCSS, CSS ",
+        img: "https://picsum.photos/400/655/?grayscale",
+        description: "Projet universitaire en groupe de Trois, Nunjucks, Javascript, SCSS, CSS",
         link: "https://github.com/adellkl/SAE-501-projet",
     }, 
     {
-        img: "https://picsum.photos/400/800/?grayscale",
+        img: require("../src/assets/images/Clone.png"),
         description: "Clone de l'ancienne interface de ChatGPT, CSS, HTML, Javascript",
         link: "https://github.com/adellkl/clone-chatgpt-interface",
     },
-  
     {
-        img: "https://picsum.photos/400/400/?grayscale",
+        img: "https://picsum.photos/400/450/?grayscale",
         description: "Extension chrome, calculator, Javascript",
         link: "https://github.com/adellkl/Extension-chrome",
     },
@@ -96,11 +99,11 @@ const dataportfolio = [{
         img: "https://picsum.photos/400/1235/?grayscale",
         description: "CRUD, PHP, CSS, HTML",
         link: "https://github.com/adellkl/CRUD_Portfolio",
-    },
-
-   
-   
+    }
 ];
+
+export default dataportfolio;
+
 
 const contactConfig = {
     YOUR_EMAIL: "adelloukal2@gmail.com",
