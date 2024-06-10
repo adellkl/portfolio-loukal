@@ -1,6 +1,3 @@
-import Figma from "../src/assets/images/Figma.png"
-import Clone from "../src/assets/images/Clone.png"
-
 const logotext = "A.Loukal";
 const meta = {
     title: "Adel Loukal",
@@ -8,11 +5,12 @@ const meta = {
 };
 
 const introdata = {
-    title: "Adel Loukal 😜 ",
+    title: "Adel Loukal ✌️ ",
     animated: {
         first: "Développeur front-end",
         second: "Web designer",
         third: "Etudiant",
+       
     },
     description: "Bienvenue sur mon portfolio. Vous y trouverez mes réalisations, mes expériences professionnelles et mes formations. Bonne visite ! ",
     your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
@@ -81,7 +79,7 @@ const dataportfolio = [
         link: "https://www.figma.com/proto/EB2NXGZIzJlLeboP9cPWUo/ISCOM-Talent?node-id=555-4246&t=e0bL8NgCfYxG8nBX-0&scaling=scale-down&page-id=86%3A5531&starting-point-node-id=555%3A4246&show-proto-sidebar=1&content-scaling=fixed",
     },
     {
-        img: "https://picsum.photos/400/655/?grayscale",
+        img: "https://picsum.photos/400/450/?grayscale",
         description: "Projet universitaire en groupe de Trois, Nunjucks, Javascript, SCSS, CSS",
         link: "https://github.com/adellkl/SAE-501-projet",
     }, 
@@ -91,12 +89,12 @@ const dataportfolio = [
         link: "https://github.com/adellkl/clone-chatgpt-interface",
     },
     {
-        img: "https://picsum.photos/400/450/?grayscale",
+        img: require("../src/assets/images/Extention.png"),
         description: "Extension chrome, calculator, Javascript",
         link: "https://github.com/adellkl/Extension-chrome",
     },
     {
-        img: "https://picsum.photos/400/1235/?grayscale",
+        img: require("../src/assets/images/Crud.png"),
         description: "CRUD, PHP, CSS, HTML",
         link: "https://github.com/adellkl/CRUD_Portfolio",
     }
@@ -133,3 +131,5 @@ export {
     socialprofils,
     logotext,
 };
+
+

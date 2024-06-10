@@ -4,26 +4,30 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
-import moi from "../../assets/images/moi.png"
-
+import moi from "../../assets/images/moi.jpeg"
+import { RoughNotation } from "react-rough-notation";
 export const Home = () => {
   return (
     <HelmetProvider>
       <section id="home" className="home">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> {meta.title}</title>
+          
+          
+          <title> {meta.title} </title>
           <meta name="description" content={meta.description} />
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center ">
+          
           <div
+          
             className="h_bg-image order-1 order-lg-2 h-100 "
             style={{ backgroundImage: `url(${moi})` }} 
           ></div>
           <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
             <div className="align-self-center ">
               <div className="intro mx-auto">
-                <h2 className="mb-1x">{introdata.title}</h2>
+              <h2 className="mb-1x">   <RoughNotation type="circle" show={true} color="green"> {introdata.title}</RoughNotation></h2>
                 <h1 className="fluidz-48 mb-1x">
                   <Typewriter
                     options={{
@@ -34,7 +38,7 @@ export const Home = () => {
                       ],
                       autoStart: true,
                       loop: true,
-                      deleteSpeed: 10,
+                      deleteSpeed: 17,
                     }}
                   />
                 </h1>
@@ -48,6 +52,7 @@ export const Home = () => {
                       <div className="ring three"></div>
                     </div>
                   </Link>
+                  
                   <Link to="/contact">
                     <div id="button_h" className="ac_btn btn">
                       Me contacter

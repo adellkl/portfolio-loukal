@@ -44,7 +44,7 @@ const Headermain = () => {
                   <Link onClick={handleToggle} to="/about" className="my-3">A propos</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/contact" className="my-3"> Me contact</Link>
+                  <Link onClick={handleToggle} to="/contact" className="my-3"> Me contacter</Link>
                   </li>
                   <li className="menu_item">
   <a onClick={handleToggle} href="https://www.canva.com/design/DAGHXbCmYOY/P10YOW6gG9xxsJIMJ3txtA/view?utm_content=DAGHXbCmYOY&utm_campaign=designshare&utm_medium=link&utm_source=editor" className="my-3" target="_blank" rel="noopener noreferrer">
@@ -61,7 +61,7 @@ const Headermain = () => {
             <div className="d-flex">
             
             <a href={socialprofils.github}>Github</a>
-            <a href={socialprofils.twitter}>Twitter</a>
+            <a href={socialprofils.linkedin}>Linkedin</a>
             </div>
             <p className="copyright m-0">copyright __ {logotext}</p>
           </div>

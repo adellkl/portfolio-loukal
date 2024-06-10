@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+
+import { RoughNotation } from "react-rough-notation";
 import {
   dataabout,
   meta,
@@ -45,28 +47,32 @@ export const About = () => {
       <Container className="About-header" ref={aboutRef}>
         <Helmet>
           <meta charSet="utf-8" />
-          <title> About | {meta.title}</title>
+          <title> A propos | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4 ">A propos de moi 😉</h1>
+            
+            <h1 className="display-4 mb-4 ">  A propos de moi 😉</h1>
             <hr className="t_border my-4 ml-0 text-left fade-in" />
           </Col>
         </Row>
         <Row className="sec_sp fade-in">
           <Col lg="5">
-            <h3 className="color_sec py-4">{dataabout.title}</h3>
+            <h3 className="color_sec py-4"> <RoughNotation type="underline" show={true} color="#ff0000">{dataabout.title}</RoughNotation></h3>
           </Col>
           <Col lg="7" className="d-flex align-items-center fade-in">
             <div>
-              <p>{dataabout.aboutme}</p>
+              <p> {dataabout.aboutme}</p>
             </div>
           </Col>
         </Row>
         <Row className=" sec_sp fade-in">
           <Col lg="5">
-            <h3 className="color_sec py-4">Historique de missions</h3>
+         
+ <h3 className="color_sec py-4"> <RoughNotation type="underline" show={true} color="#ff0000">Historique des missions</RoughNotation></h3>
+
+           
           </Col>
           <Col lg="7">
             <table className="table caption-top">
@@ -87,7 +93,7 @@ export const About = () => {
         </Row>
         <Row className="sec_sp fade-in">
           <Col lg="5">
-            <h3 className="color_sec py-4 fade-in">Langages/Logiciels</h3>
+            <h3 className="color_sec py-4 fade-in">  <RoughNotation type="underline" show={true} color="#ff0000"> Langages/Logiciels</RoughNotation></h3>
           </Col>
           <Col lg="7" className="fade-in">
             {skills.map((data, i) => {
@@ -111,7 +117,7 @@ export const About = () => {
         </Row>
         <Row className="sec_sp fade-in">
           <Col lg="5">
-            <h3 className="color_sec py-4 fade-in">Détails des missions</h3>
+            <h3 className="color_sec py-4 fade-in"> <RoughNotation type="underline" show={true} color="#ff0000">Détails des missions</RoughNotation></h3>
           </Col>
           <Col lg="7" className="fade-in">
             {services.map((data, i) => {

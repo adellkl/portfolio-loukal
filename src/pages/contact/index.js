@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
+import { RoughNotation } from "react-rough-notation";
+
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
@@ -101,9 +103,11 @@ export const ContactUs = () => {
           <title>{meta.title} | Contact</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3">
+        <Row className="mb-5 mt-3 pt-md-2">
           <Col lg="8">
-            <h1 className="display-4 mb-4 fade-in">Contactez-moi</h1>
+     
+              <h1 className="display- mb-4 fade-in">Contactez-moi 🙂</h1>
+
             <hr className="t_border my-4 ml-0 text-left fade-in" />
           </Col>
         </Row>
@@ -121,21 +125,28 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5 fade-left">
-            <h3 className="color_sec py-4">N'hésitez pas </h3>
+            <h3 className="color_sec py-4">Mon profil vous intéresse ?
+              Contactez-moi via ces canaux.</h3>
             <address>
-              <strong>Email:</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                {contactConfig.YOUR_EMAIL}
-              </a>
+              <strong>Email 📥 :</strong>{" "}
+              <RoughNotation type="circle" show={true} color="#ff0000">
+                <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
+                  {contactConfig.YOUR_EMAIL}
+                </a>
+              </RoughNotation>
               <br />
+              
               <br />
               {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Num:</strong> {contactConfig.YOUR_FONE}
-                </p>
+               
+                  <p>
+                    <strong>Num 📲 :</strong> {contactConfig.YOUR_FONE}
+                  </p>
+            
               ) : (
                 ""
               )}
+              
             </address>
             <p>{contactConfig.description}</p>
           </Col>
@@ -193,4 +204,3 @@ export const ContactUs = () => {
     </HelmetProvider>
   );
 };
-
