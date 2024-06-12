@@ -24,7 +24,7 @@ export const About = () => {
           gsap.from(entry.target, {
             opacity: 0,
             x: -50,
-            duration: 1.5,
+            duration: 2.0,
           });
           observer.unobserve(entry.target);
         }
@@ -60,9 +60,9 @@ export const About = () => {
         <Row className="sec_sp">
           <Col lg="5">
             <h3 className="color_sec py-4">
-              <RoughNotation type="underline" show={true} color="#ff0000">
+             
                 {dataabout.title}
-              </RoughNotation>
+            
             </h3>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
@@ -74,9 +74,9 @@ export const About = () => {
         <Row className="sec_sp">
           <Col lg="5">
             <h3 className="color_sec py-4">
-              <RoughNotation type="underline" show={true} color="#ff0000">
+            
                 Historique des missions
-              </RoughNotation>
+            
             </h3>
           </Col>
           <Col lg="7">
@@ -99,9 +99,9 @@ export const About = () => {
         <Row className="sec_sp">
           <Col lg="5">
             <h3 className="color_sec py-4">
-              <RoughNotation type="underline" show={true} color="#ff0000">
+              
                 Langages/Logiciels
-              </RoughNotation>
+            
             </h3>
           </Col>
           <Col lg="7">

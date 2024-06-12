@@ -56,9 +56,13 @@ const skills = [
         value: 60,
     },
     {
-        name: "StarUML",
+        name: "Photoshop",
+        value: 70,
+    }, {
+        name: "Premiere pro",
         value: 90,
     },
+   
 ];
 
 const services = [{

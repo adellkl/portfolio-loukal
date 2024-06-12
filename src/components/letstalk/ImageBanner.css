@@ -1,0 +1,26 @@
+.image-banner {
+    position: fixed;
+    bottom: 10px;
+    z-index: 1000;
+  }
+  
+  .image-banner.right {
+    right: 20px;
+  }
+  
+  .image-banner.left {
+    left: 10px;
+    opacity: 0;
+  }
+  
+  .image-banner img {
+    width: 150px; /* Taille par défaut */
+  }
+  
+  /* Media query pour les écrans de téléphone */
+  @media (max-width: 768px) {
+    .image-banner img {
+      width: 100px; /* Taille ajustée pour les téléphones */
+    }
+  }
+  
