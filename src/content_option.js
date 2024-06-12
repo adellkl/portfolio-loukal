@@ -8,7 +8,7 @@ const introdata = {
     title: "Adel Loukal ✌️ ",
     animated: {
         first: "Développeur front-end",
-        second: "Web designer",
+        second: "UX/UI design",
         third: "Etudiant",
        
     },
