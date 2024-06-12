@@ -28,7 +28,7 @@ export const ContactUs = () => {
       y: 50,
       duration: 1,
       ease: "power3.out",
-      stagger: 0.2,
+      stagger: 0.4,
     });
   }, []);
 
