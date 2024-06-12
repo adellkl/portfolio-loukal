@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { RoughNotation } from "react-rough-notation";
-
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
@@ -20,32 +19,17 @@ export const ContactUs = () => {
     variant: "",
   });
 
-  const aboutRef = useRef(null);
+  const formRef = useRef(null);
 
   useEffect(() => {
-    const aboutSection = aboutRef.current;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          gsap.from(entry.target, {
-            opacity: 0,
-            x: -55,
-            duration: 1.5,
-          });
-          observer.unobserve(entry.target);
-        }
-      });
+    const formElements = formRef.current.querySelectorAll(".animate-field");
+    gsap.from(formElements, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
     });
-
-    const sections = aboutSection.querySelectorAll(".fade-in");
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
   }, []);
 
   const handleSubmit = (e) => {
@@ -70,8 +54,9 @@ export const ContactUs = () => {
         (result) => {
           console.log(result.text);
           setFormdata({
+            ...formData,
             loading: false,
-            alertmessage: "SUCCESS! ,Merci pour votre message",
+            alertmessage: "SUCCESS! Merci pour votre message",
             variant: "success",
             show: true,
           });
@@ -79,7 +64,9 @@ export const ContactUs = () => {
         (error) => {
           console.log(error.text);
           setFormdata({
-            alertmessage: `Erreur! réessayez,${error.text}`,
+            ...formData,
+            loading: false,
+            alertmessage: `Erreur! réessayez, ${error.text}`,
             variant: "danger",
             show: true,
           });
@@ -97,7 +84,7 @@ export const ContactUs = () => {
 
   return (
     <HelmetProvider>
-      <Container ref={aboutRef}>
+      <Container>
         <Helmet>
           <meta charSet="utf-8" />
           <title>{meta.title} | Contact</title>
@@ -105,13 +92,11 @@ export const ContactUs = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-2">
           <Col lg="8">
-     
-              <h1 className="display- mb-4 fade-in">Contactez-moi 🙂</h1>
-
-            <hr className="t_border my-4 ml-0 text-left fade-in" />
+            <h1 className="display- mb-4">Contactez-moi 🙂</h1>
+            <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <Row className="sec_sp fade-in">
+        <Row className="sec_sp">
           <Col lg="12">
             <Alert
               variant={formData.variant}
@@ -124,9 +109,10 @@ export const ContactUs = () => {
               <p className="my-0">{formData.alertmessage}</p>
             </Alert>
           </Col>
-          <Col lg="5" className="mb-5 fade-left">
-            <h3 className="color_sec py-4">Mon profil vous intéresse ?
-              Contactez-moi via ces canaux.</h3>
+          <Col lg="5" className="mb-5">
+            <h3 className="color_sec py-4">
+              Mon profil vous intéresse ? Contactez-moi via ces canaux.
+            </h3>
             <address>
               <strong>Email 📥 :</strong>{" "}
               <RoughNotation type="circle" show={true} color="#ff0000">
@@ -135,25 +121,19 @@ export const ContactUs = () => {
                 </a>
               </RoughNotation>
               <br />
-              
               <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-               
-                  <p>
-                    <strong>Num 📲 :</strong> {contactConfig.YOUR_FONE}
-                  </p>
-            
-              ) : (
-                ""
+              {contactConfig.hasOwnProperty("YOUR_FONE") && (
+                <p>
+                  <strong>Num 📲 :</strong> {contactConfig.YOUR_FONE}
+                </p>
               )}
-              
             </address>
             <p>{contactConfig.description}</p>
           </Col>
-          <Col lg="7" className="d-flex align-items-center fade-right">
-            <form onSubmit={handleSubmit} className="contact__form w-100">
+          <Col lg="7" className="d-flex align-items-center">
+            <form ref={formRef} onSubmit={handleSubmit} className="contact__form w-100">
               <Row>
-                <Col lg="6" className="form-group">
+                <Col lg="6" className="form-group animate-field">
                   <input
                     className="form-control"
                     id="name"
@@ -165,7 +145,7 @@ export const ContactUs = () => {
                     onChange={handleChange}
                   />
                 </Col>
-                <Col lg="6" className="form-group">
+                <Col lg="6" className="form-group animate-field">
                   <input
                     className="form-control rounded-0"
                     id="email"
@@ -179,7 +159,7 @@ export const ContactUs = () => {
                 </Col>
               </Row>
               <textarea
-                className="form-control rounded-0"
+                className="form-control rounded-0 animate-field"
                 id="message"
                 name="message"
                 placeholder="Message"
@@ -190,7 +170,7 @@ export const ContactUs = () => {
               ></textarea>
               <br />
               <Row>
-                <Col lg="12" className="form-group">
+                <Col lg="12" className="form-group animate-field">
                   <button className="btn ac_btn" type="submit">
                     {formData.loading ? "Envoi..." : "Envoyer"}
                   </button>

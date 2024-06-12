@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-
 import { RoughNotation } from "react-rough-notation";
 import {
   dataabout,
@@ -32,8 +31,10 @@ export const About = () => {
       });
     });
 
-    const sections = aboutSection.querySelectorAll(".fade-in");
-    sections.forEach((section) => {
+    const sectionsToAnimate = aboutSection.querySelectorAll(
+      ".service_, .where, .date, .description, .aboutme"
+    );
+    sectionsToAnimate.forEach((section) => {
       observer.observe(section);
     });
 
@@ -52,38 +53,42 @@ export const About = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            
-            <h1 className="display-4 mb-4 ">  A propos de moi 😉</h1>
-            <hr className="t_border my-4 ml-0 text-left fade-in" />
+            <h1 className="display-4 mb-4">A propos de moi 😉</h1>
+            <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <Row className="sec_sp fade-in">
+        <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4"> <RoughNotation type="underline" show={true} color="#ff0000">{dataabout.title}</RoughNotation></h3>
+            <h3 className="color_sec py-4">
+              <RoughNotation type="underline" show={true} color="#ff0000">
+                {dataabout.title}
+              </RoughNotation>
+            </h3>
           </Col>
-          <Col lg="7" className="d-flex align-items-center fade-in">
+          <Col lg="7" className="d-flex align-items-center">
             <div>
-              <p> {dataabout.aboutme}</p>
+              <p className="aboutme">{dataabout.aboutme}</p>
             </div>
           </Col>
         </Row>
-        <Row className=" sec_sp fade-in">
+        <Row className="sec_sp">
           <Col lg="5">
-         
- <h3 className="color_sec py-4"> <RoughNotation type="underline" show={true} color="#ff0000">Historique des missions</RoughNotation></h3>
-
-           
+            <h3 className="color_sec py-4">
+              <RoughNotation type="underline" show={true} color="#ff0000">
+                Historique des missions
+              </RoughNotation>
+            </h3>
           </Col>
           <Col lg="7">
             <table className="table caption-top">
               <tbody>
                 {worktimeline.map((data, i) => {
                   return (
-                    <tr key={i} className="fade-in">
-                      <th scope="row">{data.jobtitle}</th>
-                      <td>{data.where}</td>
-                      <td>{data.date}</td>
-                      <td>{data.description}</td>
+                    <tr key={i}>
+                      <th scope="row" className="where">{data.jobtitle}</th>
+                      <td className="where">{data.where}</td>
+                      <td className="date">{data.date}</td>
+                      <td className="description">{data.description}</td>
                     </tr>
                   );
                 })}
@@ -91,14 +96,18 @@ export const About = () => {
             </table>
           </Col>
         </Row>
-        <Row className="sec_sp fade-in">
+        <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4 fade-in">  <RoughNotation type="underline" show={true} color="#ff0000"> Langages/Logiciels</RoughNotation></h3>
+            <h3 className="color_sec py-4">
+              <RoughNotation type="underline" show={true} color="#ff0000">
+                Langages/Logiciels
+              </RoughNotation>
+            </h3>
           </Col>
-          <Col lg="7" className="fade-in">
+          <Col lg="7">
             {skills.map((data, i) => {
               return (
-                <div key={i} className="fade-in">
+                <div key={i}>
                   <h3 className="progress-title">{data.name}</h3>
                   <div className="progress">
                     <div
@@ -115,11 +124,15 @@ export const About = () => {
             })}
           </Col>
         </Row>
-        <Row className="sec_sp fade-in">
+        <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4 fade-in"> <RoughNotation type="underline" show={true} color="#ff0000">Détails des missions</RoughNotation></h3>
+            <h3 className="color_sec py-4">
+              <RoughNotation type="circle" show={true} color="green">
+                Détails des missions
+              </RoughNotation>
+            </h3>
           </Col>
-          <Col lg="7" className="fade-in">
+          <Col lg="7">
             {services.map((data, i) => {
               return (
                 <div className="service_ py-4 fade-in" key={i}>
