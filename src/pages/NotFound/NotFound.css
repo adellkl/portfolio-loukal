@@ -11,7 +11,7 @@
     max-width: 600px;
   }
 
-  *{
+  body{
     overflow-y: hidden;
     overflow-x: hidden;
   }
