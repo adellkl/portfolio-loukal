@@ -55,12 +55,16 @@ export const Home = () => {
                   
                   <Link to="/contact">
                     <div id="button_h" className="ac_btn btn">
-                      Me contacter ici
+                      Me contacter
                       <div className="ring one"></div>
                       <div className="ring two"></div>
                       <div className="ring three"></div>
+
+                     
                     </div>
-                  </Link>
+                  </Link>  
+                  
+                 <br></br>  <br></br> <p>Branche expérimentation </p>
                 </div>
               </div>
             </div>
