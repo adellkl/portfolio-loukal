@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
-import { RoughNotation } from "react-rough-notation";
+
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
@@ -92,7 +92,8 @@ export const ContactUs = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-2">
           <Col lg="8">
-            <h1 className="display- mb-4">Contactez-moi 🙂</h1>
+
+            <h1 className="display- mb-4"> Contactez-moi 🙂 </h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
@@ -115,11 +116,11 @@ export const ContactUs = () => {
             </h3>
             <address>
               <strong>Email 📥 :</strong>{" "}
-              <RoughNotation type="circle" show={true} color="#ff0000">
+             
                 <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
                   {contactConfig.YOUR_EMAIL}
                 </a>
-              </RoughNotation>
+            
               <br />
               <br />
               {contactConfig.hasOwnProperty("YOUR_FONE") && (

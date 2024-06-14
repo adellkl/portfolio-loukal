@@ -122,6 +122,8 @@ const socialprofils = {
     github: "https://github.com/adellkl",
     
     linkedin: "https://www.linkedin.com/in/adel-loukal-257541221/",
+
+    Twitch:"https://bento.me/adel-loukal",
 };
 export {
     meta,

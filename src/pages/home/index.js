@@ -64,7 +64,7 @@ export const Home = () => {
                     </div>
                   </Link>  
                   
-                 <br></br>  <br></br> <p>Branche expérimentation </p>
+                 
                 </div>
               </div>
             </div>
