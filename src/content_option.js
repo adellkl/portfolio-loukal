@@ -67,10 +67,10 @@ const skills = [
 
 const services = [{
         title: "Mon alternance de 12 mois chez Iscom Paris",
-        description: "Durant ma période d'alternance, j'ai eu l'occasion de travailler sur le développement d'une solution qui répondait aux problèmes de l'entreprise. J'ai collaboré avec un UX/UI designer, nous avons fait les maquettes, la charte graphique, et une fois toutes ces étapes terminées, j'ai commencé à coder avec React.JS et Tailwind pour le côté front-end, et pour le back-end, avec Node.JS et Firebase pour la base de données.",
+        description: "Durant ma période d'alternance, j'ai eu l'opportunité de participer au développement d'une solution innovante pour répondre aux problématiques de l'entreprise. En collaboration avec un UX/UI designer, nous avons élaboré les maquettes et défini la charte graphique. Une fois ces étapes achevées, j'ai développé la partie front-end avec React.JS et Tailwind CSS, créant des interfaces dynamiques et cohérentes. Pour le back-end, j'ai utilisé Node.JS et Firebase pour la gestion des données et l'authentification des utilisateurs. Cette expérience m'a permis d'approfondir mes compétences en développement full-stack et de travailler efficacement en équipe pour résoudre des problèmes concrets tout en répondant aux besoins de l'entreprise.",
     },{
         title: "Mon stage de 6 mois en UX/UI design",
-        description: "Mes missions étaient variées, mais principalement je faisais de la création de contenu pour la plateforme Iscom Anytime.",
+        description: "Mes missions étaient variées, mais principalement axées sur la création de contenu pour la plateforme Iscom Anytime. Cette tâche impliquait la conception, la rédaction et la mise en forme de divers types de contenus destinés à engager et informer les utilisateurs de la plateforme. J'ai travaillé sur des articles, des infographies, et d'autres supports multimédias, en veillant à ce que chaque pièce de contenu soit pertinente et attrayante. Cette expérience m'a permis de développer mes compétences en communication et en création de contenu, tout en contribuant à l'enrichissement de la plateforme Iscom Anytime.",
     },
   
   
