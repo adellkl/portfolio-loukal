@@ -10,9 +10,10 @@ const NotFound = () => {
       <div className="not-found-content">
        
         <div className="not-found-text">
+          
           <h1>OUPS ! PAGE INTROUVABLE.</h1>
           <p>
-          Pas de panique je vous guide, appuiyez simplement sur ce <br></br> bouton pour retourner sur mon portfolio et admirer le travaille
+          Pas de panique 
           </p>
           <Link to="/" className="not-found-button">HOME</Link>
         </div>

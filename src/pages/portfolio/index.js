@@ -1,9 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useMemo } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { dataportfolio, meta } from "../../content_option";
 import gsap from "gsap";
+
+const PortfolioItem = React.memo(({ data, index }) => (
+  <div key={index} className="po_item">
+    <img src={data.img} alt={`Project ${index}`} className="card-image" />
+    <div className="content">
+      <p>{data.description}</p>
+      <a href={data.link} target="_blank" rel="noopener noreferrer">
+        Voir le repository Github
+      </a>
+    </div>
+  </div>
+));
 
 export const Portfolio = () => {
   const portfolioRef = useRef(null);
@@ -45,6 +57,13 @@ export const Portfolio = () => {
     }
   }, []);
 
+  const portfolioItems = useMemo(() => 
+    dataportfolio.map((data, index) => (
+      <PortfolioItem key={index} data={data} index={index} />
+    )),
+    []
+  );
+
   return (
     <HelmetProvider>
       <Container className="About-header" ref={portfolioRef}>
@@ -60,17 +79,7 @@ export const Portfolio = () => {
           </Col>
         </Row>
         <div className="mb-5 po_items_ho">
-          {dataportfolio.map((data, i) => (
-            <div key={i} className="po_item">
-              <img src={data.img} alt={`Project ${i}`} className="card-image" />
-              <div className="content">
-                <p>{data.description}</p>
-                <a href={data.link} target="_blank" rel="noopener noreferrer">
-                  Voir le repositories Github
-                </a>
-              </div>
-            </div>
-          ))}
+          {portfolioItems}
         </div>
       </Container>
     </HelmetProvider>
