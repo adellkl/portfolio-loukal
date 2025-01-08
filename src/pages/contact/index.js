@@ -93,17 +93,23 @@ export const ContactUs = () => {
         <Row className="mb-5 mt-3 pt-md-2">
           <Col lg="8">
 
-            <h1 className="display- mb-4"> Contactez-moi 🙂 </h1>
+            <h1 className="display- mb-4"> Contactez-moi </h1>
             <hr className="t_border my-4 ml-0 text-left" />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h1 className="display- mb-4 mt-4">
+
+            </h1>
           </Col>
         </Row>
         <Row className="sec_sp">
           <Col lg="12">
             <Alert
               variant={formData.variant}
-              className={`rounded-0 co_alert ${
-                formData.show ? "d-block" : "d-none"
-              }`}
+              className={`rounded-0 co_alert ${formData.show ? "d-block" : "d-none"
+                }`}
               onClose={() => setFormdata({ show: false })}
               dismissible
             >
@@ -115,17 +121,20 @@ export const ContactUs = () => {
               Mon profil vous intéresse ? Contactez-moi via ces canaux.
             </h3>
             <address>
-              <strong>Email 📥 :</strong>{" "}
-             
-                <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                  {contactConfig.YOUR_EMAIL}
-                </a>
-            
+              <strong>Email :</strong>{" "}
+
+              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
+                {contactConfig.YOUR_EMAIL}
+              </a>
+              <a href="{''mailto:$5{mailto: you.config.YOOUR_EMAIL, confifutation can}}">
+                [your_img_url];
+              </a>
+
               <br />
               <br />
               {contactConfig.hasOwnProperty("YOUR_FONE") && (
                 <p>
-                  <strong>Num 📲 :</strong> {contactConfig.YOUR_FONE}
+                  <strong>Num de téléphone:</strong> {contactConfig.YOUR_FONE}
                 </p>
               )}
             </address>
@@ -183,6 +192,7 @@ export const ContactUs = () => {
       </Container>
       <div className={formData.loading ? "loading-bar" : "d-none"}></div>
     </HelmetProvider>
-    
+
+
   );
 };

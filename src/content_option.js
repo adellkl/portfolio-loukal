@@ -10,7 +10,7 @@ const introdata = {
         first: "Développeur front-end",
         second: "UX/UI design",
         third: "Etudiant",
-       
+
     },
     description: "Bienvenue sur mon portfolio. Vous y trouverez mes réalisations, mes expériences professionnelles et mes formations. Bonne visite ! ",
     your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
@@ -18,23 +18,25 @@ const introdata = {
 
 const dataabout = {
     title: "A propos de moi",
-    aboutme: "Jeune passionné d'informatique et de design, actuellement en BUT MMI, spécialisation développement web et dispositifs interactifs, en alternance chez ISCOM Paris.",
+    aboutme: "Fraîchement diplômé d’un Bachelor Universitaire de Technologie, j’aimerais approfondir mes connaissances en développement web et en cybersécurité. C'est pourquoi je recherche activement une formation et une entreprise pour une rentrée décalée en mars 2025.",
+
 };
 const worktimeline = [{
-        jobtitle: "Développeur front-end ",
-        where: "ISCOM Paris",
-        date: "2023-2024",
-    },
-    {
-        jobtitle: "Assistant chef de projet UX/UI design",
-        where: "ISCOM Paris",
-        date: "Avril-Septembre 2023",
-    },
-    {
-        jobtitle: "Merchandising",
-        where: "Actiale",
-        date: "2022",
-    },
+    jobtitle: "Développeur front-end ",
+    where: "ISCOM Paris",
+    date: "2023-2024",
+},
+{
+    jobtitle: "Développement de mon portfolio",
+    where: "Autonomie",
+    date: "2023",
+},
+{
+    jobtitle: "Assistant chef de projet UX/UI design",
+    where: "ISCOM Paris",
+    date: "Avril-Septembre 2023",
+},
+
 ];
 
 const skills = [
@@ -48,6 +50,10 @@ const skills = [
         value: 70,
     },
     {
+        name: "VS Code",
+        value: 90,
+    },
+    {
         name: "TailwindCSS",
         value: 80,
     },
@@ -55,25 +61,19 @@ const skills = [
         name: "Figma",
         value: 60,
     },
-    {
-        name: "Photoshop",
-        value: 70,
-    }, {
-        name: "Premiere pro",
-        value: 90,
-    },
-   
+
+
 ];
 
 const services = [{
-        title: "Mon alternance de 12 mois chez Iscom Paris",
-        description: "Durant ma période d'alternance, j'ai eu l'opportunité de participer au développement d'une solution innovante pour répondre aux problématiques de l'entreprise. En collaboration avec un UX/UI designer, nous avons élaboré les maquettes et défini la charte graphique. Une fois ces étapes achevées, j'ai développé la partie front-end avec React.JS et Tailwind CSS, créant des interfaces dynamiques et cohérentes. Pour le back-end, j'ai utilisé Node.JS et Firebase pour la gestion des données et l'authentification des utilisateurs. Cette expérience m'a permis d'approfondir mes compétences en développement full-stack et de travailler efficacement en équipe pour résoudre des problèmes concrets tout en répondant aux besoins de l'entreprise.",
-    },{
-        title: "Mon stage de 6 mois en UX/UI design",
-        description: "Mes missions étaient variées, mais principalement axées sur la création de contenu pour la plateforme Iscom Anytime. Cette tâche impliquait la conception, la rédaction et la mise en forme de divers types de contenus destinés à engager et informer les utilisateurs de la plateforme. J'ai travaillé sur des articles, des infographies, et d'autres supports multimédias, en veillant à ce que chaque pièce de contenu soit pertinente et attrayante. Cette expérience m'a permis de développer mes compétences en communication et en création de contenu, tout en contribuant à l'enrichissement de la plateforme Iscom Anytime.",
-    },
-  
-  
+    title: "Mon alternance de 12 mois chez Iscom Paris",
+    description: "Durant ma période d'alternance, j'ai eu l'opportunité de participer au développement d'une solution innovante pour répondre aux problématiques de l'entreprise. En collaboration avec un UX/UI designer, nous avons élaboré les maquettes et défini la charte graphique. Une fois ces étapes achevées, j'ai développé la partie front-end avec React.JS et Tailwind CSS, créant des interfaces dynamiques et cohérentes. Pour le back-end, j'ai utilisé Node.JS et Firebase pour la gestion des données et l'authentification des utilisateurs. Cette expérience m'a permis d'approfondir mes compétences en développement full-stack et de travailler efficacement en équipe pour résoudre des problèmes concrets tout en répondant aux besoins de l'entreprise.",
+}, {
+    title: "Mon stage de 6 mois en UX/UI design",
+    description: "Mes missions étaient variées, mais principalement axées sur la création de contenu pour la plateforme Iscom Anytime. Cette tâche impliquait la conception, la rédaction et la mise en forme de divers types de contenus destinés à engager et informer les utilisateurs de la plateforme. J'ai travaillé sur des articles, des infographies, et d'autres supports multimédias, en veillant à ce que chaque pièce de contenu soit pertinente et attrayante. Cette expérience m'a permis de développer mes compétences en communication et en création de contenu, tout en contribuant à l'enrichissement de la plateforme Iscom Anytime.",
+},
+
+
 ];
 
 const dataportfolio = [
@@ -86,7 +86,7 @@ const dataportfolio = [
         img: require("../src/assets/images/sae501.png"),
         description: "Projet universitaire en groupe de Trois, Nunjucks, Javascript, SCSS, CSS",
         link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
-    }, 
+    },
     {
         img: require("../src/assets/images/Clone.png"),
         description: "Clone de l'ancienne interface de ChatGPT, CSS, HTML, Javascript",
@@ -120,10 +120,10 @@ const contactConfig = {
 
 const socialprofils = {
     github: "https://github.com/adellkl",
-    
+
     linkedin: "https://www.linkedin.com/in/adel-loukal-257541221/",
 
-    Twitch:"https://bento.me/adel-loukal",
+    Twitch: "https://bento.me/adel-loukal",
 };
 export {
     meta,
