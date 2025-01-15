@@ -126,8 +126,8 @@ export const ContactUs = () => {
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
                 {contactConfig.YOUR_EMAIL}
               </a>
-              <a href="{''mailto:$5{mailto: you.config.YOOUR_EMAIL, confifutation can}}">
-                [your_img_url];
+              <a target="_blank" href="{''mailto:$5{mailto: you.config.YOOUR_EMAIL, confifutation can}}">
+
               </a>
 
               <br />
