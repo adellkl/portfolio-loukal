@@ -90,7 +90,7 @@ export const Home = () => {
                   </Link>
                 </div>
 
-                {/* Logo Carousel Section Directly Below Buttons */}
+
                 <div
                   className="logo-carousel-container"
                   style={{ marginTop: '30px', display: window.innerWidth <= 768 ? 'none' : 'block' }}

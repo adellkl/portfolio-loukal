@@ -5,7 +5,7 @@ const meta = {
 };
 
 const introdata = {
-    title: "Adel Loukal ✌️ ",
+    title: "Adel Loukal ",
     animated: {
         first: "Développeur front-end",
         second: "UX/UI design",
