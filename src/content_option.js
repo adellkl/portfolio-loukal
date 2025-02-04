@@ -77,32 +77,47 @@ const services = [{
 ];
 
 const dataportfolio = [
+
     {
+
         img: require("../src/assets/images/Figma.png"),
         description: "Maquette et prototypage ISCOM Talent.",
         link: "https://www.figma.com/proto/EB2NXGZIzJlLeboP9cPWUo/ISCOM-Talent?node-id=555-4246&t=e0bL8NgCfYxG8nBX-0&scaling=scale-down&page-id=86%3A5531&starting-point-node-id=555%3A4246&show-proto-sidebar=1&content-scaling=fixed",
     },
     {
+
         img: require("../src/assets/images/sae501.png"),
         description: "Projet universitaire en groupe de Trois, Nunjucks, Javascript, SCSS, CSS",
         link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
     },
     {
+
         img: require("../src/assets/images/Clone.png"),
         description: "Clone de l'ancienne interface de ChatGPT, CSS, HTML, Javascript",
         link: "https://github.com/adellkl/clone-chatgpt-interface",
     },
     {
+
+
         img: require("../src/assets/images/Extention.png"),
         description: "Extension chrome, calculator, Javascript",
         link: "https://github.com/adellkl/Extension-chrome",
+        readme: "https://raw.githubusercontent.com/adellkl/Extension-chrome/main/README.md",
+
+        //         photos: [
+        //     require("../src/assets/images/image1.png"),
+        //     require("../src/assets/images/image2.png")
+        // ]
+
     },
     {
+
         img: require("../src/assets/images/Crud.png"),
         description: "CRUD, PHP, CSS, HTML",
         link: "https://github.com/adellkl/CRUD_Portfolio",
     }
 ];
+
 
 export default dataportfolio;
 

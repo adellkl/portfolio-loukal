@@ -6,32 +6,13 @@ import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
 import moi from "../../assets/images/moi.jpeg";
 import { RoughNotation } from "react-rough-notation";
-import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const logos = [
-  { src: require("../../assets/images/Logo1.png"), alt: "Logo 1" },
-  { src: require("../../assets/images/Logo2.jpg"), alt: "Logo 2" },
-  { src: require("../../assets/images/Logo3.png"), alt: "Logo 3" },
-  { src: require("../../assets/images/Logo4.png"), alt: "Logo 4" },
-  { src: require("../../assets/images/Logo5.png"), alt: "Logo 5" }
-];
 
 export const Home = () => {
-  const settings = {
-    infinite: true,
-    speed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    rtl: true,
-    pauseOnHover: true,
-    draggable: true,
-    arrows: false
-  };
+
 
   return (
     <HelmetProvider>
@@ -95,18 +76,7 @@ export const Home = () => {
                   className="logo-carousel-container"
                   style={{ marginTop: '30px', display: window.innerWidth <= 768 ? 'none' : 'block' }}
                 >
-                  <Slider {...settings}>
-                    {logos.map((logo, index) => (
-                      <div key={index} style={{ display: 'flex', justifyContent: 'center' }}>
-                        <img
-                          src={logo.src}
-                          alt={logo.alt}
-                          className="logo-carousel"
-                          style={{ maxWidth: '100px', maxHeight: '100px', outline: 'none', border: 'none' }}
-                        />
-                      </div>
-                    ))}
-                  </Slider>
+
                 </div>
               </div>
             </div>
