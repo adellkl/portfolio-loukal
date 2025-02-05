@@ -96,6 +96,7 @@ const dataportfolio = [
         description: "Clone de l'ancienne interface de ChatGPT, CSS, HTML, Javascript",
         link: "https://github.com/adellkl/clone-chatgpt-interface",
     },
+
     {
 
 
@@ -104,11 +105,14 @@ const dataportfolio = [
         link: "https://github.com/adellkl/Extension-chrome",
         readme: "https://raw.githubusercontent.com/adellkl/Extension-chrome/main/README.md",
 
-        //         photos: [
-        //     require("../src/assets/images/image1.png"),
-        //     require("../src/assets/images/image2.png")
-        // ]
 
+
+    },
+    {
+
+        img: require("../src/assets/images/sae501.png"),
+        description: "Extension Chrome, Historique Tracker qui permet aux utilisateurs de visualiser le temps qu’ils ont passé sur chaque site, avec plein de fonctionnalités sympas comme le filtrage par durée d’historique ou par groupe. ",
+        link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
     },
     {
 
