@@ -6,21 +6,27 @@ import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
 import moi from "../../assets/images/moi.jpeg";
 import { RoughNotation } from "react-rough-notation";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 export const Home = () => {
-
-
   return (
     <HelmetProvider>
       <section id="home" className="home">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> {meta.title} </title>
+          <title>{meta.title}</title>
           <meta name="description" content={meta.description} />
+          <meta name="keywords" content="développement web, portfolio, React, JavaScript, programmation" />
+          <meta name="author" content="Votre Nom" />
+          <meta property="og:title" content={meta.title} />
+          <meta property="og:description" content={meta.description} />
+          <meta property="og:image" content={moi} />
+          <meta property="og:url" content={window.location.href} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={meta.title} />
+          <meta name="twitter:description" content={meta.description} />
+          <meta name="twitter:image" content={moi} />
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center">
           <div
@@ -70,13 +76,10 @@ export const Home = () => {
                     </div>
                   </Link>
                 </div>
-
-
                 <div
                   className="logo-carousel-container"
                   style={{ marginTop: '30px', display: window.innerWidth <= 768 ? 'none' : 'block' }}
                 >
-
                 </div>
               </div>
             </div>
