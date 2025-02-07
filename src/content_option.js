@@ -91,20 +91,7 @@ const dataportfolio = [
         link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
         technologies: ["Javascript", "Tailwind CSS", "Node.js", "Nunjucks"],
     },
-    {
-        img: require("../src/assets/images/Clone.png"),
-        titre: "Reproduction de l'interface de ChatGPT 4",
-        description: "Réalisation d'un clone de l'ancienne interface de ChatGPT en utilisant uniquement HTML, CSS et Javascript. Ce projet m'a permis de travailler sur la mise en page responsive et de reproduire fidèlement les éléments interactifs de l'interface utilisateur.",
-        link: "https://github.com/adellkl/clone-chatgpt-interface",
-        technologies: ["Javascript", "CSS", "HTML"],
-    },
-    {
-        img: require("../src/assets/images/Extention.png"),
-        titre: "Développement d'une extension Chrome - Calculatrice",
-        description: "Création d'une extension Chrome permettant d'effectuer des calculs directement depuis le navigateur. Développée en Javascript, elle intègre une interface simple et intuitive permettant aux utilisateurs de réaliser rapidement des opérations mathématiques sans quitter leur onglet en cours.",
-        link: "https://github.com/adellkl/Extension-chrome",
-        technologies: ["Javascript", "CSS", "HTML"],
-    },
+
     {
         img: require("../src/assets/images/chrome.png"),
         titre: "Extension Chrome - Analyse du temps d'écran",
