@@ -77,47 +77,41 @@ const services = [{
 ];
 
 const dataportfolio = [
-
     {
-
         img: require("../src/assets/images/Figma.png"),
-        description: "Maquette et prototypage ISCOM Talent.",
+        titre: "Maquette Figma - ISCOM Talent",
+        description: "Dans le cadre de mon stage de 6 mois en deuxième année de Bachelor, j'ai réalisé, en collaboration avec le chef de projet UX/UI (Monsieur Darabor), la maquette du projet 'ISCOM TALENT'. J'ai participé à la définition de la charte graphique, à l'élaboration de la maquette sur Figma et à la rédaction du cahier des charges détaillant les fonctionnalités et exigences du projet.",
         link: "https://www.figma.com/proto/EB2NXGZIzJlLeboP9cPWUo/ISCOM-Talent?node-id=555-4246&t=e0bL8NgCfYxG8nBX-0&scaling=scale-down&page-id=86%3A5531&starting-point-node-id=555%3A4246&show-proto-sidebar=1&content-scaling=fixed",
     },
     {
-
         img: require("../src/assets/images/sae501.png"),
-        description: "Projet universitaire en groupe de Trois, Nunjucks, Javascript, SCSS, CSS",
+        titre: "Projet universitaire - Initiation à Nunjucks",
+        description: "Projet réalisé en groupe dans le cadre de ma formation universitaire. L'objectif était de concevoir un site dynamique en utilisant le moteur de templating Nunjucks, combiné avec Javascript, SCSS et CSS. Nous avons mis en place une architecture modulaire et appris à manipuler des templates pour optimiser la structure et le rendu du site.",
         link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
     },
     {
-
         img: require("../src/assets/images/Clone.png"),
-        description: "Clone de l'ancienne interface de ChatGPT, CSS, HTML, Javascript",
+        titre: "Reproduction de l'interface de ChatGPT 4",
+        description: "Réalisation d'un clone de l'ancienne interface de ChatGPT en utilisant uniquement HTML, CSS et Javascript. Ce projet m'a permis de travailler sur la mise en page responsive et de reproduire fidèlement les éléments interactifs de l'interface utilisateur.",
         link: "https://github.com/adellkl/clone-chatgpt-interface",
     },
-
     {
-
-
         img: require("../src/assets/images/Extention.png"),
-        description: "Extension chrome, calculator, Javascript",
+        titre: "Développement d'une extension Chrome - Calculatrice",
+        description: "Création d'une extension Chrome permettant d'effectuer des calculs directement depuis le navigateur. Développée en Javascript, elle intègre une interface simple et intuitive permettant aux utilisateurs de réaliser rapidement des opérations mathématiques sans quitter leur onglet en cours.",
         link: "https://github.com/adellkl/Extension-chrome",
         readme: "https://raw.githubusercontent.com/adellkl/Extension-chrome/main/README.md",
-
-
-
     },
     {
-
         img: require("../src/assets/images/sae501.png"),
-        description: "Extension Chrome, Historique Tracker qui permet aux utilisateurs de visualiser le temps qu’ils ont passé sur chaque site, avec plein de fonctionnalités sympas comme le filtrage par durée d’historique ou par groupe. ",
+        titre: "Extension Chrome - Analyse du temps d'écran",
+        description: "Développement d'une extension Chrome permettant aux utilisateurs de suivre le temps passé sur chaque site web. Elle propose des fonctionnalités avancées comme le filtrage des résultats par durée et par groupe de sites, offrant ainsi une analyse détaillée du temps d'écran et des habitudes de navigation.",
         link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
     },
     {
-
         img: require("../src/assets/images/Crud.png"),
-        description: "CRUD, PHP, CSS, HTML",
+        titre: "CRUD en PHP - Gestion des données",
+        description: "Développement d'un système de gestion des données (CRUD : Create, Read, Update, Delete) en utilisant PHP, HTML et CSS. Ce projet permet d'ajouter, modifier, supprimer et afficher des données stockées dans une base de données MySQL via une interface web conviviale.",
         link: "https://github.com/adellkl/CRUD_Portfolio",
     }
 ];
