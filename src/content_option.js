@@ -18,7 +18,7 @@ const introdata = {
 
 const dataabout = {
     title: "A propos de moi",
-    aboutme: "Fraîchement diplômé d’un Bachelor Universitaire de Technologie, j’aimerais approfondir mes connaissances en développement web et en cybersécurité. C'est pourquoi je recherche activement une formation et une entreprise pour une rentrée décalée en mars 2025.",
+    aboutme: "Fraîchement diplômé d’un Bachelor Universitaire de Technologie, j’aimerais approfondir mes connaissances en développement web et en cybersécurité. C'est pourquoi je recherche activement une formation et une entreprise pour la rentrée de septembre 2025",
 
 };
 const worktimeline = [{
@@ -88,7 +88,7 @@ const dataportfolio = [
         img: require("../src/assets/images/sae501.png"),
         titre: "Projet universitaire - Initiation à Nunjucks",
         description: "Projet réalisé en groupe dans le cadre de ma formation universitaire. L'objectif était de concevoir un site dynamique en utilisant le moteur de templating Nunjucks, combiné avec Javascript, SCSS et CSS. Nous avons mis en place une architecture modulaire et appris à manipuler des templates pour optimiser la structure et le rendu du site.",
-        link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/flow",
+        link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/",
         technologies: ["Javascript", "Tailwind CSS", "Node.js", "Nunjucks"],
     },
 
