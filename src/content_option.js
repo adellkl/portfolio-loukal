@@ -88,7 +88,7 @@ const dataportfolio = [
         img: require("../src/assets/images/sae501.png"),
         titre: "Projet universitaire - Initiation à Nunjucks",
         description: "Projet réalisé en groupe dans le cadre de ma formation universitaire. L'objectif était de concevoir un site dynamique en utilisant le moteur de templating Nunjucks, combiné avec Javascript, SCSS et CSS. Nous avons mis en place une architecture modulaire et appris à manipuler des templates pour optimiser la structure et le rendu du site.",
-        link: "https://xd.adobe.com/view/95c93a87-3bd9-475d-8adf-6d6937baace9-c09a/",
+        link: "https://github.com/By-Kvn/SAE-501",
         technologies: ["Javascript", "Tailwind CSS", "Node.js", "Nunjucks"],
     },
 
@@ -98,6 +98,12 @@ const dataportfolio = [
         description: "Développement d'une extension Chrome permettant aux utilisateurs de suivre le temps passé sur chaque site web. Elle propose des fonctionnalités avancées comme le filtrage des résultats par durée et par groupe de sites, offrant ainsi une analyse détaillée du temps d'écran et des habitudes de navigation.",
         link: "https://github.com/adellkl/extension-tracker",
         technologies: ["react.js", "TailwindCSS", "Node.js"],
+    }, {
+        img: require("../src/assets/images/mdp.png"),
+        titre: "Extension Chrome - Analyse du temps d'écran",
+        description: "Développement d'une application permettant de générer des mots de passe sécurisés avec différents niveaux de complexité. L'interface moderne et intuitive offre une expérience utilisateur fluide, avec la possibilité de copier instantanément les mots de passe générés. Une section éducative met en avant l'importance d'utiliser des mots de passe robustes pour protéger ses comptes en ligne.",
+        link: "https://password-generator-khaki-iota-42.vercel.app/",
+        technologies: ["react.js", "TailwindCSS"],
     },
 
 ];
