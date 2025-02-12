@@ -46,13 +46,10 @@ const skills = [
         value: 70,
     },
     {
-        name: "React",
+        name: "React.JS",
         value: 70,
     },
-    {
-        name: "VS Code",
-        value: 90,
-    },
+
     {
         name: "TailwindCSS",
         value: 80,
@@ -69,7 +66,7 @@ const services = [{
     title: "Mon alternance de 12 mois chez Iscom Paris",
     description: "Durant ma période d'alternance, j'ai eu l'opportunité de participer au développement d'une solution innovante pour répondre aux problématiques de l'entreprise. En collaboration avec un UX/UI designer, nous avons élaboré les maquettes et défini la charte graphique. Une fois ces étapes achevées, j'ai développé la partie front-end avec React.JS et Tailwind CSS, créant des interfaces dynamiques et cohérentes. Pour le back-end, j'ai utilisé Node.JS et Firebase pour la gestion des données et l'authentification des utilisateurs. Cette expérience m'a permis d'approfondir mes compétences en développement full-stack et de travailler efficacement en équipe pour résoudre des problèmes concrets tout en répondant aux besoins de l'entreprise.",
 }, {
-    title: "Mon stage de 6 mois en UX/UI design",
+    title: "Mon stage de 5 mois en UX/UI design",
     description: "Mes missions étaient variées, mais principalement axées sur la création de contenu pour la plateforme Iscom Anytime. Cette tâche impliquait la conception, la rédaction et la mise en forme de divers types de contenus destinés à engager et informer les utilisateurs de la plateforme. J'ai travaillé sur des articles, des infographies, et d'autres supports multimédias, en veillant à ce que chaque pièce de contenu soit pertinente et attrayante. Cette expérience m'a permis de développer mes compétences en communication et en création de contenu, tout en contribuant à l'enrichissement de la plateforme Iscom Anytime.",
 },
 
@@ -100,9 +97,9 @@ const dataportfolio = [
         technologies: ["react.js", "TailwindCSS", "Node.js"],
     }, {
         img: require("../src/assets/images/mdp.png"),
-        titre: "Extension Chrome - Analyse du temps d'écran",
+        titre: "Générateur de mot de passe ",
         description: "Développement d'une application permettant de générer des mots de passe sécurisés avec différents niveaux de complexité. L'interface moderne et intuitive offre une expérience utilisateur fluide, avec la possibilité de copier instantanément les mots de passe générés. Une section éducative met en avant l'importance d'utiliser des mots de passe robustes pour protéger ses comptes en ligne.",
-        link: "https://password-generator-khaki-iota-42.vercel.app/",
+        link: "https://github.com/adellkl/TO-DO-TEXT-",
         technologies: ["react.js", "TailwindCSS"],
     },
     {
