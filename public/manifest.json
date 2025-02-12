@@ -3,17 +3,17 @@
   "name": "Portfolio - Adel Loukal",
   "icons": [
     {
-      "src": "assets/images/favicon.ico",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Red_circle.svg/1024px-Red_circle.svg.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "assets/images/logo192.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Red_circle.svg/1024px-Red_circle.svg.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "assets/images/logo512.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Red_circle.svg/1024px-Red_circle.svg.png",
       "type": "image/png",
       "sizes": "512x512"
     }
