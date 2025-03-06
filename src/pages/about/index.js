@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
@@ -9,20 +9,22 @@ import gsap from "gsap";
 export const About = () => {
   const aboutRef = useRef(null);
 
+  const animateSection = useCallback((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        gsap.from(entry.target, {
+          opacity: 0,
+          x: -50,
+          duration: 2.0,
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, []);
+
   useEffect(() => {
     const aboutSection = aboutRef.current;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          gsap.from(entry.target, {
-            opacity: 0,
-            x: -50,
-            duration: 2.0,
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+    const observer = new IntersectionObserver(animateSection);
 
     const sectionsToAnimate = aboutSection.querySelectorAll(
       ".service_, .where, .date, .description, .aboutme"
@@ -34,7 +36,7 @@ export const About = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [animateSection]);
 
   return (
     <HelmetProvider>

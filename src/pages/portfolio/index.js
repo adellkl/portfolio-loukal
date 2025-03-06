@@ -1,4 +1,3 @@
-// Portfolio.js
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./style.css";
@@ -7,7 +6,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { dataportfolio, meta } from "../../content_option";
 import gsap from "gsap";
 
-// Nouveau composant pour afficher les technologies avec animation
 const TechList = ({ technologies }) => {
   const techRef = useRef(null);
 

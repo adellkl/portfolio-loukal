@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
@@ -10,6 +10,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <section id="home" className="home">
@@ -56,10 +69,10 @@ export const Home = () => {
                   />
                 </h1>
                 <p className="mb-1x">{introdata.description}</p>
-                <br></br>
+                <br />
                 <div className="intro_btn-action pb-5">
                   <Link to="/portfolio" className="text_2">
-                    <div id="button_p" className="ac_btn btn" style={{ marginRight: '20px' }}>
+                    <div id="button_p" className="ac_btn btn">
                       Mes réalisations
                       <div className="ring one"></div>
                       <div className="ring two"></div>
@@ -78,7 +91,7 @@ export const Home = () => {
                 </div>
                 <div
                   className="logo-carousel-container"
-                  style={{ marginTop: '30px', display: window.innerWidth <= 768 ? 'none' : 'block' }}
+                  style={{ marginTop: '30px', display: isMobile ? 'none' : 'block' }}
                 >
                 </div>
               </div>

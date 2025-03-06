@@ -5,11 +5,13 @@
 .table td,
 .table th {
   color: var(--text-color);
+  background-color: transparent !important;
 }
 
 .t_border {
   border-color: var(--text-color) !important;
 }
+
 [data-theme="dark"] .table th,
 td {
   background-color: transparent !important;
@@ -72,6 +74,60 @@ td {
 
 .service-section .service-category-title {
   padding-bottom: 4px;
+}
+
+/* Style pour la timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-date {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  color: #888;
+}
+
+/* Style pour les compétences */
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  flex: 1;
+}
+
+.skill-value {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  color: #555;
 }
 
 /*! CSS Used keyframes */

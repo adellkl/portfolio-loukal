@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -19,6 +19,7 @@ export const ContactUs = () => {
   });
 
   const formRef = useRef(null);
+  const alertRef = useRef(null);
 
   useEffect(() => {
     const formElements = formRef.current.querySelectorAll(".animate-field");
@@ -31,9 +32,9 @@ export const ContactUs = () => {
     });
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
-    setFormdata({ loading: true });
+    setFormdata((prev) => ({ ...prev, loading: true }));
 
     const templateParams = {
       from_name: formData.email,
@@ -50,7 +51,7 @@ export const ContactUs = () => {
         contactConfig.YOUR_USER_ID
       )
       .then(
-        (result) => {
+        () => {
           setFormdata({
             ...formData,
             loading: false,
@@ -58,6 +59,7 @@ export const ContactUs = () => {
             variant: "success",
             show: true,
           });
+          alertRef.current.scrollIntoView();
         },
         (error) => {
           setFormdata({
@@ -67,17 +69,17 @@ export const ContactUs = () => {
             variant: "danger",
             show: true,
           });
-          document.getElementsByClassName("co_alert")[0].scrollIntoView();
+          alertRef.current.scrollIntoView();
         }
       );
-  };
+  }, [formData]);
 
-  const handleChange = (e) => {
-    setFormdata({
-      ...formData,
+  const handleChange = useCallback((e) => {
+    setFormdata((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
-  };
+    }));
+  }, []);
 
   return (
     <HelmetProvider>
@@ -106,8 +108,9 @@ export const ContactUs = () => {
             <Alert
               variant={formData.variant}
               className={`rounded-0 co_alert ${formData.show ? "d-block" : "d-none"}`}
-              onClose={() => setFormdata({ show: false })}
+              onClose={() => setFormdata((prev) => ({ ...prev, show: false }))}
               dismissible
+              ref={alertRef}
             >
               <p className="my-0">{formData.alertmessage}</p>
             </Alert>

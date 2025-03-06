@@ -228,3 +228,23 @@ section {
   line-height: 1.3;
   color: var(--text-color);
 }
+
+/* Ajoutez cette classe pour gérer l'espacement des boutons */
+.intro_btn-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Ajustez cette valeur pour l'espacement souhaité */
+}
+
+/* Assurez-vous que les boutons ont une largeur appropriée */
+.ac_btn.btn {
+  width: 100%; /* Les boutons prennent toute la largeur disponible */
+  max-width: 300px; /* Limitez la largeur maximale pour un meilleur contrôle */
+}
+
+@media (min-width: 768px) {
+  .intro_btn-action {
+    flex-direction: row; /* Alignement horizontal sur les écrans plus larges */
+  }
+}
