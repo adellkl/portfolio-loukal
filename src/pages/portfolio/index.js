@@ -94,7 +94,7 @@ export const Portfolio = () => {
               <TechList technologies={selectedProject.technologies} />
               <div className="project-buttons" style={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "20px" }}>
                 <Button variant="primary" href={selectedProject.link} target="_blank" className="project-button" style={{ padding: "5px 20px", borderRadius: "6px", minWidth: "120px" }}>
-                  Voir le repos Github
+                  Voir le projet
                 </Button>
                 <Button variant="secondary" onClick={handleBack} className="project-button" style={{ padding: "5px 20px", borderRadius: "6px", backgroundColor: "#f8f9fa", color: "#333", border: "1px solid #ccc", minWidth: "120px" }}>
                   Retour
