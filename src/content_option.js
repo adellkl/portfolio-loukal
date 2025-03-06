@@ -82,33 +82,22 @@ const dataportfolio = [
         technologies: ["React", "Tailwind CSS", "Node.js"],
     },
     {
-        img: require("../src/assets/images/sae501.png"),
-        titre: "Projet universitaire - Initiation à Nunjucks",
-        description: "Projet réalisé en groupe dans le cadre de ma formation universitaire. L'objectif était de concevoir un site dynamique en utilisant le moteur de templating Nunjucks, combiné avec Javascript, SCSS et CSS. Nous avons mis en place une architecture modulaire et appris à manipuler des templates pour optimiser la structure et le rendu du site.",
-        link: "https://github.com/By-Kvn/SAE-501",
-        technologies: ["Javascript", "Tailwind CSS", "Node.js", "Nunjucks"],
+        img: require("../src/assets/images/Openmat.png"),
+        titre: "OpenMat France - Gestion des Open Mats",
+        description: "OpenMat France est une application permettant d'ajouter et de consulter des sessions d'Open Mat de Jiu-Jitsu Brésilien et de Grappling en France. Les utilisateurs peuvent créer un événement en remplissant un formulaire.",
+        link: "https://open-mat-france.vercel.app/",
+        technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
+    },
+    {
+        img: require("../src/assets/images/mdp.png"),
+        titre: "MDP - Générateur",
+        description: "Mon application vous aide à créer des mots de passe sécurisés pour tous vos identifiants. Elle génère des mots de passe robustes et uniques, incluant des caractères spéciaux, des chiffres et des lettres majuscules/minuscules, pour protéger vos comptes contre les cybermenaces.",
+        link: "https://password-generator-khaki-iota-42.vercel.app/",
+        technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
     },
 
-    {
-        img: require("../src/assets/images/chrome.png"),
-        titre: "Extension Chrome - Analyse du temps d'écran",
-        description: "Développement d'une extension Chrome permettant aux utilisateurs de suivre le temps passé sur chaque site web. Elle propose des fonctionnalités avancées comme le filtrage des résultats par durée et par groupe de sites, offrant ainsi une analyse détaillée du temps d'écran et des habitudes de navigation.",
-        link: "https://github.com/adellkl/extension-tracker",
-        technologies: ["react.js", "TailwindCSS", "Node.js"],
-    }, {
-        img: require("../src/assets/images/mdp.png"),
-        titre: "Générateur de mot de passe ",
-        description: "Développement d'une application permettant de générer des mots de passe sécurisés avec différents niveaux de complexité. L'interface moderne et intuitive offre une expérience utilisateur fluide, avec la possibilité de copier instantanément les mots de passe générés. Une section éducative met en avant l'importance d'utiliser des mots de passe robustes pour protéger ses comptes en ligne.",
-        link: "https://github.com/adellkl/TO-DO-TEXT-",
-        technologies: ["react.js", "TailwindCSS"],
-    },
-    {
-        img: require("../src/assets/images/mess.png"),
-        titre: "Messagerie Anonyme",
-        description: "Une application web permettant d'envoyer et de recevoir des messages anonymes via des liens uniques. Les messages sont stockés de manière sécurisée et peuvent être partagés facilement.",
-        link: "https://github.com/adellkl/TO-DO-TEXT-",
-        technologies: ["JavaScript", "HTML", "CSS"],
-    },
+
+
 
 
 ];
