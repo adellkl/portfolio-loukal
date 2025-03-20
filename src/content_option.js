@@ -96,6 +96,15 @@ const dataportfolio = [
         technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
     },
 
+    {
+        img: require("../src/assets/images/portfolio.png"),
+        titre: "Portfolio",
+        description: "Portfolio réalisé avec React et TailwindCSS pour mettre en avant mes compétences et mes projets.",
+        link: "https://github.com/adellkl/portfolio-loukal.git",
+        technologies: ["React", "Tailwind CSS", "Node.js"],
+    },
+
+
 
 
 
