@@ -1,6 +1,6 @@
 {
   "short_name": "Adel Loukal",
-  "name": "Portfolio - Adel Loukal",
+  "name": "Adel Loukal - Développeur Web React.js & UX/UI Designer",
   "icons": [
     {
       "src": "https://em-content.zobj.net/source/apple/391/slightly-smiling-face_1f642.png",
@@ -18,8 +18,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://www.adelloukal.fr",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Portfolio d'Adel Loukal, développeur web front-end spécialisé en React.js et UX/UI design à Paris."
 }

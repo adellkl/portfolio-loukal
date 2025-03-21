@@ -1,25 +1,23 @@
 const logotext = "A.Loukal";
 const meta = {
-    title: "Adel Loukal",
-    description: "Je suis Adel Loukal, étudiant en alternance chez ISCOM Paris ",
+    title: "Adel Loukal - Développeur Web React.js & UX/UI Designer à Paris",
+    description: "Portfolio d'Adel Loukal, développeur web front-end spécialisé en React.js et UX/UI design à Paris. Expert en développement d'interfaces modernes et responsive. En recherche d'alternance pour septembre 2025.",
 };
 
 const introdata = {
-    title: "Adel Loukal ",
+    title: "Adel Loukal",
     animated: {
-        first: "Développeur front-end",
-        second: "UX/UI design",
-        third: "Etudiant",
-
+        first: "Développeur front-end React.js",
+        second: "Expert UX/UI design",
+        third: "Étudiant passionné",
     },
-    description: "Bienvenue sur mon portfolio. Vous y trouverez mes réalisations, mes expériences professionnelles et mes formations. Bonne visite ! ",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+    description: "Bienvenue sur mon portfolio ! Je suis un développeur front-end passionné par la création d'interfaces utilisateur modernes et intuitives. Spécialisé en React.js et UX/UI design, je combine créativité et expertise technique pour créer des expériences web exceptionnelles.",
+    your_img_url: "https://www.adelloukal.fr/moi.jpeg",
 };
 
 const dataabout = {
-    title: "A propos de moi",
-    aboutme: "Fraîchement diplômé d’un Bachelor Universitaire de Technologie, j’aimerais approfondir mes connaissances en développement web et en cybersécurité. C'est pourquoi je recherche activement une formation et une entreprise pour la rentrée de septembre 2025",
-
+    title: "À propos de moi",
+    aboutme: "Fraîchement diplômé d'un Bachelor Universitaire de Technologie, je suis passionné par le développement web et la cybersécurité. Mon expertise en React.js, JavaScript et UX/UI design me permet de créer des interfaces utilisateur modernes et sécurisées. Je recherche activement une formation et une entreprise pour la rentrée de septembre 2025, avec l'objectif d'approfondir mes compétences et de contribuer à des projets innovants.",
 };
 const worktimeline = [{
     jobtitle: "Développeur front-end ",
@@ -118,7 +116,7 @@ export default dataportfolio;
 const contactConfig = {
     YOUR_EMAIL: "adelloukal2@gmail.com",
     YOUR_FONE: "0769120166",
-    description: " ",
+    description: "N'hésitez pas à me contacter pour discuter de vos projets ou opportunités de collaboration.",
     // creat an emailjs.com account 
     // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
     YOUR_SERVICE_ID: "service_e22vuqz",
