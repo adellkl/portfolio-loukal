@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { RoughNotation } from "react-rough-notation";
-import { dataabout, meta, worktimeline, skills, services } from "../../content_option";
+import { dataabout, meta, worktimeline, services } from "../../content_option";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -26,7 +26,6 @@ export const About = () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
 
-          // Ajouter un délai pour chaque skill-item
           if (entry.target.classList.contains('skills-section')) {
             const items = entry.target.querySelectorAll('.skill-item');
             items.forEach((item, index) => {
@@ -210,6 +209,7 @@ export const About = () => {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
                 style={{ borderRadius: '12px', marginBottom: '20px' }}
+                title="Ma playlist Spotify"
               ></iframe>
             </div>
           </Col>

@@ -339,7 +339,7 @@ Pour chaque article, je structure les données ainsi :
 \`\`\`javascript
 {
   slug: 'mon-article',
-  title: 'Titre de l\'article',
+  title: 'Titre de l'article',
   date: 'Date',
   category: 'Catégorie',
   content: '# Contenu en Markdown'

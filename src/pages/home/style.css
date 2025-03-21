@@ -212,7 +212,6 @@ section {
   width: 250px;
   height: 220px;
   border-radius: 100%;
-  /* mix-blend-mode: multiply; */
   background-color: #2f514e;
   z-index: 9999999999;
   display: flex;
@@ -248,8 +247,6 @@ section {
   font-size: 14px;
   color: var(--text-color);
   letter-spacing: 0.1rem;
-  font-weight: 700;
-  margin-bottom: 15px;
 }
 
 .intro_sec .h_bg-image .block p {
@@ -510,4 +507,20 @@ section {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.download-icon {
+  margin-right: 8px;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.cv-download-btn {
+  text-decoration: none;
+  color: inherit;
+}
+
+#button_cv {
+  background: linear-gradient(90deg, #1976d2, #2196f3);
+  margin-left: 15px;
 }

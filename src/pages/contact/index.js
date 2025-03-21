@@ -116,7 +116,7 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Mon profil vous intéresse ? Contactez-moi via ces canaux.</h3>
+            <h3 className="py-4">Mon profil vous intéresse ? Contactez-moi via ces canaux.</h3>
             <address>
               <strong>Email :</strong> <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>{contactConfig.YOUR_EMAIL}</a>
               {contactConfig.hasOwnProperty("YOUR_FONE") && (

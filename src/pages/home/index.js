@@ -45,7 +45,6 @@ const DrawableOverlay = () => {
     const canvas = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
 
-    // Pour les événements tactiles
     if (event.touches && event.touches[0]) {
       return {
         x: event.touches[0].clientX - rect.left,
@@ -53,7 +52,6 @@ const DrawableOverlay = () => {
       };
     }
 
-    // Pour la souris
     return {
       x: event.clientX - rect.left,
       y: event.clientY - rect.top

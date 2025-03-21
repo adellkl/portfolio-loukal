@@ -18,6 +18,7 @@ const dataabout = {
     title: "À propos de moi",
     aboutme: "Fraîchement diplômé d'un Bachelor Universitaire de Technologie, je suis passionné par le développement web et la cybersécurité. Mon expertise en React.js, JavaScript et UX/UI design me permet de créer des interfaces utilisateur modernes et sécurisées. Je recherche activement une formation et une entreprise pour la rentrée de septembre 2025, avec l'objectif d'approfondir mes compétences et de contribuer à des projets innovants.",
 };
+
 const worktimeline = [{
     jobtitle: "Développeur front-end ",
     where: "ISCOM Paris",
@@ -33,11 +34,9 @@ const worktimeline = [{
     where: "ISCOM Paris",
     date: "Avril-Septembre 2023",
 },
-
 ];
 
 const skills = [
-
     {
         name: "Javascript",
         value: 70,
@@ -46,7 +45,6 @@ const skills = [
         name: "React.JS",
         value: 70,
     },
-
     {
         name: "TailwindCSS",
         value: 80,
@@ -55,8 +53,6 @@ const skills = [
         name: "Figma",
         value: 60,
     },
-
-
 ];
 
 const services = [{
@@ -65,10 +61,7 @@ const services = [{
 }, {
     title: "Mon stage de 5 mois en UX/UI design",
     description: "Mes missions étaient variées, mais principalement axées sur la création de contenu pour la plateforme Iscom Anytime. Cette tâche impliquait la conception, la rédaction et la mise en forme de divers types de contenus destinés à engager et informer les utilisateurs de la plateforme. J'ai travaillé sur des articles, des infographies, et d'autres supports multimédias, en veillant à ce que chaque pièce de contenu soit pertinente et attrayante. Cette expérience m'a permis de développer mes compétences en communication et en création de contenu, tout en contribuant à l'enrichissement de la plateforme Iscom Anytime.",
-},
-
-
-];
+}];
 
 const dataportfolio = [
     {
@@ -92,7 +85,6 @@ const dataportfolio = [
         link: "https://password-generator-khaki-iota-42.vercel.app/",
         technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
     },
-
     {
         img: require("../src/assets/images/portfolio.png"),
         titre: "Portfolio",
@@ -100,24 +92,14 @@ const dataportfolio = [
         link: "https://github.com/adellkl/portfolio-loukal.git",
         technologies: ["React", "Tailwind CSS", "Node.js"],
     },
-
-
-
-
-
-
 ];
 
-
 export default dataportfolio;
-
 
 const contactConfig = {
     YOUR_EMAIL: "adelloukal2@gmail.com",
     YOUR_FONE: "0769120166",
     description: "N'hésitez pas à me contacter pour discuter de vos projets ou opportunités de collaboration.",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
     YOUR_SERVICE_ID: "service_e22vuqz",
     YOUR_TEMPLATE_ID: "template_yuw54r4",
     YOUR_USER_ID: "Sd6qtk3ZZ8OuP3eLR",
@@ -125,11 +107,10 @@ const contactConfig = {
 
 const socialprofils = {
     github: "https://github.com/adellkl",
-
     linkedin: "https://www.linkedin.com/in/adel-loukal-257541221/",
-
     Twitch: "https://bento.me/adel-loukal",
 };
+
 export {
     meta,
     dataabout,
