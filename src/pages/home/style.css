@@ -328,52 +328,59 @@ section {
 
 @media (max-width: 768px) {
   .intro_sec {
-    overflow: hidden;
+    min-height: 100vh;
   }
 
   .intro_sec .text {
     padding: 20px;
-    text-align: center;
-  }
-
-  .intro_sec .text h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .intro_sec .text h3 {
-    font-size: 14px;
+    margin-top: 100vh;
+    position: relative;
+    z-index: 2;
+    background: var(--bg-color);
   }
 
   .intro_sec .h_bg-image {
-    height: 40vh;
-    min-height: 300px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .intro_sec .text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .intro_sec .text h3 {
+    font-size: 1.4rem;
+  }
+
+  .intro_sec .intro {
+    padding: 1.5rem 1rem;
   }
 
   .intro_btn-action {
     flex-direction: column;
-    align-items: center;
     gap: 15px;
   }
 
   .ac_btn {
-    margin-right: 0;
     width: 100%;
-    max-width: 250px;
+    margin: 0;
     text-align: center;
   }
 
   .drawable-canvas {
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none !important;
   }
 
   .drawing-hint {
-    bottom: 10px;
-    font-size: 12px;
-    padding: 8px 12px;
+    display: none !important;
+  }
+
+  .drawable-image-container {
+    display: none !important;
   }
 }
