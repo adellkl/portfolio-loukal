@@ -127,22 +127,16 @@ export const Portfolio = () => {
               </Col>
             </Row>
           ) : (
-            <div className="mb-5 po_items_ho" style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-              gap: "20px"
-            }}>
+            <div className="mb-5 po_items_ho">
               {dataportfolio.map((data, index) => (
                 <div key={index} className="po_item" onClick={() => handleProjectClick(data)}>
                   <img
                     src={data.img}
                     alt={`Project ${index}`}
-                    className="card-image"
                     loading="lazy"
-                    style={{ width: "100%", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
                   />
-                  <div className="content" style={{ textAlign: "center", padding: "15px" }}>
-                    <h3 style={{ fontSize: "1.2rem", marginBottom: "10px" }}>{data.titre}</h3>
+                  <div className="content">
+                    <h3>{data.titre}</h3>
                     <TechList technologies={data.technologies} />
                   </div>
                 </div>

@@ -1,3 +1,15 @@
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.home {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 section {
   flex: 1 0 auto;
   position: relative;
@@ -31,9 +43,8 @@ section {
 }
 
 .intro_sec {
-  height: calc(100vh - 60px);
-  min-height: 700px;
   height: 100vh;
+  min-height: 100vh;
   margin-top: -60px;
 }
 
@@ -42,18 +53,24 @@ section {
     display: block;
     height: auto !important;
   }
+
+  .intro_sec .h_bg-image {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 30px;
+  }
+
+  .intro_sec .text {
+    width: 100%;
+    padding: 20px;
+  }
 }
 
 .intro_sec .text,
 .intro_sec .h_bg-image {
   width: 50%;
-}
-
-@media (max-width: 991.98px) {
-  .intro_sec .text,
-  .intro_sec .h_bg-image {
-    width: 100%;
-  }
+  height: 100vh;
 }
 
 .intro_sec .intro {
@@ -91,11 +108,14 @@ section {
   font-weight: 700;
 }
 
-.intro_sec .h_bg-image {
+.h_bg-image {
   background-size: cover;
   background-position: center;
-  min-height: 700px;
   position: relative;
+  overflow: hidden;
+  touch-action: none;
+  height: 100vh;
+  min-height: 100vh;
 }
 
 .ac_btn {
@@ -246,5 +266,65 @@ section {
 @media (min-width: 768px) {
   .intro_btn-action {
     flex-direction: row; /* Alignement horizontal sur les écrans plus larges */
+  }
+}
+
+.drawable-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.drawable-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  z-index: 10;
+  background: transparent;
+  touch-action: none; /* Empêche le scroll lors du dessin sur mobile */
+}
+
+.drawing-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 11;
+  width: auto;
+  white-space: nowrap;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .drawing-hint {
+    font-size: 12px;
+    padding: 6px 12px;
+    bottom: 10px;
+  }
+
+  .h_bg-image {
+    min-height: 50vh; /* Ajuste la hauteur sur mobile */
   }
 }

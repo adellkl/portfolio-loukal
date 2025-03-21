@@ -32,22 +32,25 @@ const Headermain = () => {
           </div>
         </div>
 
-        <div className={`site__navigation ${isActive ? "menu__opend" : ""}`}>
+        <div className={`site__navigation ${!isActive ? "" : "menu__opend"}`}>
           <div className="bg__menu h-100">
             <div className="menu__wrapper">
               <div className="menu__container p-3">
                 <ul className="the_menu">
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/" className="my-3">Home</Link>
+                    <Link onClick={handleToggle} to="/" className="my-3">Accueil</Link>
                   </li>
                   <li className="menu_item">
                     <Link onClick={handleToggle} to="/portfolio" className="my-3">Portfolio</Link>
                   </li>
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/about" className="my-3">A propos</Link>
+                    <Link onClick={handleToggle} to="/about" className="my-3">À propos</Link>
                   </li>
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/contact" className="my-3">Me contacter</Link>
+                    <Link onClick={handleToggle} to="/contact" className="my-3">Contact</Link>
+                  </li>
+                  <li className="menu_item">
+                    <Link onClick={handleToggle} to="/blog" className="my-3">Blog</Link>
                   </li>
                   <li className="menu_item">
                     <a
