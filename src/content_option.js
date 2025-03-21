@@ -7,11 +7,10 @@ const meta = {
 const introdata = {
     title: "Adel Loukal",
     animated: {
-        first: "Développeur front-end React.js",
-        second: "Expert UX/UI design",
-        third: "Étudiant passionné",
+        first: "Développeur React.js",
+        second: "UX/UI designer",
     },
-    description: "Bienvenue sur mon portfolio ! Je suis un développeur front-end passionné par la création d'interfaces utilisateur modernes et intuitives. Spécialisé en React.js et UX/UI design, je combine créativité et expertise technique pour créer des expériences web exceptionnelles.",
+    description: "Bienvenue sur mon portfolio ! Je suis un développeur front-end passionné par la création d'interfaces utilisateur modernes et intuitives",
     your_img_url: "https://www.adelloukal.fr/moi.jpeg",
 };
 

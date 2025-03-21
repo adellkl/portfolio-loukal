@@ -10,7 +10,7 @@
 }
 
 .category-btn {
-  background: none;
+  background: var(--bg-color);
   border: 2px solid var(--primary-color);
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -18,17 +18,39 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="light"] .category-btn {
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  color: #333;
 }
 
-/* Supprimez les anciens styles qui sont maintenant redéfinis ci-dessus */
+[data-theme="dark"] .category-btn {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  color: #fff;
+}
+
 .category-btn:hover,
 .category-btn.active {
   font-weight: 600;
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .category-btn:hover,
+[data-theme="light"] .category-btn.active {
+  background: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .category-btn:hover,
+[data-theme="dark"] .category-btn.active {
+  background: #2a2a2a;
+  border-color: var(--text-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Animation d'entrée pour les cartes */
@@ -154,7 +176,6 @@
 }
 
 .read-more {
-  color: var(--primary-color);
   font-weight: 600;
 }
 

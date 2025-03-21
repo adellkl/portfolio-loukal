@@ -183,6 +183,10 @@ export const Home = () => {
                     </div>
                   </Link>
                 </div>
+                <div className="availability-indicator">
+                  <div className="availability-dot"></div>
+                  <span className="availability-text">Disponible pour une alternance de 24 mois.</span>
+                </div>
                 <div
                   className="logo-carousel-container"
                   style={{ marginTop: '30px', display: isMobile ? 'none' : 'block' }}

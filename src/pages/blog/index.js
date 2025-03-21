@@ -4,7 +4,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { meta } from "../../content_option";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { RoughNotation } from "react-rough-notation";
 
 export const Blog = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
@@ -107,13 +106,7 @@ export const Blog = () => {
                                     className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
                                     onClick={() => setSelectedCategory(category.id)}
                                 >
-                                    <RoughNotation
-                                        type="underline"
-                                        show={selectedCategory === category.id}
-                                        color="var(--text-color)"
-                                    >
-                                        {category.name}
-                                    </RoughNotation>
+                                    {category.name}
                                 </button>
                             ))}
                         </div>

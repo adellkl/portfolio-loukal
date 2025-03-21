@@ -77,11 +77,11 @@ Cette alternance a été une expérience extrêmement enrichissante qui m'a perm
         title: "Mon stage chez ISCOM Paris : Assistant chef de projet UX/UI",
         date: '22 Janvier 2025',
         category: 'Expérience Pro',
-        image: 'https://www.larsg.fr/wp-content/uploads/2017/07/ISCOM-PARIS.jpg',
+        image: 'https://cdn.prod.website-files.com/64267cd26af7159117f5bbbe/64ccc3f938f65c060f927c5a_AnyConv.com__Visuel%20Article%20(1920%C2%A0%C3%97%C2%A01080%C2%A0px)%20(99).webp',
         content: `
 # Mon stage chez ISCOM Paris : Assistant chef de projet UX/UI
 
-![ISCOM Paris](https://www.larsg.fr/wp-content/uploads/2017/07/ISCOM-PARIS.jpg)
+
 
 ## Présentation de l'entreprise
 

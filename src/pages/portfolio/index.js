@@ -30,6 +30,62 @@ const Loader = () => (
   </div>
 );
 
+const DraggableImage = ({ src, alt }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+  const constraints = { x: 30, y: 30 };
+
+  const handleMouseMove = (e) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Calculer la distance relative au centre
+      const deltaX = (e.clientX - centerX) / rect.width * constraints.x * 2;
+      const deltaY = (e.clientY - centerY) / rect.height * constraints.y * 2;
+
+      setPosition({
+        x: Math.max(Math.min(deltaX, constraints.x), -constraints.x),
+        y: Math.max(Math.min(deltaY, constraints.y), -constraints.y)
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    // Retour en douceur à la position initiale
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden'
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="img-fluid"
+        loading="lazy"
+        style={{
+          width: "100%",
+          borderRadius: "10px",
+          boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)",
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          transition: 'transform 0.2s ease-out'
+        }}
+      />
+    </div>
+  );
+};
+
 export const Portfolio = () => {
   const portfolioRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -104,12 +160,9 @@ export const Portfolio = () => {
           {selectedProject ? (
             <Row className="project-detail" style={{ textAlign: "left", padding: "20px" }}>
               <Col md={5}>
-                <img
+                <DraggableImage
                   src={selectedProject.img}
                   alt={selectedProject.titre}
-                  className="img-fluid"
-                  loading="lazy"
-                  style={{ width: "100%", borderRadius: "10px", boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)" }}
                 />
               </Col>
               <Col md={7} style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
