@@ -15,44 +15,33 @@ export const About = () => {
   const servicesRef = useRef(null);
   const missionTitleRef = useRef(null);
 
-  const animateSection = useCallback((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        gsap.from(entry.target, {
-          opacity: 0,
-          y: 50,
-          duration: 1.0,
-          ease: "power2.out",
-        });
-        observer.unobserve(entry.target);
-      }
-    });
-  }, []);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(animateSection, {
+    const observerOptions = {
       threshold: 0.2,
-    });
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Ajouter un délai pour chaque skill-item
+          if (entry.target.classList.contains('skills-section')) {
+            const items = entry.target.querySelectorAll('.skill-item');
+            items.forEach((item, index) => {
+              item.style.setProperty('--delay', index);
+            });
+          }
+        }
+      });
+    }, observerOptions);
 
     const sections = document.querySelectorAll('.animate-section');
-    sections.forEach((section) => observer.observe(section));
-
-    // Animation des barres de progression
-    const progressBars = document.querySelectorAll('.progress-bar');
-    progressBars.forEach((bar) => {
-      gsap.to(bar, {
-        width: bar.style.width,
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: bar,
-          start: "top 80%",
-        },
-      });
-    });
+    sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
-  }, [animateSection]);
+  }, []);
 
   return (
     <HelmetProvider>
@@ -79,7 +68,7 @@ export const About = () => {
 
         <Row className="sec_sp animate-section">
           <Col lg="5">
-            <h3 className="color_sec py-4">{dataabout.title}</h3>
+            <h3 className=" py-4">{dataabout.title}</h3>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div className="aboutme">
@@ -90,7 +79,7 @@ export const About = () => {
 
         <Row className="sec_sp animate-section">
           <Col lg="5">
-            <h3 className="color_sec py-4">Historique des missions</h3>
+            <h3 className=" py-4">Historique des missions</h3>
           </Col>
           <Col lg="7">
             <div className="timeline-section">
@@ -110,26 +99,46 @@ export const About = () => {
           </Col>
         </Row>
 
-        <Row className="sec_sp animate-section" ref={skillsRef}>
+        <Row className="sec_sp animate-section skills-row" ref={skillsRef}>
           <Col lg="5">
-            <h3 className="color_sec py-4">Langages & Logiciels</h3>
+            <h3 className=" py-4">Langages & Logiciels</h3>
           </Col>
           <Col lg="7">
             <div className="skills-section">
-              {skills.map((data, i) => (
-                <div key={i}>
-                  <div className="progress-title">
-                    <span>{data.name}</span>
-                    <span className="progress-value">{data.value}%</span>
-                  </div>
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      style={{ width: `${data.value}%` }}
-                    />
-                  </div>
+              <div className="skills-grid">
+                <div className="skill-item">
+                  <i className="devicon-javascript-plain colored"></i>
+                  <span>JavaScript</span>
                 </div>
-              ))}
+                <div className="skill-item">
+                  <i className="devicon-react-original colored"></i>
+                  <span>React.js</span>
+                </div>
+                <div className="skill-item">
+                  <i className="devicon-tailwindcss-plain colored"></i>
+                  <span>TailwindCSS</span>
+                </div>
+                <div className="skill-item">
+                  <i className="devicon-figma-plain colored"></i>
+                  <span>Figma</span>
+                </div>
+                <div className="skill-item">
+                  <i className="devicon-html5-plain colored"></i>
+                  <span>HTML5</span>
+                </div>
+                <div className="skill-item">
+                  <i className="devicon-css3-plain colored"></i>
+                  <span>CSS3</span>
+                </div>
+                <div className="skill-item">
+                  <i className="devicon-git-plain colored"></i>
+                  <span>Git</span>
+                </div>
+                <div className="skill-item">
+                  <i className="devicon-nodejs-plain colored"></i>
+                  <span>Node.js</span>
+                </div>
+              </div>
             </div>
           </Col>
         </Row>
@@ -146,7 +155,7 @@ export const About = () => {
                 animationDuration={1500}
                 strokeWidth={2}
               >
-                <h3 className="color_sec py-4">Détails des missions</h3>
+                <h3 className=" py-4">Détails des missions</h3>
               </RoughNotation>
             </div>
           </Col>
@@ -157,6 +166,52 @@ export const About = () => {
                 <p className="service_desc">{data.description}</p>
               </div>
             ))}
+          </Col>
+        </Row>
+
+        <Row className="sec_sp animate-section">
+          <Col lg="5">
+            <h3 className=" py-4">Centres d'intérêt</h3>
+          </Col>
+          <Col lg="7">
+            <div className="interests-container">
+              <div className="interest-item">
+                <h5>🥋 Sports de Combat</h5>
+                <p>Passionné de Jiu-Jitsu Brésilien et de Grappling. Ces disciplines m'ont appris la persévérance, la discipline et l'importance de la progression continue.</p>
+              </div>
+              <div className="interest-item">
+                <h5>🎵 Musique</h5>
+                <p>Amateur de différents styles musicaux, particulièrement le rap français et américain. La musique m'accompagne dans mon processus créatif.</p>
+              </div>
+              <div className="interest-item">
+                <h5>💻 Veille Technologique</h5>
+                <p>Constamment à l'affût des nouvelles technologies et frameworks dans le développement web. J'aime explorer et tester les dernières innovations.</p>
+              </div>
+              <div className="interest-item">
+                <h5>🎨 Design & Créativité</h5>
+                <p>Passionné par l'UI/UX design et l'art numérique. J'explore régulièrement de nouvelles tendances en design et techniques créatives.</p>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+        <Row className="sec_sp animate-section">
+          <Col lg="5">
+            <h3 className=" py-4">Ma Playlist</h3>
+          </Col>
+          <Col lg="7">
+            <div className="spotify-playlist-container">
+              <iframe
+                src="https://open.spotify.com/embed/playlist/7a3RWpT6cmXHZMSVWVMezb"
+                width="100%"
+                height="452"
+                frameBorder="0"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                style={{ borderRadius: '12px', marginBottom: '20px' }}
+              ></iframe>
+            </div>
           </Col>
         </Row>
       </Container>

@@ -418,11 +418,15 @@ section {
     display: none !important;
   }
 
+  .availability-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   .availability-indicator {
-    margin-top: 20px;
-    padding: 10px 18px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    justify-content: center;
   }
 
   .availability-text {
@@ -444,19 +448,22 @@ section {
   }
 }
 
+.availability-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
 .availability-indicator {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 12px;
-  margin-top: 25px;
-  padding: 12px 20px;
+  gap: 8px;
+  padding: 8px 15px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
+  border-radius: 20px;
   backdrop-filter: blur(5px);
-  width: fit-content;
-  margin-left: 0;
-  margin-right: auto;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
@@ -474,8 +481,8 @@ section {
 }
 
 .availability-dot {
-  width: 1rem;
-  height: 1rem;
+  width: 8px;
+  height: 8px;
   background-color: #2ecc71;
   border-radius: 50%;
   animation: pulse 2s infinite;
@@ -483,9 +490,10 @@ section {
 }
 
 .availability-text {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: var(--text-color);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 @keyframes pulse {

@@ -183,9 +183,19 @@ export const Home = () => {
                     </div>
                   </Link>
                 </div>
-                <div className="availability-indicator">
-                  <div className="availability-dot"></div>
-                  <span className="availability-text">Disponible pour une alternance de 24 mois.</span>
+                <div className="availability-container">
+                  <div className="availability-indicator">
+                    <div className="availability-dot"></div>
+                    <span className="availability-text">Disponible à Paris</span>
+                  </div>
+                  <div className="availability-indicator">
+                    <div className="availability-dot"></div>
+                    <span className="availability-text">Alternance 24 mois</span>
+                  </div>
+                  <div className="availability-indicator">
+                    <div className="availability-dot"></div>
+                    <span className="availability-text">Expérience &lt;1 an</span>
+                  </div>
                 </div>
                 <div
                   className="logo-carousel-container"
