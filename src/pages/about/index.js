@@ -61,13 +61,14 @@ export const About = () => {
 
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="about-title">À propos de moi</h1>
+            <h1 className="display- mb-4">À propos de moi</h1>
+            <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
 
         <Row className="sec_sp animate-section">
           <Col lg="5">
-            <h3 className=" py-4">{dataabout.title}</h3>
+            <h3 className="py-4">{dataabout.title}</h3>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div className="aboutme">
@@ -78,7 +79,7 @@ export const About = () => {
 
         <Row className="sec_sp animate-section">
           <Col lg="5">
-            <h3 className=" py-4">Historique des missions</h3>
+            <h3 className="py-4">Historique des missions</h3>
           </Col>
           <Col lg="7">
             <div className="timeline-section">
@@ -100,7 +101,7 @@ export const About = () => {
 
         <Row className="sec_sp animate-section skills-row" ref={skillsRef}>
           <Col lg="5">
-            <h3 className=" py-4">Langages & Logiciels</h3>
+            <h3 className="py-4">Langages & Logiciels</h3>
           </Col>
           <Col lg="7">
             <div className="skills-section">
@@ -154,7 +155,7 @@ export const About = () => {
                 animationDuration={1500}
                 strokeWidth={2}
               >
-                <h3 className=" py-4">Détails des missions</h3>
+                <h3 className="py-4">Détails des missions</h3>
               </RoughNotation>
             </div>
           </Col>
@@ -170,7 +171,7 @@ export const About = () => {
 
         <Row className="sec_sp animate-section">
           <Col lg="5">
-            <h3 className=" py-4">Centres d'intérêt</h3>
+            <h3 className="py-4">Centres d'intérêt</h3>
           </Col>
           <Col lg="7">
             <div className="interests-container">
@@ -196,7 +197,7 @@ export const About = () => {
 
         <Row className="sec_sp animate-section">
           <Col lg="5">
-            <h3 className=" py-4">Ma Playlist</h3>
+            <h3 className="py-4">Ma Playlist</h3>
           </Col>
           <Col lg="7">
             <div className="spotify-playlist-container">

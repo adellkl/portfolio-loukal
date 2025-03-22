@@ -164,6 +164,8 @@ td {
   width: 100%;
   position: relative;
   overflow-y: auto;
+  overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -172,6 +174,16 @@ body {
   position: relative;
   overflow-y: auto;
   height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.Container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .about-title {

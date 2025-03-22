@@ -25,10 +25,11 @@ export const ContactUs = () => {
     const formElements = formRef.current.querySelectorAll(".animate-field");
     gsap.from(formElements, {
       opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power3.out",
-      stagger: 0.4,
+      y: 20,
+      duration: 0.5,
+      ease: "power2.out",
+      stagger: 0.2,
+      clearProps: "all"
     });
   }, []);
 
