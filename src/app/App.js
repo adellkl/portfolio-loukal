@@ -9,7 +9,7 @@ import ImageBanner from "../components/letstalk/ImageBanner";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import meta from "../content_option";
 import "./App.css";
-import ChatBot from "../components/ChatBot/ChatBot";
+
 
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
@@ -54,7 +54,7 @@ export default function App() {
           <Headermain />
           <Routes />
           <ImageBanner />
-          <ChatBot />
+       
         </ScrollToTop>
       </Router>
     </HelmetProvider>
