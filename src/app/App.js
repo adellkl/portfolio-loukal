@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import withRouter from "../hooks/withRouter";
-import AppRoutes from "./routes";
+import { motion, AnimatePresence } from 'framer-motion';
+import Routes from './routes';
 import Headermain from "../header";
 import AnimatedCursor from "../hooks/AnimatedCursor";
 import ImageBanner from "../components/letstalk/ImageBanner";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import meta from "../content_option";
 import "./App.css";
+import ChatBot from "../components/ChatBot/ChatBot";
 
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
@@ -19,6 +21,70 @@ function _ScrollToTop(props) {
 }
 
 const ScrollToTop = withRouter(_ScrollToTop);
+
+function AnimatedContent() {
+  const location = useLocation();
+  const sections = [1, 2, 3, 4, 5];
+  const totalDuration = 0.8;
+  const sectionDelay = 0.1;
+  const totalAnimationTime = totalDuration + (sections.length - 1) * sectionDelay;
+
+  return (
+    <>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          className="page-wrapper"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: {
+              duration: 0.3,
+              delay: totalAnimationTime - 0.1,
+              ease: "easeOut"
+            }
+          }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        >
+          <Routes />
+        </motion.div>
+      </AnimatePresence>
+
+      <AnimatePresence mode="wait">
+        <div className="curtains-container" key={location.pathname + "-curtains"}>
+          {sections.map((section, index) => (
+            <motion.div
+              key={`curtain-${index}`}
+              className="page-transition-overlay"
+              initial={{ scaleX: 1 }}
+              animate={{
+                scaleX: 0,
+                transition: {
+                  duration: totalDuration,
+                  ease: [0.645, 0.045, 0.355, 1],
+                  delay: index * sectionDelay
+                }
+              }}
+              exit={{
+                scaleX: 1,
+                transition: {
+                  duration: totalDuration * 0.6,
+                  ease: [0.645, 0.045, 0.355, 1],
+                  delay: (sections.length - index - 1) * sectionDelay * 0.6
+                }
+              }}
+              style={{
+                left: `${(index * 100) / sections.length}%`,
+                width: `${100 / sections.length}%`,
+                boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)"
+              }}
+            />
+          ))}
+        </div>
+      </AnimatePresence>
+    </>
+  );
+}
 
 export default function App() {
   return (
@@ -51,8 +117,9 @@ export default function App() {
         </div>
         <ScrollToTop>
           <Headermain />
-          <AppRoutes />
+          <AnimatedContent />
           <ImageBanner />
+          <ChatBot />
         </ScrollToTop>
       </Router>
     </HelmetProvider>
