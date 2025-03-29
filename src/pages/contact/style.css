@@ -20,7 +20,7 @@
 .contact__form .form-control:focus {
   background-color: var(--bg-color);
   color: var(--text-color);
-  border-color: var(--primary-color);
+
   box-shadow: 0 0 0 0.2rem rgba(var(--primary-rgb), 0.25);
   outline: none;
 }
@@ -101,19 +101,13 @@ button.btn.ac_btn:active {
 }
 
 address {
-  color: var(--text-color);
   font-style: normal;
   line-height: 1.6;
 }
 
 address a {
-  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-address a:hover {
-  color: var(--secondary-color);
 }
 
 .loading-bar {

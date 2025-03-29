@@ -10,7 +10,7 @@ const introdata = {
         first: "Développeur React.js",
         second: "UX/UI designer",
     },
-    description: "Bienvenue sur mon portfolio ! Je suis un développeur front-end passionné par la création d'interfaces utilisateur modernes et intuitives",
+    description: "Bienvenue sur mon portfolio ! Je suis un développeur front-end, actuellement en recherche d'une alternance pour septembre 2025.",
     your_img_url: "https://www.adelloukal.fr/moi.jpeg",
 };
 
@@ -82,7 +82,7 @@ const dataportfolio = [
         img: require("../src/assets/images/mdp.png"),
         titre: "MDP - Générateur",
         description: "Mon application vous aide à créer des mots de passe sécurisés pour tous vos identifiants. Elle génère des mots de passe robustes et uniques, incluant des caractères spéciaux, des chiffres et des lettres majuscules/minuscules, pour protéger vos comptes contre les cybermenaces.",
-        link: "https://password-generator-khaki-iota-42.vercel.app/",
+        link: "https://password-generator-codbkk5nq-adellkls-projects.vercel.app/",
         technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
     },
     {

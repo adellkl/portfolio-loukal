@@ -113,7 +113,7 @@ export const ContactUs = () => {
               dismissible
               ref={alertRef}
             >
-              <p className="my-0">{formData.alertmessage}</p>
+              <p className="my-0 ">{formData.alertmessage}</p>
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
