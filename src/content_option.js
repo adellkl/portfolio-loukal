@@ -82,7 +82,7 @@ const dataportfolio = [
         img: require("../src/assets/images/mdp.png"),
         titre: "MDP - Générateur",
         description: "Mon application vous aide à créer des mots de passe sécurisés pour tous vos identifiants. Elle génère des mots de passe robustes et uniques, incluant des caractères spéciaux, des chiffres et des lettres majuscules/minuscules, pour protéger vos comptes contre les cybermenaces.",
-        link: "https://password-generator-codbkk5nq-adellkls-projects.vercel.app/",
+        link: "https://password-generator-mocha-sigma.vercel.app/",
         technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
     },
     {
