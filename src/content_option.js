@@ -10,30 +10,34 @@ const introdata = {
         first: "Développeur React.js",
         second: "UX/UI designer",
     },
-    description: "Bienvenue sur mon portfolio ! Je suis un développeur front-end, actuellement en recherche d'une alternance pour septembre 2025.",
+    description: "Développeur front-end, actuellement en recherche d'une   alternance pour septembre 2025.",
     your_img_url: "https://www.adelloukal.fr/moi.jpeg",
 };
 
 const dataabout = {
     title: "À propos de moi",
-    aboutme: "Fraîchement diplômé d'un Bachelor Universitaire de Technologie, je suis passionné par le développement web et la cybersécurité. Mon expertise en React.js, JavaScript et UX/UI design me permet de créer des interfaces utilisateur modernes et sécurisées. Je recherche activement une formation et une entreprise pour la rentrée de septembre 2025, avec l'objectif d'approfondir mes compétences et de contribuer à des projets innovants.",
+    aboutme: "Récemment diplômé d’un Bachelor Universitaire de Technologie, je souhaite poursuivre mes études en alternance sur une durée de 24 mois afin de renforcer mes compétences et acquérir un maximum d’expérience pour intégrer efficacement le monde professionnel.",
 };
 
-const worktimeline = [{
-    jobtitle: "Développeur front-end ",
-    where: "ISCOM Paris",
-    date: "2023-2024",
-},
-{
-    jobtitle: "Développement de mon portfolio",
-    where: "Autonomie",
-    date: "2023",
-},
-{
-    jobtitle: "Assistant chef de projet UX/UI design",
-    where: "ISCOM Paris",
-    date: "Avril-Septembre 2023",
-},
+
+const worktimeline = [
+
+
+    {
+        jobtitle: "Développement de mon portfolio",
+        where: "Autonomie",
+        date: "2025",
+    }, {
+        jobtitle: "Développeur front-end ",
+        where: "ISCOM Paris",
+        date: "2023-2024",
+    },
+
+    {
+        jobtitle: "Assistant chef de projet UX/UI design",
+        where: "ISCOM Paris",
+        date: "Avril-Septembre 2023",
+    },
 ];
 
 const skills = [
