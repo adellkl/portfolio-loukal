@@ -204,50 +204,37 @@ function CursorCore({
   useEffect(() => {
     const clickableEls = document.querySelectorAll(clickables.join(','))
 
+    const handleMouseOver = () => setIsActive(true)
+    const handleClick = () => {
+      setIsActive(true)
+      setIsActiveClickable(false)
+    }
+    const handleMouseDown = () => setIsActiveClickable(true)
+    const handleMouseUp = () => setIsActive(true)
+    const handleMouseOut = () => {
+      setIsActive(false)
+      setIsActiveClickable(false)
+    }
+
     clickableEls.forEach((el) => {
       el.style.cursor = 'none'
-
-      el.addEventListener('mouseover', () => {
-        setIsActive(true)
-      })
-      el.addEventListener('click', () => {
-        setIsActive(true)
-        setIsActiveClickable(false)
-      })
-      el.addEventListener('mousedown', () => {
-        setIsActiveClickable(true)
-      })
-      el.addEventListener('mouseup', () => {
-        setIsActive(true)
-      })
-      el.addEventListener('mouseout', () => {
-        setIsActive(false)
-        setIsActiveClickable(false)
-      })
+      el.addEventListener('mouseover', handleMouseOver)
+      el.addEventListener('click', handleClick)
+      el.addEventListener('mousedown', handleMouseDown)
+      el.addEventListener('mouseup', handleMouseUp)
+      el.addEventListener('mouseout', handleMouseOut)
     })
 
     return () => {
       clickableEls.forEach((el) => {
-        el.removeEventListener('mouseover', () => {
-          setIsActive(true)
-        })
-        el.removeEventListener('click', () => {
-          setIsActive(true)
-          setIsActiveClickable(false)
-        })
-        el.removeEventListener('mousedown', () => {
-          setIsActiveClickable(true)
-        })
-        el.removeEventListener('mouseup', () => {
-          setIsActive(true)
-        })
-        el.removeEventListener('mouseout', () => {
-          setIsActive(false)
-          setIsActiveClickable(false)
-        })
+        el.removeEventListener('mouseover', handleMouseOver)
+        el.removeEventListener('click', handleClick)
+        el.removeEventListener('mousedown', handleMouseDown)
+        el.removeEventListener('mouseup', handleMouseUp)
+        el.removeEventListener('mouseout', handleMouseOut)
       })
     }
-  }, [isActive, clickables])
+  }, [clickables])
 
   // Cursor Styles
   const styles = {

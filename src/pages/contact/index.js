@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
+import { meta } from "../../content_option";
+import { RoughNotation } from "react-rough-notation";
 import gsap from "gsap";
 
 export const ContactUs = () => {
@@ -100,7 +101,17 @@ export const ContactUs = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-2">
           <Col lg="8">
-            <h1 className="display- mb-4"> Contactez-moi </h1>
+            <h1 className="display-4 mb-4">
+              <RoughNotation
+                type="highlight"
+                show={true}
+                color="rgba(0, 255, 0, 0.2)"
+                animationDelay={500}
+                animationDuration={1000}
+              >
+                Contactez-moi
+              </RoughNotation>
+            </h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>

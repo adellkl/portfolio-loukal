@@ -1,0 +1,411 @@
+.current-container {
+  padding-top: 2rem;
+}
+
+.section-title {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-size: 1.8rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--text-color-3), transparent);
+  border-radius: 2px;
+}
+
+/* Availability Card */
+.availability-card {
+  background: var(--bg-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.availability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00ff00, #00cc00);
+}
+
+.availability-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.availability-header {
+  margin-bottom: 1.5rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.status-indicator h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  background: #00ff00;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.availability-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.detail-separator {
+  color: var(--text-color-2);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .availability-details {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .detail-separator {
+    display: none;
+  }
+}
+
+/* Progress Cards */
+.progress-card {
+  background: var(--bg-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.project-link {
+  margin: 1rem 0;
+}
+
+.project-link .btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.project-link .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.progress-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--text-color-3);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.card-title-section {
+  flex: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.3;
+}
+
+.priority-badge {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.card-description {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.progress-section {
+  margin-top: auto;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.progress-label {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.progress-percentage {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.custom-progress {
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(var(--text-color-rgb), 0.1);
+}
+
+.custom-progress .progress-bar {
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Goal Cards */
+.goal-card {
+  background: var(--bg-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.goal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.goal-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  flex: 1;
+}
+
+.goal-deadline {
+  font-size: 0.9rem;
+  color: var(--text-color-3);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.goal-description {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.goal-status {
+  margin-top: auto;
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .progress-card,
+[data-theme="dark"] .goal-card,
+[data-theme="dark"] .availability-card {
+  background-color: var(--bg-color);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .progress-card:hover,
+[data-theme="dark"] .goal-card:hover,
+[data-theme="dark"] .availability-card:hover {
+  border-color: var(--text-color-3);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode specific styles */
+[data-theme="light"] .progress-card,
+[data-theme="light"] .goal-card,
+[data-theme="light"] .availability-card {
+  background-color: var(--bg-color);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .progress-card:hover,
+[data-theme="light"] .goal-card:hover,
+[data-theme="light"] .availability-card:hover {
+  border-color: var(--text-color-3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .current-container {
+    padding-top: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .availability-details {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .detail-item {
+    justify-content: center;
+    font-size: 1rem;
+  }
+  
+  .detail-icon {
+    font-size: 1.2rem;
+  }
+  
+  .goal-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .goal-deadline {
+    align-self: flex-start;
+    font-size: 0.85rem;
+  }
+  
+  .card-header {
+    gap: 10px;
+  }
+  
+  .card-icon {
+    font-size: 1.8rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-description {
+    font-size: 0.95rem;
+  }
+  
+  .goal-title {
+    font-size: 1.1rem;
+  }
+  
+  .goal-description {
+    font-size: 0.95rem;
+  }
+  
+  .status-indicator h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .progress-card,
+  .goal-card,
+  .availability-card {
+    padding: 1rem;
+  }
+  
+  .availability-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+  }
+  
+  .goal-title {
+    font-size: 1rem;
+  }
+  
+  .goal-description {
+    font-size: 0.9rem;
+  }
+  
+  .detail-item {
+    font-size: 0.95rem;
+  }
+  
+  .status-indicator h4 {
+    font-size: 1.2rem;
+  }
+}

@@ -37,7 +37,7 @@ export default function App() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <link rel="icon" type="image/png" href="src/assets/images/moi.png" />
+        <link rel="icon" type="image/png" href="/moi.png" />
       </Helmet>
       <Router basename={process.env.PUBLIC_URL}>
         <div className="cursor__dot">

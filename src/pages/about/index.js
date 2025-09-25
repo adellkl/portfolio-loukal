@@ -2,8 +2,15 @@ import React, { useEffect, useRef } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+import {
+  dataabout,
+  meta,
+  worktimeline,
+  skills,
+  services,
+} from "../../content_option";
 import { RoughNotation } from "react-rough-notation";
-import { dataabout, meta, worktimeline, services } from "../../content_option";
+import GitHubStats from "../../components/GitHubStats";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -61,7 +68,17 @@ export const About = () => {
 
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display- mb-4">À propos de moi</h1>
+            <h1 className="display-4 mb-4">
+              <RoughNotation
+                type="highlight"
+                show={true}
+                color="rgba(0, 255, 0, 0.2)"
+                animationDelay={500}
+                animationDuration={1000}
+              >
+                À propos de moi
+              </RoughNotation>
+            </h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
@@ -191,6 +208,29 @@ export const About = () => {
                 <h5>🎨 Design & Créativité</h5>
                 <p>Passionné par l'UI/UX design et l'art numérique. J'explore régulièrement de nouvelles tendances en design et techniques créatives.</p>
               </div>
+            </div>
+          </Col>
+        </Row>
+
+        {/* GitHub Stats Compact Section */}
+        <Row className="sec_sp animate-section">
+          <Col lg="5">
+            <h4 className="py-3">
+              <RoughNotation
+                type="underline"
+                show={true}
+                color="#00ff88"
+                animationDelay={600}
+                animationDuration={800}
+                strokeWidth={2}
+              >
+                📊 GitHub Stats
+              </RoughNotation>
+            </h4>
+          </Col>
+          <Col lg="7">
+            <div className="github-compact">
+              <GitHubStats username="adellkl" compact={true} />
             </div>
           </Col>
         </Row>

@@ -4,6 +4,7 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import { dataportfolio, meta } from "../../content_option";
+import { RoughNotation } from "react-rough-notation";
 import gsap from "gsap";
 
 const TechList = ({ technologies }) => {
@@ -180,8 +181,25 @@ export const Portfolio = () => {
               </Col>
             </Row>
           ) : (
-            <div className="mb-5 po_items_ho">
-              {dataportfolio.map((data, index) => (
+            <>
+              <Row className="mb-5 mt-3 pt-md-3">
+                <Col lg="8">
+                  <h1 className="display-4 mb-4">
+                    <RoughNotation
+                      type="highlight"
+                      show={true}
+                      color="rgba(0, 255, 0, 0.2)"
+                      animationDelay={500}
+                      animationDuration={1000}
+                    >
+                      Portfolio
+                    </RoughNotation>
+                  </h1>
+                  <hr className="t_border my-4 ml-0 text-left" />
+                </Col>
+              </Row>
+              <div className="mb-5 po_items_ho">
+                {dataportfolio.map((data, index) => (
                 <div key={index} className="po_item" onClick={() => handleProjectClick(data)}>
                   <img
                     src={data.img}
@@ -193,8 +211,9 @@ export const Portfolio = () => {
                     <TechList technologies={data.technologies} />
                   </div>
                 </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </Container>

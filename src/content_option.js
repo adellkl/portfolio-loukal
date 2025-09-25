@@ -9,8 +9,9 @@ const introdata = {
     animated: {
         first: "Développeur React.js",
         second: "UX/UI designer",
+        third: "Créateur d'interfaces"
     },
-    description: "Développeur front-end, actuellement en recherche d'une   alternance pour septembre 2025.",
+    description: "Développeur front-end, actuellement en recherche d'une alternance pour septembre 2025.",
     your_img_url: "https://www.adelloukal.fr/moi.jpeg",
 };
 
@@ -115,6 +116,85 @@ const socialprofils = {
     Twitch: "https://bento.me/adel-loukal",
 };
 
+const currentActivities = {
+    title: "En ce moment",
+    subtitle: "Mes activités actuelles et objectifs à court terme",
+    projects: [
+        {
+            title: "Recherche d'alternance",
+            description: "Activement à la recherche d'une alternance de 24 mois pour septembre 2025 en développement web",
+            status: "En cours",
+            priority: "high",
+            icon: "🎯",
+            progress: 75
+        },
+        {
+            title: "Amélioration du portfolio",
+            description: "Ajout de nouvelles fonctionnalités et optimisation des performances",
+            status: "En cours",
+            priority: "medium",
+            icon: "🚀",
+            progress: 60
+        },
+        {
+            title: "Alpha Fight Club",
+            description: "Site web pour un club de grappling professionnel à Saint-Ouen avec SEO optimisé et design moderne",
+            status: "En cours",
+            priority: "high",
+            icon: "🥋",
+            progress: 85,
+            link: "https://alpha-fight-club.vercel.app/"
+        }
+    ],
+    learning: [
+        {
+            technology: "TypeScript",
+            description: "Apprentissage approfondi de TypeScript pour améliorer la qualité du code",
+            progress: 70,
+            icon: "📘"
+        },
+        {
+            technology: "Next.js",
+            description: "Exploration du framework Next.js pour les applications React",
+            progress: 45,
+            icon: "⚡"
+        },
+        {
+            technology: "Node.js avancé",
+            description: "Perfectionnement des compétences backend avec Node.js",
+            progress: 55,
+            icon: "🔧"
+        }
+    ],
+    goals: [
+        {
+            title: "Décrocher une alternance",
+            deadline: "Mars 2025",
+            description: "Trouver une entreprise pour une alternance de 24 mois",
+            completed: false
+        },
+        {
+            title: "Maîtriser TypeScript",
+            deadline: "Février 2025",
+            description: "Atteindre un niveau avancé en TypeScript",
+            completed: false
+        },
+        {
+            title: "Lancer un nouveau projet",
+            deadline: "Janvier 2025",
+            description: "Créer une nouvelle application web innovante",
+            completed: false
+        }
+    ],
+    availability: {
+        status: "Disponible",
+        location: "Paris, France",
+        workType: "CDI / Alternance",
+        startDate: "Immédiatement ou Septembre 2025",
+        duration: "CDI ou 24 mois (alternance)"
+    }
+};
+
 export {
     meta,
     dataabout,
@@ -126,6 +206,7 @@ export {
     contactConfig,
     socialprofils,
     logotext,
+    currentActivities,
 };
 
 
