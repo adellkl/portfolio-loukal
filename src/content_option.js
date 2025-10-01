@@ -69,13 +69,7 @@ const services = [{
 }];
 
 const dataportfolio = [
-    {
-        img: require("../src/assets/images/Figma.png"),
-        titre: "Maquette Figma - ISCOM Talent",
-        description: "Dans le cadre de mon stage de 6 mois en deuxième année de Bachelor, j'ai réalisé, en collaboration avec le chef de projet UX/UI (Monsieur Darabor), la maquette du projet 'ISCOM TALENT'. J'ai participé à la définition de la charte graphique, à l'élaboration de la maquette sur Figma et à la rédaction du cahier des charges détaillant les fonctionnalités et exigences du projet.",
-        link: "https://www.figma.com/proto/EB2NXGZIzJlLeboP9cPWUo/ISCOM-Talent?node-id=555-4246&t=e0bL8NgCfYxG8nBX-0&scaling=scale-down&page-id=86%3A5531&starting-point-node-id=555%3A4246&show-proto-sidebar=1&content-scaling=fixed",
-        technologies: ["React", "Tailwind CSS", "Node.js"],
-    },
+
     {
         img: require("../src/assets/images/Openmat.png"),
         titre: "OpenMat France - Gestion des Open Mats",
@@ -97,6 +91,26 @@ const dataportfolio = [
         link: "https://github.com/adellkl/portfolio-loukal.git",
         technologies: ["React", "Tailwind CSS", "Node.js"],
     },
+    {
+        img: require("../src/assets/images/test-psychotechnique permis.png"),
+        titre: "test-psychotechnique-permis",
+        description: "site wordpress, avec elementor et un thème personnalisé. (astra)",
+        link: "test-psychotechnique-permis.com",
+        technologies: ["wordpress", "elementor", "astra"],
+    }, {
+        img: require("../src/assets/images/Alpha-fight-club.png"),
+        titre: "Alpha Fight Club",
+        description: "Site Réalisé avec React et TailwindCSS pour mettre en avant un club de grappling et de jiu-jitsu brésilien. ",
+        link: "https://alpha-fight-club.vercel.app/",
+        technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
+    },
+    {
+        img: require("../src/assets/images/Figma.png"),
+        titre: "Maquette Figma - ISCOM Talent",
+        description: "Dans le cadre de mon stage de 6 mois en deuxième année de Bachelor, j'ai réalisé, en collaboration avec le chef de projet UX/UI (Monsieur Darabor), la maquette du projet 'ISCOM TALENT'. J'ai participé à la définition de la charte graphique, à l'élaboration de la maquette sur Figma et à la rédaction du cahier des charges détaillant les fonctionnalités et exigences du projet.",
+        link: "https://www.figma.com/proto/EB2NXGZIzJlLeboP9cPWUo/ISCOM-Talent?node-id=555-4246&t=e0bL8NgCfYxG8nBX-0&scaling=scale-down&page-id=86%3A5531&starting-point-node-id=555%3A4246&show-proto-sidebar=1&content-scaling=fixed",
+        technologies: ["React", "Tailwind CSS", "Node.js"],
+    },
 ];
 
 export default dataportfolio;
@@ -116,84 +130,6 @@ const socialprofils = {
     Twitch: "https://bento.me/adel-loukal",
 };
 
-const currentActivities = {
-    title: "En ce moment",
-    subtitle: "Mes activités actuelles et objectifs à court terme",
-    projects: [
-        {
-            title: "Recherche d'alternance",
-            description: "Activement à la recherche d'une alternance de 24 mois pour septembre 2025 en développement web",
-            status: "En cours",
-            priority: "high",
-            icon: "🎯",
-            progress: 75
-        },
-        {
-            title: "Amélioration du portfolio",
-            description: "Ajout de nouvelles fonctionnalités et optimisation des performances",
-            status: "En cours",
-            priority: "medium",
-            icon: "🚀",
-            progress: 60
-        },
-        {
-            title: "Alpha Fight Club",
-            description: "Site web pour un club de grappling professionnel à Saint-Ouen avec SEO optimisé et design moderne",
-            status: "En cours",
-            priority: "high",
-            icon: "🥋",
-            progress: 85,
-            link: "https://alpha-fight-club.vercel.app/"
-        }
-    ],
-    learning: [
-        {
-            technology: "TypeScript",
-            description: "Apprentissage approfondi de TypeScript pour améliorer la qualité du code",
-            progress: 70,
-            icon: "📘"
-        },
-        {
-            technology: "Next.js",
-            description: "Exploration du framework Next.js pour les applications React",
-            progress: 45,
-            icon: "⚡"
-        },
-        {
-            technology: "Node.js avancé",
-            description: "Perfectionnement des compétences backend avec Node.js",
-            progress: 55,
-            icon: "🔧"
-        }
-    ],
-    goals: [
-        {
-            title: "Décrocher une alternance",
-            deadline: "Mars 2025",
-            description: "Trouver une entreprise pour une alternance de 24 mois",
-            completed: false
-        },
-        {
-            title: "Maîtriser TypeScript",
-            deadline: "Février 2025",
-            description: "Atteindre un niveau avancé en TypeScript",
-            completed: false
-        },
-        {
-            title: "Lancer un nouveau projet",
-            deadline: "Janvier 2025",
-            description: "Créer une nouvelle application web innovante",
-            completed: false
-        }
-    ],
-    availability: {
-        status: "Disponible",
-        location: "Paris, France",
-        workType: "CDI / Alternance",
-        startDate: "Immédiatement ou Septembre 2025",
-        duration: "CDI ou 24 mois (alternance)"
-    }
-};
 
 export {
     meta,
@@ -206,7 +142,6 @@ export {
     contactConfig,
     socialprofils,
     logotext,
-    currentActivities,
 };
 
 

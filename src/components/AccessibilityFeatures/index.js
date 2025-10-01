@@ -55,8 +55,6 @@ const AccessibilityFeatures = () => {
       window.location.href = '/portfolio';
     } else if (command.includes('contact')) {
       window.location.href = '/contact';
-    } else if (command.includes('en ce moment') || command.includes('current')) {
-      window.location.href = '/current';
     } else if (command.includes('thème sombre') || command.includes('dark mode')) {
       document.querySelector('.theme-toggle')?.click();
     } else if (command.includes('thème clair') || command.includes('light mode')) {
@@ -211,7 +209,6 @@ const AccessibilityFeatures = () => {
                 <div><kbd>Alt + 2</kbd> À propos</div>
                 <div><kbd>Alt + 3</kbd> Portfolio</div>
                 <div><kbd>Alt + 4</kbd> Contact</div>
-                <div><kbd>Alt + 5</kbd> En ce moment</div>
                 <div><kbd>Alt + A</kbd> Accessibilité</div>
                 <div><kbd>Alt + T</kbd> Changer thème</div>
                 <div><kbd>Alt + Q</kbd> QR Code</div>

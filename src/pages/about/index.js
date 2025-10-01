@@ -10,7 +10,6 @@ import {
   services,
 } from "../../content_option";
 import { RoughNotation } from "react-rough-notation";
-import GitHubStats from "../../components/GitHubStats";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -212,28 +211,6 @@ export const About = () => {
           </Col>
         </Row>
 
-        {/* GitHub Stats Compact Section */}
-        <Row className="sec_sp animate-section">
-          <Col lg="5">
-            <h4 className="py-3">
-              <RoughNotation
-                type="underline"
-                show={true}
-                color="#00ff88"
-                animationDelay={600}
-                animationDuration={800}
-                strokeWidth={2}
-              >
-                📊 GitHub Stats
-              </RoughNotation>
-            </h4>
-          </Col>
-          <Col lg="7">
-            <div className="github-compact">
-              <GitHubStats username="adellkl" compact={true} />
-            </div>
-          </Col>
-        </Row>
 
         <Row className="sec_sp animate-section">
           <Col lg="5">

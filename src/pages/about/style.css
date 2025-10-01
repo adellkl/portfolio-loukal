@@ -689,17 +689,26 @@ body {
   transform: translateY(-3px);
 }
 
-
 .spotify-playlist-container {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  background: var(--bg-color);
+  border: 1px solid var(--secondary-color);
+  padding: 1rem;
 }
 
 .spotify-playlist-container:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
 }
+
+.spotify-playlist-container iframe {
+  border-radius: 8px;
+}
+
 
 /* Animation des titres de section */
 .color_sec {
