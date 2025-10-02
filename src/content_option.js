@@ -95,7 +95,7 @@ const dataportfolio = [
         img: require("../src/assets/images/test-psychotechnique permis.png"),
         titre: "test-psychotechnique-permis",
         description: "site wordpress, avec elementor et un thème personnalisé. (astra)",
-        link: "test-psychotechnique-permis.com",
+        link: "https://test-psychotechnique-permis.com",
         technologies: ["wordpress", "elementor", "astra"],
     }, {
         img: require("../src/assets/images/Alpha-fight-club.png"),
