@@ -351,7 +351,7 @@
 /* Mobile (480px) */
 @media (max-width: 480px) {
   .contact-overlay {
-    padding: 8px;
+    padding: 15px;
     align-items: flex-start;
     padding-top: 30px;
   }
@@ -384,7 +384,7 @@
   }
 
   .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .form-group label {
@@ -394,16 +394,16 @@
 
   .form-group input,
   .form-group textarea {
-    padding: 10px 12px;
+    padding: 8px 10px;
     font-size: 0.85rem;
   }
 
   .form-group textarea {
-    min-height: 100px;
+    min-height: 70px;
   }
 
   .submit-btn {
-    padding: 12px;
+    padding: 10px;
     font-size: 0.75rem;
   }
 
@@ -431,6 +431,10 @@
 
 /* Mobile Small (375px) */
 @media (max-width: 375px) {
+  .contact-overlay {
+    padding: 12px;
+  }
+
   .contact-modal {
     padding: 22px 16px;
     max-height: 88vh;
@@ -452,21 +456,21 @@
   }
 
   .form-group {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .form-group input,
   .form-group textarea {
-    padding: 9px 10px;
+    padding: 8px 10px;
     font-size: 0.8rem;
   }
 
   .form-group textarea {
-    min-height: 90px;
+    min-height: 65px;
   }
 
   .submit-btn {
-    padding: 11px;
+    padding: 9px;
     font-size: 0.72rem;
   }
 

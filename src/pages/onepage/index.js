@@ -244,6 +244,26 @@ export const OnePage = () => {
           <meta name="contact" content="adelloukal2@gmail.com" />
           <meta name="reply-to" content="adelloukal2@gmail.com" />
           <meta name="phone" content="+33769120166" />
+          
+          {/* Google Search Console Verification */}
+          <meta name="google-site-verification" content="E0WdBuIaUjGYKGUFE_ZfN6nLA2h5usBfDSqopv8fuZE" />
+          
+          {/* Bing Webmaster Tools */}
+          <meta name="msvalidate.01" content="049909097ECB304A84CEBEC96B1C2286" />
+          
+          {/* Google Analytics 4 */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX', {
+                page_path: window.location.pathname,
+                send_page_view: true
+              });
+            `}
+          </script>
 
           {/* JSON-LD Schema */}
           <script type="application/ld+json">
