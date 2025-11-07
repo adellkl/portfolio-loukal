@@ -14,21 +14,33 @@ html, body {
   font-family: 'Space Mono', monospace;
 }
 
-html, body {
-  height: 100vh;
-  overflow: hidden;
+/* Desktop uniquement : bloquer le scroll */
+@media (min-width: 969px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .onepage-container {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  min-height: 100vh;
   background: #0a0a0a;
   color: #ffffff;
   font-family: 'Space Mono', monospace;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+  position: relative;
+}
+
+/* Desktop : container fixed pour layout horizontal */
+@media (min-width: 969px) {
+  .onepage-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
 }
 
 /* Loading Screen with Code Animation */
@@ -191,11 +203,17 @@ html, body {
 
 /* Content wrapper */
 .content-wrapper {
-  height: calc(100vh - 160px);
   width: 100%;
   position: relative;
   z-index: 2;
-  overflow: hidden;
+}
+
+/* Desktop : pleine hauteur sans restrictions */
+@media (min-width: 969px) {
+  .content-wrapper {
+    height: calc(100vh - 160px);
+    overflow: hidden;
+  }
 }
 
 /* Info section (left center) */
