@@ -182,15 +182,15 @@ export const OnePage = () => {
       <div className="onepage-container">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Développeur React.js Freelance Paris - Adel Loukal | Expert Front-End Next.js TypeScript</title>
-          <meta name="description" content="💻 Développeur React.js Freelance à Paris | Expert Front-End Next.js, TypeScript, TailwindCSS | Création sites web & applications React sur-mesure | Réponse 24h | Portfolio 2025 | Disponible immédiatement" />
+          <title>Adel Loukal - Développeur React.js Freelance Paris | Création Sites Web Modernes</title>
+          <meta name="description" content="💼 Développeur Front-End Freelance spécialisé React.js, Next.js & TypeScript à Paris. 🚀 Création de sites web et applications modernes sur-mesure. ⚡ 2 ans d'expérience | Réponse sous 24h | Disponible immédiatement pour vos projets web." />
           <meta name="keywords" content="développeur react paris, développeur freelance paris, développeur front-end paris, développeur javascript paris, développeur react.js, développeur next.js paris, développeur typescript paris, création site web react, application react sur mesure, développeur web paris, freelance react, développeur fullstack javascript, développeur react freelance, expert react paris, développeur tailwindcss, développeur node.js paris, développeur firebase, création application web, développeur ux ui paris, site web moderne, développeur reactjs freelance ile de france, prestation développement web, mission freelance développeur, développeur web indépendant paris, développeur react disponible, développeur javascript moderne, spa react, progressive web app, développeur front end freelance, consultant react paris, freelance développeur web paris 2025" />
 
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://www.adelloukal.fr/" />
-          <meta property="og:title" content="Adel Loukal - Développeur React.js Freelance Paris | Portfolio 2025" />
-          <meta property="og:description" content="💻 Développeur Front-End spécialisé React.js, Next.js, TypeScript | Création de sites web & applications modernes sur-mesure | 2 ans d'expérience | Paris | Réponse 24h" />
+          <meta property="og:title" content="Adel Loukal - Développeur React.js Freelance Paris | Création Sites Web" />
+          <meta property="og:description" content="💼 Développeur Front-End spécialisé React.js, Next.js & TypeScript à Paris. 🚀 Création sites web modernes sur-mesure. ⚡ 2 ans d'expérience | Disponible | Réponse 24h" />
           <meta property="og:image" content="https://www.adelloukal.fr/Twitter-img.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
@@ -205,9 +205,9 @@ export const OnePage = () => {
           <meta name="twitter:creator" content="@adelloukal" />
           <meta name="twitter:url" content="https://www.adelloukal.fr/" />
           <meta name="twitter:title" content="Adel Loukal - Développeur React.js Freelance Paris" />
-          <meta name="twitter:description" content="💻 Expert React.js, Next.js, TypeScript | Création sites web & applications modernes | Portfolio 2025 | Disponible" />
+          <meta name="twitter:description" content="💼 Expert React.js, Next.js, TypeScript à Paris | 🚀 Création sites web modernes | ⚡ Disponible | Réponse 24h" />
           <meta name="twitter:image" content="https://www.adelloukal.fr/Twitter-img.png" />
-          <meta name="twitter:image:alt" content="Portfolio Adel Loukal - Développeur React Freelance" />
+          <meta name="twitter:image:alt" content="Adel Loukal - Développeur React.js Freelance Paris" />
           
           {/* WhatsApp / LinkedIn */}
           <meta property="og:image:secure_url" content="https://www.adelloukal.fr/Twitter-img.png" />
