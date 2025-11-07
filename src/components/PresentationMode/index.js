@@ -18,11 +18,11 @@ const PresentationMode = ({ show, onHide }) => {
             </div>
             <div className="profile-info">
               <h2>Adel Loukal</h2>
-              <p className="role">Développeur Full-Stack Junior</p>
+              <p className="role">Développeur Front-End Freelance</p>
               <div className="contact-info">
                 <p>📍 Paris, France</p>
-                <p>💼 Recherche alternance 24 mois</p>
-                <p>📅 Disponible immédiatement</p>
+                <p>💼 Freelance - Création sites web sur mesure</p>
+                <p>📅 Disponible pour vos projets</p>
               </div>
             </div>
           </div>
@@ -125,12 +125,12 @@ const PresentationMode = ({ show, onHide }) => {
       content: (
         <div className="goals-slide">
           <div className="motivation-section">
-            <h4>🎯 Objectifs à court terme</h4>
+            <h4>🎯 Ce que je propose</h4>
             <ul className="goals-list">
-              <li>Intégrer une équipe dynamique en alternance</li>
-              <li>Approfondir mes compétences en TypeScript</li>
-              <li>Contribuer à des projets impactants</li>
-              <li>Apprendre les bonnes pratiques en entreprise</li>
+              <li>Création de sites web modernes et performants</li>
+              <li>Applications React.js sur mesure</li>
+              <li>Design UX/UI professionnel</li>
+              <li>Accompagnement de A à Z sur vos projets</li>
             </ul>
             
             <h4>💡 Ce que j'apporte</h4>
@@ -168,8 +168,8 @@ const PresentationMode = ({ show, onHide }) => {
             
             <div className="availability-info">
               <h5>🕐 Disponibilité</h5>
-              <p>Immédiatement ou Septembre 2025</p>
-              <p>Alternance 24 mois - Rythme flexible</p>
+              <p>Disponible pour vos projets</p>
+              <p>Devis gratuit sous 24h - Réactivité garantie</p>
             </div>
             
             <div className="cta-section">

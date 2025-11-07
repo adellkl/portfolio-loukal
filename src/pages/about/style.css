@@ -17,118 +17,11 @@ td {
   background-color: transparent !important;
 }
 
-.progress-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 15px 0 20px;
-  font-family: "Raleway";
-}
+/* Anciens styles progress supprimés */
 
-.progress {
-  height: 5px;
-  background: var(--secondary);
-  border-radius: 0;
-  box-shadow: none;
-  margin-bottom: 30px;
-  overflow: visible;
-}
+/* Anciens styles supprimés */
 
-.progress .progress-bar {
-  position: relative;
-  background: var(--text-color);
-  animation: animate-positive 2s;
-  overflow: visible;
-  opacity: 0.9;
-}
-
-.progress .progress-value {
-  position: absolute;
-  top: -30px;
-  right: 8px;
-  font-size: 17px;
-  font-weight: bold;
-  font-style: italic;
-  color: var(--text-color);
-}
-
-@-webkit-keyframes animate-positive {
-  0% {
-    width: 0%;
-  }
-}
-
-@keyframes animate-positive {
-  0% {
-    width: 0%;
-  }
-}
-
-.section-title {
-  font-size: 45px;
-}
-
-.service__title {
-  padding: 8px 0;
-  border-bottom: solid 2px var(--secondary-color);
-}
-
-.service-section .service-category-title {
-  padding-bottom: 4px;
-}
-
-/* Style pour la timeline */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.timeline-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.timeline-item::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.timeline-content {
-  flex: 1;
-}
-
-.timeline-date {
-  flex: 0 0 auto;
-  margin-left: 10px;
-  color: #888;
-}
-
-/* Style pour les compétences */
-.skills {
-  display: flex;
-  flex-direction: column;
-}
-
-.skill-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.skill-name {
-  flex: 1;
-}
-
-.skill-value {
-  flex: 0 0 auto;
-  margin-left: 10px;
-  color: #555;
-}
+/* Anciens styles timeline supprimés - utilisez style-modern.css */
 
 /*! CSS Used keyframes */
 
@@ -186,153 +79,11 @@ body {
   overflow-x: hidden;
 }
 
-.about-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
+/* Ancien style about-title supprimé */
 
-.about-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60%;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-}
+/* Anciens styles supprimés - utilisez style-modern.css */
 
-.aboutme {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--text-color);
-  padding: 1.5rem;
-  background: var(--bg-color);
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.timeline-section {
-  position: relative;
-  padding: 2rem;
-  background: var(--bg-color);
-  border-radius: 15px;
-  margin-top: 2rem;
-}
-
-.table {
-  margin: 0;
-}
-
-.table td,
-.table th {
-  padding: 1rem;
-  vertical-align: middle;
-  border: none;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.table tr {
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.table tr:hover {
-  background: var(--hover-color);
-  transform: translateX(10px);
-}
-
-.where {
-  font-weight: 600;
-  color: var(--text-color);
-}
-
-.date {
-  color: var(--primary-color);
-  font-weight: 500;
-}
-
-.description {
-  font-style: italic;
-  color: var(--text-color);
-  opacity: 0.9;
-}
-
-/* Skills section */
-.skills-section {
-  padding: 2rem;
-  background: var(--bg-color);
-  border-radius: 15px;
-  margin-top: 2rem;
-}
-
-.progress-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1rem 0;
-  color: var(--text-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.progress {
-  height: 8px;
-  background: var(--bg-color);
-  border-radius: 4px;
-
-  margin-bottom: 2rem;
-}
-
-.progress .progress-bar {
-  background: linear-gradient(
-    to right,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  border-radius: 4px;
-  transition: width 1.5s ease-in-out;
-}
-
-.progress .progress-value {
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: var(--text-color);
-  font-size: 1rem;
-}
-
-/* Services section */
-.service_ {
-  padding: 2rem;
-  background: var(--bg-color);
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-}
-
-.service_:hover {
-  transform: translateY(-5px);
-}
-
-.service__title {
-  color: var(--text-color);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary-color);
-}
-
-.service_desc {
-  color: var(--text-color);
-  opacity: 0.9;
-  line-height: 1.6;
-}
+/* Anciens styles supprimés */
 
 @media (max-width: 768px) {
   body {
@@ -351,21 +102,6 @@ body {
     font-size: 2rem;
   }
 
-  .aboutme {
-    padding: 1rem;
-  }
-
-  .timeline-section,
-  .skills-section,
-  .service_ {
-    padding: 1rem;
-  }
-
-  .table td,
-  .table th {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
 }
 
 .mission-title {
@@ -383,350 +119,36 @@ body {
   z-index: 1;
 }
 
-.spotify-playlist-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  background: rgba(var(--secondary-rgb), 0.05);
-  padding: 20px;
-  border-radius: 16px;
+/* Anciens styles supprimés - voir style-modern.css */
 
-  backdrop-filter: blur(5px);
-}
+/* Anciens styles skills supprimés - voir style-modern.css */
 
-@media (max-width: 768px) {
-  .spotify-playlist-container {
-    padding: 10px;
-  }
-}
+/* Anciennes animations supprimées - voir style-modern.css */
 
-.interests-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+/* Anciens styles d'animation supprimés - voir style-modern.css */
 
-.interest-item {
-  background: rgba(var(--secondary-rgb), 0.03);
-  padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid transparent;
-}
-
-.interest-item:hover {
-  transform: translateY(-5px);
-  background: rgba(var(--secondary-rgb), 0.05);
-  border-color: rgba(var(--text-color-rgb), 0.1);
-}
-
-.interest-item:hover h5 {
-  transform: translateY(-3px);
-  color: #2ecc71;
-}
-
-.interest-item:hover p {
-  transform: translateY(-2px);
+/* Styles pour les liens de missions */
+.mission-link {
   color: var(--text-color);
-}
-
-.interest-item h5 {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  color: var(--text-color);
-  font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
-}
-
-.interest-item p {
-  font-size: 0.95rem;
-  color: var(--text-color);
-  opacity: 0.9;
-  line-height: 1.6;
-  margin-bottom: 0;
-  transition: all 0.3s ease;
-}
-
-.interest-item:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), transparent);
-  animation: shimmer 1.5s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@media (max-width: 768px) {
-  .interests-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .interest-item {
-    padding: 15px;
-  }
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-}
-
-.skills-section {
-  margin-top: 0 !important;
-}
-
-.skills-section .skill-item {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
-  padding: 20px;
-  background: rgba(var(--secondary-rgb), 0.03);
-  border-radius: 12px;
-  text-align: center;
+  gap: 8px;
 }
 
-.skills-section .skill-item i {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.mission-link:hover {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.skills-section .skill-item span {
-  font-size: 0.9rem;
-  color: var(--text-color);
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 15px;
-  }
-
-  .skills-section .skill-item {
-    padding: 15px;
-  }
-
-  .skills-section .skill-item i {
-    font-size: 2rem;
-  }
-}
-
-.skills-row.sec_sp {
-  margin-bottom: 6rem;
-}
-
-.skills-section {
-  margin-top: 0 !important;
-  padding: 0;
-}
-
-.animate-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.animate-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.animate-section .skill-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: calc(var(--delay) * 100ms);
-}
-
-.animate-section.visible .skill-item {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Animation d'entrée générale */
-.animate-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.animate-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Animation des skills */
-.animate-section .skill-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: calc(var(--delay) * 100ms);
-}
-
-.animate-section.visible .skill-item {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Effet hover sur les skills */
-.skills-section .skill-item {
-  cursor: pointer;
+.mission-link i {
+  font-size: 0.85em;
+  opacity: 0.7;
   transition: all 0.3s ease;
 }
 
-.skills-section .skill-item:hover {
-  transform: translateY(-5px);
-  background: rgba(var(--secondary-rgb), 0.08);
-}
-
-.skills-section .skill-item:hover i {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.skills-section .skill-item i {
-  transition: all 0.3s ease;
-}
-
-/* Animation de la timeline */
-.timeline-section tr {
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.3s ease;
-}
-
-.animate-section.visible .timeline-section tr {
+.mission-link:hover i {
   opacity: 1;
-  transform: translateX(0);
-}
-
-.timeline-section tr:nth-child(1) {
-  transition-delay: 100ms;
-}
-.timeline-section tr:nth-child(2) {
-  transition-delay: 200ms;
-}
-.timeline-section tr:nth-child(3) {
-  transition-delay: 300ms;
-}
-
-/* Effet hover sur la timeline */
-.timeline-section tr:hover {
-  background: rgba(var(--secondary-rgb), 0.05);
-  transform: translateX(10px);
-}
-
-/* Animation des services */
-.service_ {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-}
-
-.animate-section.visible .service_ {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Effet hover sur les services */
-.service_:hover {
-  transform: translateY(-5px);
-}
-
-.service_:hover .service__title {
-  color: #2ecc71;
-  padding-left: 10px;
-}
-
-.service__title {
-  transition: all 0.3s ease;
-}
-
-/* Animation du titre "À propos" */
-.about-title {
-  position: relative;
-  overflow: hidden;
-}
-
-.about-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background: #2ecc71;
-  animation: titleLine 1.5s ease forwards;
-}
-
-@keyframes titleLine {
-  to {
-    width: 60%;
-  }
-}
-
-/* Animation de la description "aboutme" */
-.aboutme {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.aboutme:hover {
-  transform: translateY(-3px);
-}
-
-.spotify-playlist-container {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  background: var(--bg-color);
-  border: 1px solid var(--secondary-color);
-  padding: 1rem;
-}
-
-.spotify-playlist-container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-color);
-}
-
-.spotify-playlist-container iframe {
-  border-radius: 8px;
-}
-
-
-/* Animation des titres de section */
-.color_sec {
-  position: relative;
-  display: inline-block;
-}
-
-.color_sec::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #2ecc71;
-  transition: width 0.3s ease;
-}
-
-.color_sec:hover::after {
-  width: 100%;
+  transform: translateX(3px);
 }

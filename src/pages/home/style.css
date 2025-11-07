@@ -374,7 +374,7 @@ section {
     line-height: 1.4;
   }
 
-  .intro_sec .text .alternance-text {
+  .intro_sec .text .status-text {
     font-size: 1.1rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -438,7 +438,7 @@ section {
 }
 
 @media (min-width: 769px) {
-  .intro_sec .text .alternance-text {
+  .intro_sec .text .status-text {
     font-size: 1.2rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;

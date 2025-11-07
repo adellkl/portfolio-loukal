@@ -1,7 +1,7 @@
 const logotext = "A.Loukal";
 const meta = {
     title: "Adel Loukal - Développeur Web React.js & UX/UI Designer à Paris",
-    description: "Portfolio d'Adel Loukal, développeur web front-end spécialisé en React.js et UX/UI design à Paris. Expert en développement d'interfaces modernes et responsive. En recherche d'alternance pour septembre 2025.",
+    description: "Portfolio d'Adel Loukal, développeur web front-end freelance spécialisé en React.js et UX/UI design à Paris. Expert en développement d'applications web modernes, performantes et responsive. Disponible pour vos projets de création de sites web sur mesure.",
 };
 
 const introdata = {
@@ -11,19 +11,29 @@ const introdata = {
         second: "UX/UI designer",
         third: "Créateur d'interfaces"
     },
-    description: "Développeur front-end, actuellement en recherche d'une alternance pour septembre 2025.",
+    description: "Développeur front-end freelance spécialisé en React.js. Je transforme vos idées en applications web modernes et performantes. Création de sites web sur mesure adaptés à vos besoins, avec un accompagnement personnalisé de A à Z.",
     your_img_url: "https://www.adelloukal.fr/moi.jpeg",
 };
 
 const dataabout = {
     title: "À propos de moi",
-    aboutme: "Récemment diplômé d’un Bachelor Universitaire de Technologie, je souhaite poursuivre mes études en alternance sur une durée de 24 mois afin de renforcer mes compétences et acquérir un maximum d’expérience pour intégrer efficacement le monde professionnel.",
+    aboutme: "Développeur front-end freelance spécialisé en React.js et UX/UI design. Je crée des sites web modernes et performants adaptés à vos besoins.",
 };
 
 
 const worktimeline = [
-
-
+    {
+        jobtitle: "Test Psychotechnique Permis",
+        where: "Site Next.js - Client",
+        date: "2025",
+        link: "https://test-psychotechnique-permis.com/"
+    },
+    {
+        jobtitle: "Alpha Fight Club",
+        where: "Site vitrine React - Client",
+        date: "2025",
+        link: "https://alpha-fight-club.vercel.app/"
+    },
     {
         jobtitle: "Développement de mon portfolio",
         where: "Autonomie",
@@ -61,11 +71,11 @@ const skills = [
 ];
 
 const services = [{
-    title: "Mon alternance de 12 mois chez Iscom Paris",
-    description: "Durant ma période d'alternance, j'ai eu l'opportunité de participer au développement d'une solution innovante pour répondre aux problématiques de l'entreprise. En collaboration avec un UX/UI designer, nous avons élaboré les maquettes et défini la charte graphique. Une fois ces étapes achevées, j'ai développé la partie front-end avec React.JS et Tailwind CSS, créant des interfaces dynamiques et cohérentes. Pour le back-end, j'ai utilisé Node.JS et Firebase pour la gestion des données et l'authentification des utilisateurs. Cette expérience m'a permis d'approfondir mes compétences en développement full-stack et de travailler efficacement en équipe pour résoudre des problèmes concrets tout en répondant aux besoins de l'entreprise.",
+    title: "Mes services de développement web freelance",
+    description: "En tant que développeur freelance, je vous propose la création complète de votre site web sur mesure. De la conception de l'interface utilisateur à la mise en ligne, je prends en charge toutes les étapes de votre projet : analyse de vos besoins, design moderne et responsive avec Figma, développement front-end avec React.js et TailwindCSS, intégration d'un back-end performant avec Node.js et Firebase si nécessaire. Mon approche orientée UX/UI garantit une expérience utilisateur optimale et un design qui reflète l'identité de votre marque. Disponibilité, réactivité et qualité sont mes priorités pour transformer votre vision en réalité digitale.",
 }, {
-    title: "Mon stage de 5 mois en UX/UI design",
-    description: "Mes missions étaient variées, mais principalement axées sur la création de contenu pour la plateforme Iscom Anytime. Cette tâche impliquait la conception, la rédaction et la mise en forme de divers types de contenus destinés à engager et informer les utilisateurs de la plateforme. J'ai travaillé sur des articles, des infographies, et d'autres supports multimédias, en veillant à ce que chaque pièce de contenu soit pertinente et attrayante. Cette expérience m'a permis de développer mes compétences en communication et en création de contenu, tout en contribuant à l'enrichissement de la plateforme Iscom Anytime.",
+    title: "Mon expérience chez ISCOM Paris - 12 mois",
+    description: "Durant mon expérience de 12 mois chez ISCOM Paris, j'ai développé des solutions web innovantes en tant que développeur front-end. En collaboration avec une équipe UX/UI, j'ai participé à l'élaboration de maquettes, la définition de chartes graphiques, et le développement d'interfaces avec React.js et Tailwind CSS. J'ai également intégré des solutions back-end avec Node.js et Firebase pour l'authentification et la gestion des données. Cette expérience professionnelle enrichissante m'a permis de maîtriser les processus de développement en équipe et de livrer des projets complets répondant aux besoins des utilisateurs.",
 }];
 
 const dataportfolio = [
@@ -94,9 +104,9 @@ const dataportfolio = [
     {
         img: require("../src/assets/images/test-psychotechnique permis.png"),
         titre: "test-psychotechnique-permis",
-        description: "site wordpress, avec elementor et un thème personnalisé. (astra)",
+        description: "Site web moderne développé avec Next.js pour la préparation aux tests psychotechniques du permis de conduire.",
         link: "https://test-psychotechnique-permis.com",
-        technologies: ["wordpress", "elementor", "astra"],
+        technologies: ["Next.js", "React", "TailwindCSS"],
     }, {
         img: require("../src/assets/images/Alpha-fight-club.png"),
         titre: "Alpha Fight Club",

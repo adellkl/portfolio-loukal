@@ -188,7 +188,7 @@ export const Home = () => {
                   </div>
                   <div className="availability-indicator">
                     <div className="availability-dot"></div>
-                    <span className="availability-text">Alternance 24 mois</span>
+                    <span className="availability-text">Freelance disponible</span>
                   </div>
                   <div className="availability-indicator">
                     <div className="availability-dot"></div>
