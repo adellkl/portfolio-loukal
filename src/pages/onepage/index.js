@@ -30,6 +30,7 @@ export const OnePage = () => {
       openmatDesc: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription",
       alphaDesc: "Site web moderne pour un club de sports de combat avec réservation en ligne",
       testPsychoDesc: "Plateforme de prise de rendez-vous pour passer un test psychotechnique pour le permis, à Clichy ou Colombes",
+      reelvibeDesc: "Plateforme sociale pour découvrir, noter, liker et commenter des films, séries, anime et mangas, avec profils et watchlists",
       comingSoonDesc: "Nouveau projet en cours de développement",
       scrollingText: "DÉVELOPPEUR FREELANCE • REACT.JS • NEXT.JS • TYPESCRIPT •",
       stackTitle: "STACK TECHNIQUE",
@@ -53,6 +54,7 @@ export const OnePage = () => {
       alphaDesc: "Modern website for a combat sports club with online booking",
       testPsychoDesc: "Appointment booking platform for psychotechnical tests for driving license in Clichy or Colombes",
       comingSoonDesc: "New project under development",
+      reelvibeDesc: "Social platform to discover, rate, like and comment on movies, series, anime and manga, with profiles and watchlists",
       scrollingText: "FREELANCE DEVELOPER • REACT.JS • NEXT.JS • TYPESCRIPT •",
       stackTitle: "TECH STACK",
     }
@@ -140,6 +142,15 @@ export const OnePage = () => {
     },
     {
       id: 5,
+      name: "REELVIBE",
+      link: "https://netflixhaha-jh2a.vercel.app/",
+      color: "#9e2f2fff",
+      date: language === 'fr' ? "Aou 2025" : "Aug 2025",
+      description: t.reelvibeDesc
+    },
+
+    {
+      id: 6,
       name: language === 'fr' ? "À SUIVRE..." : "COMING SOON...",
       link: null,
       color: "#888888",
@@ -208,7 +219,7 @@ export const OnePage = () => {
           <meta name="twitter:description" content="💼 Expert React.js, Next.js, TypeScript à Paris | 🚀 Création sites web modernes | ⚡ Disponible | Réponse 24h" />
           <meta name="twitter:image" content="https://www.adelloukal.fr/Twitter-img.png" />
           <meta name="twitter:image:alt" content="Adel Loukal - Développeur React.js Freelance Paris" />
-          
+
           {/* WhatsApp / LinkedIn */}
           <meta property="og:image:secure_url" content="https://www.adelloukal.fr/Twitter-img.png" />
           <meta property="og:image:type" content="image/png" />
@@ -218,39 +229,39 @@ export const OnePage = () => {
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
           <meta name="googlebot" content="index, follow" />
           <link rel="canonical" href="https://www.adelloukal.fr/" />
-          
+
           {/* Geo targeting */}
           <meta name="geo.region" content="FR-75" />
           <meta name="geo.placename" content="Paris" />
           <meta name="geo.position" content="48.8566;2.3522" />
           <meta name="ICBM" content="48.8566, 2.3522" />
-          
+
           {/* Language & Locale */}
           <meta httpEquiv="content-language" content="fr-FR" />
           <meta name="language" content="French" />
-          
+
           {/* Business Info */}
           <meta name="coverage" content="Worldwide" />
           <meta name="distribution" content="Global" />
           <meta name="rating" content="General" />
           <meta name="revisit-after" content="7 days" />
-          
+
           {/* Professional Info */}
           <meta name="category" content="Technology, Web Development, Freelance" />
           <meta name="subject" content="Développement Web React.js, Next.js, TypeScript" />
           <meta name="classification" content="Développeur Front-End Freelance" />
-          
+
           {/* Contact & Availability */}
           <meta name="contact" content="adelloukal2@gmail.com" />
           <meta name="reply-to" content="adelloukal2@gmail.com" />
           <meta name="phone" content="+33769120166" />
-          
+
           {/* Google Search Console Verification */}
           <meta name="google-site-verification" content="E0WdBuIaUjGYKGUFE_ZfN6nLA2h5usBfDSqopv8fuZE" />
-          
+
           {/* Bing Webmaster Tools */}
           <meta name="msvalidate.01" content="049909097ECB304A84CEBEC96B1C2286" />
-          
+
           {/* Google Analytics 4 */}
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
           <script>
@@ -317,7 +328,7 @@ export const OnePage = () => {
               }
             `}
           </script>
-          
+
           {/* JSON-LD Schema - ProfessionalService */}
           <script type="application/ld+json">
             {`
@@ -427,8 +438,8 @@ export const OnePage = () => {
                 <h3 className="stack-title">{t.stackTitle}</h3>
                 <div className="stack-grid">
                   {techStack.map((tech, index) => (
-                    <div 
-                      key={tech.name} 
+                    <div
+                      key={tech.name}
                       className="stack-item"
                       style={{ '--delay': `${4.5 + index * 0.1}s` }}
                     >
