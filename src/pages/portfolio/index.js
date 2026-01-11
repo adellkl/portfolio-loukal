@@ -87,12 +87,53 @@ const DraggableImage = ({ src, alt }) => {
   );
 };
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
 export const Portfolio = () => {
   const portfolioRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState(dataportfolio);
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Charger les projets depuis l'API
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch(`${API_URL}/projects`);
+        if (response.ok) {
+          const data = await response.json();
+          // Filtrer les projets avec ordre entre 1 et 6 et trier par ordre
+          const filteredData = data
+            .filter(p => {
+              const ordre = p.ordre || 0;
+              return ordre >= 1 && ordre <= 6;
+            })
+            .sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
+          
+          // Transformer les données de l'API pour correspondre au format attendu
+          const formattedProjects = filteredData.map(project => ({
+            ...project,
+            titre: project.titre,
+            link: project.lien || project.link,
+            img: project.img || null,
+            technologies: typeof project.technologies === 'string' 
+              ? JSON.parse(project.technologies || '[]') 
+              : (Array.isArray(project.technologies) ? project.technologies : [])
+          }));
+          if (formattedProjects.length > 0) {
+            setProjects(formattedProjects);
+          }
+        }
+      } catch (error) {
+        console.warn('Impossible de charger les projets depuis l\'API, utilisation des données locales:', error);
+        // En cas d'erreur, on utilise les données locales (déjà définies par défaut)
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   useEffect(() => {
     const lastVisit = localStorage.getItem('lastVisitPortfolio');
@@ -111,10 +152,10 @@ export const Portfolio = () => {
 
     const projectName = new URLSearchParams(location.search).get("project");
     if (projectName) {
-      const foundProject = dataportfolio.find((p) => p.titre === projectName);
+      const foundProject = projects.find((p) => p.titre === projectName);
       setSelectedProject(foundProject || null);
     }
-  }, [location.search]);
+  }, [location.search, projects]);
 
   useEffect(() => {
     if (selectedProject) {
@@ -162,7 +203,7 @@ export const Portfolio = () => {
             <Row className="project-detail" style={{ textAlign: "left", padding: "20px" }}>
               <Col md={5}>
                 <DraggableImage
-                  src={selectedProject.img}
+                  src={selectedProject.img || require('../../assets/images/portfolio.png')}
                   alt={selectedProject.titre}
                 />
               </Col>
@@ -171,7 +212,19 @@ export const Portfolio = () => {
                 <p className="project-description" style={{ fontSize: "1rem", color: "#555" }}>{selectedProject.description}</p>
                 <TechList technologies={selectedProject.technologies} />
                 <div className="project-buttons" style={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "20px" }}>
-                  <Button variant="primary" href={selectedProject.link} target="_blank" className="project-button" style={{ padding: "5px 20px", borderRadius: "6px", minWidth: "120px" }}>
+                  <Button 
+                    variant="primary" 
+                    href={selectedProject.lien || selectedProject.link} 
+                    target="_blank" 
+                    className="project-button" 
+                    style={{ 
+                      padding: "5px 20px", 
+                      borderRadius: "6px", 
+                      minWidth: "120px",
+                      backgroundColor: selectedProject.couleur_hover || '#4a9eff',
+                      borderColor: selectedProject.couleur_hover || '#4a9eff'
+                    }}
+                  >
                     Voir le projet
                   </Button>
                   <Button variant="secondary" onClick={handleBack} className="project-button" style={{ padding: "5px 20px", borderRadius: "6px", backgroundColor: "#f8f9fa", color: "#333", border: "1px solid #ccc", minWidth: "120px" }}>
@@ -199,19 +252,59 @@ export const Portfolio = () => {
                 </Col>
               </Row>
               <div className="mb-5 po_items_ho">
-                {dataportfolio.map((data, index) => (
-                <div key={index} className="po_item" onClick={() => handleProjectClick(data)}>
-                  <img
-                    src={data.img}
-                    alt={`Project ${index}`}
-                    loading="lazy"
-                  />
-                  <div className="content">
-                    <h3>{data.titre}</h3>
-                    <TechList technologies={data.technologies} />
-                  </div>
-                </div>
-                ))}
+                {projects.map((data, index) => {
+                  // Gérer les images : soit une URL, soit un require() pour les assets locaux
+                  let imgSrc = data.img;
+                  
+                  // Si pas d'image URL, essayer de trouver l'image locale par nom
+                  if (!imgSrc || (!imgSrc.startsWith('http') && !imgSrc.startsWith('/'))) {
+                    const imageMap = {
+                      'Openmat': require('../../assets/images/Openmat.png'),
+                      'mdp': require('../../assets/images/mdp.png'),
+                      'portfolio': require('../../assets/images/portfolio.png'),
+                      'test-psychotechnique': require('../../assets/images/test-psychotechnique permis.png'),
+                      'Alpha-fight-club': require('../../assets/images/Alpha-fight-club.png'),
+                      'Alpha': require('../../assets/images/Alpha-fight-club.png'),
+                      'Figma': require('../../assets/images/Figma.png'),
+                    };
+                    
+                    const titreLower = (data.titre || '').toLowerCase();
+                    const foundImage = Object.keys(imageMap).find(key => 
+                      titreLower.includes(key.toLowerCase())
+                    );
+                    
+                    imgSrc = foundImage ? imageMap[foundImage] : require('../../assets/images/portfolio.png');
+                  }
+                  
+                  // Si c'est un require(), utiliser .default
+                  if (imgSrc && typeof imgSrc === 'object' && imgSrc.default) {
+                    imgSrc = imgSrc.default || imgSrc;
+                  }
+                  
+                  return (
+                    <div 
+                      key={data.id || index} 
+                      className="po_item" 
+                      onClick={() => handleProjectClick(data)}
+                      style={{
+                        '--hover-color': data.couleur_hover || '#4a9eff'
+                      }}
+                    >
+                      <img
+                        src={imgSrc}
+                        alt={data.titre || `Project ${index}`}
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.src = require('../../assets/images/portfolio.png');
+                        }}
+                      />
+                      <div className="content">
+                        <h3>{data.titre}</h3>
+                        <TechList technologies={data.technologies || []} />
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </>
           )}

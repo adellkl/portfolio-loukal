@@ -28,91 +28,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Loading Screen with Code Animation */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #0a0a0a;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: fadeOut 0.8s ease 2.2s forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.code-container {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.9rem;
-  color: #00ff88;
-  max-width: 600px;
-  width: 90%;
-  overflow: hidden;
-}
-
-.code-line {
-  display: flex;
-  gap: 20px;
-  opacity: 0;
-  animation: codeLineAppear 0.3s ease forwards;
-  margin-bottom: 4px;
-}
-
-@keyframes codeLineAppear {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.line-number {
-  color: #444;
-  min-width: 30px;
-  text-align: right;
-  user-select: none;
-}
-
-.line-content {
-  color: #b0b0b0;
-  white-space: pre;
-}
-
-.loading-bar {
-  width: 300px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 40px;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.loading-progress {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(90deg, #00ff88, #00d4ff);
-  animation: loadingProgress 2s ease forwards;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-}
-
-@keyframes loadingProgress {
-  to {
-    width: 100%;
-  }
-}
 
 
 /* Project Styles */
@@ -210,7 +125,7 @@ html, body {
   position: absolute;
   right: 3.75rem; /* 60px */
   top: 3.75rem; /* 60px */
-  max-width: 25rem; /* 400px */
+  max-width: none; /* Supprimé la limite pour permettre plusieurs colonnes */
   animation: slideInRightBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1) 2.7s both;
 }
 
@@ -468,37 +383,28 @@ html, body {
   }
 }
 
+.projects-columns {
+  display: flex;
+  gap: 2rem; /* 32px entre les colonnes */
+  align-items: flex-start;
+}
+
+.projects-list-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
 .projects-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: calc(100vh - 250px); /* Hauteur disponible moins espace pour titre + footer */
-  overflow-y: auto;
-  padding-right: 0.5rem;
-  /* Masquer la scrollbar */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-}
-
-.projects-list::-webkit-scrollbar {
-  width: 4px;
-}
-
-.projects-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.projects-list::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-}
-
-.projects-list::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
 }
 
 
-.projects-list .project-item {
+.projects-list-column .project-item {
   opacity: 0;
   animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: var(--delay);
@@ -1215,15 +1121,6 @@ html, body {
     -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.12);
   }
 
-  /* Code loading screen */
-  .code-container {
-    font-size: 0.75rem;
-    padding: 0 20px;
-  }
-
-  .loading-bar {
-    width: 220px;
-  }
 }
 
 /* ====== MOBILE MEDIUM (480px) ====== */
@@ -1331,13 +1228,6 @@ html, body {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
   }
 
-  .code-container {
-    font-size: 0.7rem;
-  }
-
-  .loading-bar {
-    width: 180px;
-  }
 }
 
 /* ====== MOBILE SMALL (375px) ====== */

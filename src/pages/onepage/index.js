@@ -4,63 +4,38 @@ import { Contact } from './Contact';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiFirebase, SiGit, SiFigma } from 'react-icons/si';
 import './style.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
 export const OnePage = () => {
   const [time, setTime] = useState('');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [language, setLanguage] = useState('fr'); // 'fr' or 'en'
-  const [isLoading, setIsLoading] = useState(true);
+  const [projects, setProjects] = useState([]);
+  const language = 'fr'; // Langue fixée en français
 
   const translations = {
-    fr: {
-      recentProjects: "PROJETS RÉCENTS :",
-      developer: "Développeur",
-      freelance: "Front-End Freelance",
-      basedIn: "basé à",
-      paris: "Paris",
-      specialized: "Spécialisé en",
-      experience: "2 ans d'expérience • Livraison rapide",
-      satisfaction: "100% satisfaction client • Réponse sous 24h",
-      available: "DISPONIBLE POUR VOS PROJETS",
-      github: "Github",
-      linkedin: "LinkedIn",
-      contact: "Contact",
-      // Descriptions des projets
-      portfolioDesc: "Portfolio personnel minimaliste avec animations et design moderne",
-      openmatDesc: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription",
-      alphaDesc: "Site web moderne pour un club de sports de combat avec réservation en ligne",
-      testPsychoDesc: "Plateforme de prise de rendez-vous pour passer un test psychotechnique pour le permis, à Clichy ou Colombes",
-      reelvibeDesc: "Plateforme sociale pour découvrir, noter, liker et commenter des films, séries, anime et mangas, avec profils et watchlists",
-      comingSoonDesc: "Nouveau projet en cours de développement",
-      scrollingText: "DÉVELOPPEUR FREELANCE • REACT.JS • NEXT.JS • TYPESCRIPT •",
-      stackTitle: "STACK TECHNIQUE",
-    },
-    en: {
-      recentProjects: "RECENT PROJECTS :",
-      developer: "Developer",
-      freelance: "Front-End Freelance",
-      basedIn: "based in",
-      paris: "Paris",
-      specialized: "Specialized in",
-      experience: "2 years experience • Fast delivery",
-      satisfaction: "100% client satisfaction • 24h response",
-      available: "AVAILABLE FOR YOUR PROJECTS",
-      github: "Github",
-      linkedin: "LinkedIn",
-      contact: "Contact",
-      // Project descriptions
-      portfolioDesc: "Minimalist personal portfolio with animations and modern design",
-      openmatDesc: "Brazilian jiu-jitsu event management platform with registration system",
-      alphaDesc: "Modern website for a combat sports club with online booking",
-      testPsychoDesc: "Appointment booking platform for psychotechnical tests for driving license in Clichy or Colombes",
-      comingSoonDesc: "New project under development",
-      reelvibeDesc: "Social platform to discover, rate, like and comment on movies, series, anime and manga, with profiles and watchlists",
-      scrollingText: "FREELANCE DEVELOPER • REACT.JS • NEXT.JS • TYPESCRIPT •",
-      stackTitle: "TECH STACK",
-    }
+    recentProjects: "PROJETS RÉCENTS :",
+    developer: "Développeur",
+    freelance: "Front-End Freelance",
+    basedIn: "basé à",
+    paris: "Paris",
+    specialized: "Spécialisé en",
+    experience: "2 ans d'expérience",
+    github: "Github",
+    linkedin: "LinkedIn",
+    contact: "Contact",
+    // Descriptions des projets
+    portfolioDesc: "Portfolio personnel minimaliste avec animations et design moderne",
+    openmatDesc: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription",
+    alphaDesc: "Site web moderne pour un club de sports de combat avec réservation en ligne",
+    testPsychoDesc: "Plateforme de prise de rendez-vous pour passer un test psychotechnique pour le permis, à Clichy ou Colombes",
+    reelvibeDesc: "Plateforme sociale pour découvrir, noter, liker et commenter des films, séries, anime et mangas, avec profils et watchlists",
+    comingSoonDesc: "Nouveau projet en cours de développement",
+    scrollingText: "DÉVELOPPEUR FREELANCE • REACT.JS • NEXT.JS • TYPESCRIPT •",
+    stackTitle: "STACK TECHNIQUE",
   };
 
-  const t = translations[language];
+  const t = translations;
 
   const techStack = [
     { name: "React.js", icon: <SiReact />, color: "#61DAFB" },
@@ -73,16 +48,111 @@ export const OnePage = () => {
     { name: "Figma", icon: <SiFigma />, color: "#F24E1E" }
   ];
 
+  // Charger les projets depuis l'API
   useEffect(() => {
-    // Loading screen
-    const loadingTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-
-    return () => {
-      clearTimeout(loadingTimer);
+    const formatDate = (dateString) => {
+      if (!dateString) return 'Bientôt';
+      try {
+        const date = new Date(dateString);
+        const month = date.toLocaleDateString('fr-FR', { month: 'short' });
+        const year = date.getFullYear();
+        return `${month} ${year}`;
+      } catch (e) {
+        return 'Bientôt';
+      }
     };
+
+    const getDefaultProjects = () => {
+      return [
+        {
+          id: 1,
+          name: "PORTFOLIO",
+          link: "https://github.com/adellkl/portfolio-loukal.git",
+          color: "#4a9eff",
+          date: "Nov 2025",
+          description: translations.portfolioDesc
+        },
+        {
+          id: 2,
+          name: "OPENMAT FRANCE",
+          link: "https://open-mat-france.vercel.app/",
+          color: "#4a9eff",
+          date: "Oct 2025",
+          description: translations.openmatDesc
+        },
+        {
+          id: 3,
+          name: "ALPHA FIGHT CLUB",
+          link: "https://alpha-fight-club.vercel.app/",
+          color: "#4a9eff",
+          date: "Sep 2025",
+          description: translations.alphaDesc
+        },
+        {
+          id: 4,
+          name: "TEST PSYCHOTECHNIQUE PERMIS",
+          link: "https://test-psychotechnique-permis.com",
+          color: "#4a9eff",
+          date: "Aou 2025",
+          description: translations.testPsychoDesc
+        },
+        {
+          id: 5,
+          name: "REELVIBE",
+          link: null,
+          color: "#4a9eff",
+          date: "Aou 2025",
+          description: translations.reelvibeDesc
+        },
+        {
+          id: 6,
+          name: "À SUIVRE...",
+          link: null,
+          color: "#888888",
+          date: "Bientôt",
+          description: translations.comingSoonDesc
+        },
+      ];
+    };
+
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch(`${API_URL}/projects`);
+        if (response.ok) {
+          const data = await response.json();
+          // Filtrer les projets avec ordre entre 1 et 6 et trier par ordre
+          const filteredData = data
+            .filter(p => {
+              const ordre = p.ordre || 0;
+              return ordre >= 1 && ordre <= 6;
+            })
+            .sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
+          
+          // Transformer les données de l'API pour correspondre au format attendu
+          const formattedProjects = filteredData.map((project) => ({
+            id: project.ordre,
+            name: project.titre.toUpperCase(),
+            link: project.lien,
+            color: project.couleur_hover || '#4a9eff',
+            date: formatDate(project.date),
+            description: project.description
+          }));
+          
+          setProjects(formattedProjects);
+        } else {
+          setProjects(getDefaultProjects());
+        }
+      } catch (error) {
+        console.warn('Impossible de charger les projets depuis l\'API, utilisation des projets par défaut:', error);
+        // Utiliser les projets par défaut en cas d'erreur
+        setProjects(getDefaultProjects());
+      }
+    };
+
+    fetchProjects();
   }, []);
+
+
 
   useEffect(() => {
     // Update time
@@ -107,86 +177,7 @@ export const OnePage = () => {
     };
   }, []);
 
-  const getProjects = () => [
-    {
-      id: 1,
-      name: "PORTFOLIO",
-      link: "#",
-      color: "#ffff00",
-      date: language === 'fr' ? "Nov 2025" : "Nov 2025",
-      description: t.portfolioDesc
-    },
-    {
-      id: 2,
-      name: "OPENMAT FRANCE",
-      link: "https://open-mat-france.vercel.app/",
-      color: "#ff00ff",
-      date: language === 'fr' ? "Oct 2025" : "Oct 2025",
-      description: t.openmatDesc
-    },
-    {
-      id: 3,
-      name: "ALPHA FIGHT CLUB",
-      link: "https://alpha-fight-club.vercel.app/",
-      color: "#00ffff",
-      date: language === 'fr' ? "Sep 2025" : "Sep 2025",
-      description: t.alphaDesc
-    },
-    {
-      id: 4,
-      name: "TEST PSYCHOTECHNIQUE PERMIS",
-      link: "https://test-psychotechnique-permis.com/",
-      color: "#00ff00",
-      date: language === 'fr' ? "Aou 2025" : "Aug 2025",
-      description: t.testPsychoDesc
-    },
-    {
-      id: 5,
-      name: "REELVIBE",
-      link: "https://netflixhaha-jh2a.vercel.app/",
-      color: "#9e2f2fff",
-      date: language === 'fr' ? "Aou 2025" : "Aug 2025",
-      description: t.reelvibeDesc
-    },
 
-    {
-      id: 6,
-      name: language === 'fr' ? "À SUIVRE..." : "COMING SOON...",
-      link: null,
-      color: "#888888",
-      date: language === 'fr' ? "Bientôt" : "Soon",
-      description: t.comingSoonDesc
-    },
-  ];
-
-  const projects = getProjects();
-
-  // Code lines for loading animation
-  const codeLines = [
-    "import React from 'react';",
-    "import { useState, useEffect } from 'react';",
-    "",
-    "const Portfolio = () => {",
-    "  const [loading, setLoading] = useState(true);",
-    "  const [projects, setProjects] = useState([]);",
-    "",
-    "  useEffect(() => {",
-    "    // Initialize portfolio",
-    "    fetchProjects().then(data => {",
-    "      setProjects(data);",
-    "      setLoading(false);",
-    "    });",
-    "  }, []);",
-    "",
-    "  return (",
-    "    <div className='portfolio'>",
-    "      {loading ? <Loader /> : <MainContent />}",
-    "    </div>",
-    "  );",
-    "};",
-    "",
-    "export default Portfolio;",
-  ];
 
   return (
     <HelmetProvider>
@@ -372,23 +363,6 @@ export const OnePage = () => {
           </script>
         </Helmet>
 
-        {/* Loading Screen */}
-        {isLoading && (
-          <div className="loading-screen">
-            <div className="code-container">
-              {codeLines.map((line, index) => (
-                <div
-                  key={index}
-                  className="code-line"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <span className="line-number">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="line-content">{line}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Cursor follower */}
         <div
@@ -423,15 +397,7 @@ export const OnePage = () => {
                   <span className="bullet">•</span>
                   <span className="highlight-info">{t.experience}</span>
                 </li>
-                <li>
-                  <span className="bullet">•</span>
-                  <span className="highlight-info">{t.satisfaction}</span>
-                </li>
               </ul>
-              <p className="status">
-                <span className="status-dot"></span>
-                {t.available}
-              </p>
 
               {/* Tech Stack */}
               <div className="tech-stack">
@@ -456,41 +422,54 @@ export const OnePage = () => {
           <div className="right-section projects-section">
             <div className="section-header">
               <h2 className="section-title">{t.recentProjects}</h2>
-              <span className="scroll-indicator">↓</span>
             </div>
-            <ul className="projects-list">
-              {projects.map((project, index) => (
-                <li
-                  key={project.id}
-                  className="project-item"
-                  style={{ '--delay': `${index * 0.1}s` }}
-                >
-                  <div className="project-header">
-                    <span className="project-number">{project.id}.</span>
-                    {project.link ? (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link"
-                        style={{ '--accent-color': project.color }}
-                      >
-                        {project.name}
-                      </a>
-                    ) : (
-                      <span
-                        className="project-link project-no-link"
-                        style={{ '--accent-color': project.color }}
-                      >
-                        {project.name}
-                      </span>
-                    )}
-                    <span className="project-date">{project.date}</span>
-                  </div>
-                  <p className="project-description">{project.description}</p>
-                </li>
-              ))}
-            </ul>
+            <div className="projects-columns">
+              {(() => {
+                // Grouper les projets par groupes de 5
+                const columns = [];
+                for (let i = 0; i < projects.length; i += 5) {
+                  columns.push(projects.slice(i, i + 5));
+                }
+                return columns.map((column, columnIndex) => (
+                  <ul key={columnIndex} className="projects-list-column">
+                    {column.map((project, index) => {
+                      const globalIndex = columnIndex * 5 + index;
+                      return (
+                        <li
+                          key={project.id}
+                          className="project-item"
+                          style={{ '--delay': `${globalIndex * 0.1}s` }}
+                        >
+                          <div className="project-header">
+                            <span className="project-number">{project.id}.</span>
+                            {project.link ? (
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="project-link"
+                                style={{ '--accent-color': project.color }}
+                              >
+                                {project.name}
+                              </a>
+                            ) : (
+                              <span
+                                className="project-link project-no-link"
+                                style={{ '--accent-color': project.color }}
+                              >
+                                {project.name}
+                              </span>
+                            )}
+                            <span className="project-date">{project.date}</span>
+                          </div>
+                          <p className="project-description">{project.description}</p>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ));
+              })()}
+            </div>
           </div>
         </div>
 
@@ -516,27 +495,12 @@ export const OnePage = () => {
             </button>
           </div>
           <div className="footer-right">
-            <div className="language-selector">
-              <button
-                className={`lang-btn ${language === 'fr' ? 'active' : ''}`}
-                onClick={() => setLanguage('fr')}
-              >
-                FR
-              </button>
-              <span className="lang-separator">/</span>
-              <button
-                className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-                onClick={() => setLanguage('en')}
-              >
-                EN
-              </button>
-            </div>
             <div className="footer-time">{time}</div>
           </div>
         </footer>
 
         {/* Contact Modal */}
-        <Contact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} language={language} />
+        <Contact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       </div>
     </HelmetProvider>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './contact.css';
 
-export const Contact = ({ isOpen, onClose, language = 'fr' }) => {
+export const Contact = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,39 +11,22 @@ export const Contact = ({ isOpen, onClose, language = 'fr' }) => {
   const [status, setStatus] = useState('');
 
   const translations = {
-    fr: {
-      title: "CONTACTEZ-MOI",
-      subtitle: "Créons quelque chose d'incroyable ensemble",
-      name: "Nom",
-      namePlaceholder: "Votre nom",
-      email: "Email",
-      emailPlaceholder: "votre@email.com",
-      message: "Message",
-      messagePlaceholder: "Parlez-moi de votre projet...",
-      send: "ENVOYER",
-      sending: "ENVOI...",
-      sent: "ENVOYÉ ✓",
-      error: "ERREUR ✗",
-      or: "Ou contactez-moi directement à :",
-    },
-    en: {
-      title: "GET IN TOUCH",
-      subtitle: "Let's create something amazing together",
-      name: "Name",
-      namePlaceholder: "Your name",
-      email: "Email",
-      emailPlaceholder: "your@email.com",
-      message: "Message",
-      messagePlaceholder: "Tell me about your project...",
-      send: "SEND MESSAGE",
-      sending: "SENDING...",
-      sent: "SENT ✓",
-      error: "ERROR ✗",
-      or: "Or reach me directly at:",
-    }
+    title: "CONTACTEZ-MOI",
+    subtitle: "Créons quelque chose d'incroyable ensemble",
+    name: "Nom",
+    namePlaceholder: "Votre nom",
+    email: "Email",
+    emailPlaceholder: "votre@email.com",
+    message: "Message",
+    messagePlaceholder: "Parlez-moi de votre projet...",
+    send: "ENVOYER",
+    sending: "ENVOI...",
+    sent: "ENVOYÉ ✓",
+    error: "ERREUR ✗",
+    or: "Ou contactez-moi directement à :",
   };
 
-  const t = translations[language];
+  const t = translations;
 
   const handleChange = (e) => {
     setFormData({
