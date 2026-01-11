@@ -87,6 +87,9 @@ export const AdminDashboard = () => {
   };
 
   const handleOpenModal = (project = null) => {
+    // Récupérer la date sauvegardée depuis localStorage
+    const savedDate = localStorage.getItem('lastProjectDate') || new Date().toISOString().split('T')[0];
+    
     if (project) {
       setEditingProject(project);
       setFormData({
@@ -95,7 +98,7 @@ export const AdminDashboard = () => {
         lien: project.lien || '',
         couleur_hover: project.couleur_hover || '#4a9eff',
         description: project.description || '',
-        date: project.date || new Date().toISOString().split('T')[0],
+        date: project.date || savedDate,
         img: project.img || '',
         technologies: Array.isArray(project.technologies) 
           ? project.technologies 
@@ -109,7 +112,7 @@ export const AdminDashboard = () => {
         lien: '',
         couleur_hover: '#4a9eff',
         description: '',
-        date: new Date().toISOString().split('T')[0],
+        date: savedDate,
         img: '',
         technologies: []
       });
@@ -128,10 +131,48 @@ export const AdminDashboard = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    // Sauvegarder la date dans localStorage
+    if (name === 'date') {
+      localStorage.setItem('lastProjectDate', value);
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    // Vérifier que c'est une image
+    if (!file.type.startsWith('image/')) {
+      setError('Veuillez sélectionner un fichier image');
+      return;
+    }
+
+    // Vérifier la taille (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      setError('L\'image est trop volumineuse (max 5MB)');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      // Convertir en base64
+      const base64String = reader.result;
+      setFormData(prev => ({
+        ...prev,
+        img: base64String
+      }));
+      setError('');
+    };
+    reader.onerror = () => {
+      setError('Erreur lors de la lecture du fichier');
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleTechnologiesChange = (e) => {
@@ -167,6 +208,10 @@ export const AdminDashboard = () => {
       }
 
       setSuccess(editingProject ? 'Projet modifié avec succès!' : 'Projet ajouté avec succès!');
+      
+      // Sauvegarder la date pour la prochaine fois
+      localStorage.setItem('lastProjectDate', formData.date);
+      
       fetchProjects();
       setTimeout(() => {
         handleCloseModal();
@@ -516,15 +561,40 @@ export const AdminDashboard = () => {
                     />
                   </div>
                   <div className="form-group-admin">
-                    <label className="form-label-admin">Image (URL)</label>
+                    <label className="form-label-admin">Image</label>
                     <input
-                      type="url"
-                      name="img"
-                      value={formData.img}
-                      onChange={handleInputChange}
-                      placeholder="https://example.com/image.png"
-                      className="form-input-admin"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="form-file-admin"
                     />
+                    {formData.img && (
+                      <div className="image-preview-container">
+                        <img 
+                          src={formData.img} 
+                          alt="Aperçu" 
+                          className="image-preview"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, img: '' }))}
+                          className="image-remove-btn"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    )}
+                    {!formData.img && (
+                      <input
+                        type="url"
+                        name="img"
+                        value={formData.img && formData.img.startsWith('http') ? formData.img : ''}
+                        onChange={handleInputChange}
+                        placeholder="Ou entrez une URL d'image"
+                        className="form-input-admin"
+                        style={{ marginTop: '0.5rem' }}
+                      />
+                    )}
                   </div>
                 </div>
 

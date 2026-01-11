@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { dataportfolio, meta } from "../../content_option";
 import { RoughNotation } from "react-rough-notation";
 import gsap from "gsap";
@@ -23,13 +23,6 @@ const TechList = ({ technologies }) => {
   );
 };
 
-const Loader = () => (
-  <div className="loader-overlay" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', zIndex: 9999 }}>
-    <Spinner animation="border" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>
-  </div>
-);
 
 const DraggableImage = ({ src, alt }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -92,7 +85,6 @@ const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 export const Portfolio = () => {
   const portfolioRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState(dataportfolio);
   const navigate = useNavigate();
   const location = useLocation();
@@ -136,20 +128,6 @@ export const Portfolio = () => {
   }, []);
 
   useEffect(() => {
-    const lastVisit = localStorage.getItem('lastVisitPortfolio');
-    const now = new Date().getTime();
-
-    if (!lastVisit || (now - parseInt(lastVisit, 10)) > 3 * 60 * 1000) {
-      // Simulate loading time if the page has not been visited in the last 3 minutes
-      const loaderTimeout = setTimeout(() => setLoading(false), 2000); // Adjust the timeout as needed
-      localStorage.setItem('lastVisitPortfolio', now.toString());
-
-      // Clean up the timeout if the component is unmounted
-      return () => clearTimeout(loaderTimeout);
-    } else {
-      setLoading(false);
-    }
-
     const projectName = new URLSearchParams(location.search).get("project");
     if (projectName) {
       const foundProject = projects.find((p) => p.titre === projectName);
@@ -196,10 +174,7 @@ export const Portfolio = () => {
           <meta name="twitter:image" content={selectedProject ? selectedProject.img : "default_image_url"} />
         </Helmet>
 
-        {loading && <Loader />}
-
-        <div style={{ opacity: loading ? 0 : 1, transition: 'opacity 0.5s ease-in-out' }}>
-          {selectedProject ? (
+        {selectedProject ? (
             <Row className="project-detail" style={{ textAlign: "left", padding: "20px" }}>
               <Col md={5}>
                 <DraggableImage

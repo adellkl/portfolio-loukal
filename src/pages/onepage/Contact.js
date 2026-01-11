@@ -6,24 +6,34 @@ export const Contact = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
   const [status, setStatus] = useState('');
 
   const translations = {
-    title: "CONTACTEZ-MOI",
-    subtitle: "Créons quelque chose d'incroyable ensemble",
+    title: "Contact",
+    subtitle: "Un projet ? Une question ?",
     name: "Nom",
     namePlaceholder: "Votre nom",
     email: "Email",
     emailPlaceholder: "votre@email.com",
+    subject: "Sujet",
+    subjectPlaceholder: "Sélectionnez un sujet",
     message: "Message",
-    messagePlaceholder: "Parlez-moi de votre projet...",
-    send: "ENVOYER",
-    sending: "ENVOI...",
-    sent: "ENVOYÉ ✓",
-    error: "ERREUR ✗",
-    or: "Ou contactez-moi directement à :",
+    messagePlaceholder: "Votre message...",
+    send: "Envoyer",
+    sending: "Envoi...",
+    sent: "Envoyé",
+    error: "Erreur",
+    or: "Ou contactez-moi directement :",
+    subjects: {
+      project: "Nouveau projet",
+      quote: "Demande de devis",
+      collaboration: "Collaboration",
+      question: "Question",
+      other: "Autre"
+    }
   };
 
   const t = translations;
@@ -45,13 +55,14 @@ export const Contact = ({ isOpen, onClose }) => {
       {
         from_name: formData.name,
         from_email: formData.email,
+        subject: formData.subject,
         message: formData.message,
       },
       'Sd6qtk3ZZ8OuP3eLR'
     )
     .then(() => {
       setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => {
         setStatus('');
         onClose();
@@ -68,8 +79,8 @@ export const Contact = ({ isOpen, onClose }) => {
   return (
     <div className="contact-overlay" onClick={onClose}>
       <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>
-          <span>✕</span>
+        <button className="close-btn" onClick={onClose} type="button" aria-label="Fermer">
+          <span>×</span>
         </button>
 
         <div className="contact-header">
@@ -79,7 +90,6 @@ export const Contact = ({ isOpen, onClose }) => {
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">{t.name}</label>
             <input
               type="text"
               id="name"
@@ -88,11 +98,11 @@ export const Contact = ({ isOpen, onClose }) => {
               onChange={handleChange}
               required
               placeholder={t.namePlaceholder}
+              className="form-input"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">{t.email}</label>
             <input
               type="email"
               id="email"
@@ -101,11 +111,29 @@ export const Contact = ({ isOpen, onClose }) => {
               onChange={handleChange}
               required
               placeholder={t.emailPlaceholder}
+              className="form-input"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">{t.message}</label>
+            <select
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="form-select"
+            >
+              <option value="" disabled>{t.subjectPlaceholder}</option>
+              <option value={t.subjects.project}>{t.subjects.project}</option>
+              <option value={t.subjects.quote}>{t.subjects.quote}</option>
+              <option value={t.subjects.collaboration}>{t.subjects.collaboration}</option>
+              <option value={t.subjects.question}>{t.subjects.question}</option>
+              <option value={t.subjects.other}>{t.subjects.other}</option>
+            </select>
+          </div>
+
+          <div className="form-group">
             <textarea
               id="message"
               name="message"
@@ -114,6 +142,7 @@ export const Contact = ({ isOpen, onClose }) => {
               required
               rows="5"
               placeholder={t.messagePlaceholder}
+              className="form-textarea"
             />
           </div>
 

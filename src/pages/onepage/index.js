@@ -11,7 +11,6 @@ export const OnePage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [projects, setProjects] = useState([]);
-  const language = 'fr'; // Langue fixée en français
 
   const translations = {
     recentProjects: "PROJETS RÉCENTS :",
@@ -70,7 +69,7 @@ export const OnePage = () => {
           link: "https://github.com/adellkl/portfolio-loukal.git",
           color: "#4a9eff",
           date: "Nov 2025",
-          description: translations.portfolioDesc
+          description: "Portfolio personnel minimaliste avec animations et design moderne"
         },
         {
           id: 2,
@@ -78,7 +77,7 @@ export const OnePage = () => {
           link: "https://open-mat-france.vercel.app/",
           color: "#4a9eff",
           date: "Oct 2025",
-          description: translations.openmatDesc
+          description: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription"
         },
         {
           id: 3,
@@ -86,7 +85,7 @@ export const OnePage = () => {
           link: "https://alpha-fight-club.vercel.app/",
           color: "#4a9eff",
           date: "Sep 2025",
-          description: translations.alphaDesc
+          description: "Site web moderne pour un club de sports de combat avec réservation en ligne"
         },
         {
           id: 4,
@@ -94,7 +93,7 @@ export const OnePage = () => {
           link: "https://test-psychotechnique-permis.com",
           color: "#4a9eff",
           date: "Aou 2025",
-          description: translations.testPsychoDesc
+          description: "Plateforme de prise de rendez-vous pour passer un test psychotechnique pour le permis, à Clichy ou Colombes"
         },
         {
           id: 5,
@@ -102,7 +101,7 @@ export const OnePage = () => {
           link: null,
           color: "#4a9eff",
           date: "Aou 2025",
-          description: translations.reelvibeDesc
+          description: "Plateforme sociale pour découvrir, noter, liker et commenter des films, séries, anime et mangas, avec profils et watchlists"
         },
         {
           id: 6,
@@ -110,7 +109,7 @@ export const OnePage = () => {
           link: null,
           color: "#888888",
           date: "Bientôt",
-          description: translations.comingSoonDesc
+          description: "Nouveau projet en cours de développement"
         },
       ];
     };
@@ -135,7 +134,8 @@ export const OnePage = () => {
             link: project.lien,
             color: project.couleur_hover || '#4a9eff',
             date: formatDate(project.date),
-            description: project.description
+            description: project.description,
+            img: project.img || null
           }));
           
           setProjects(formattedProjects);
@@ -151,6 +151,8 @@ export const OnePage = () => {
 
     fetchProjects();
   }, []);
+
+
 
 
 
@@ -407,7 +409,7 @@ export const OnePage = () => {
                     <div
                       key={tech.name}
                       className="stack-item"
-                      style={{ '--delay': `${4.5 + index * 0.1}s` }}
+                      style={{ '--delay': `${1.15 + index * 0.05}s` }}
                     >
                       <span className="stack-icon" style={{ color: tech.color }}>{tech.icon}</span>
                       <span className="stack-name">{tech.name}</span>
@@ -438,7 +440,7 @@ export const OnePage = () => {
                         <li
                           key={project.id}
                           className="project-item"
-                          style={{ '--delay': `${globalIndex * 0.1}s` }}
+                          style={{ '--delay': `${0.35 + globalIndex * 0.03}s` }}
                         >
                           <div className="project-header">
                             <span className="project-number">{project.id}.</span>
@@ -501,6 +503,7 @@ export const OnePage = () => {
 
         {/* Contact Modal */}
         <Contact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+
       </div>
     </HelmetProvider>
   );

@@ -212,3 +212,131 @@
     margin-right: 10px;
     text-decoration: none;
 }
+
+/* ==============================================
+   RESPONSIVE DESIGN - Mobile First Approach
+   ============================================== */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    .site__header {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .nav_ac {
+        padding: 5px 12px;
+        font-size: 1.125rem;
+        height: 45px;
+    }
+
+    .menu__button svg {
+        width: 1.75em;
+        height: 1.75em;
+    }
+
+    .the_menu {
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+        padding-left: 8vh;
+    }
+
+    .site__navigation .main__menu_ul li a {
+        font-size: 2.2rem;
+    }
+
+    .menu_footer {
+        font-size: 13px;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .site__header {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .nav_ac {
+        padding: 5px 10px;
+        font-size: 1rem;
+        height: 42px;
+    }
+
+    .menu__button svg {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .cortina__wrapper-menu {
+        padding-top: 4em;
+        padding-bottom: 2em;
+    }
+
+    .the_menu {
+        padding-top: 12vh;
+        padding-bottom: 12vh;
+        padding-left: 5vh;
+    }
+
+    .site__navigation .main__menu_ul li {
+        margin: 8px 0;
+    }
+
+    .site__navigation .main__menu_ul li a {
+        font-size: 1.8rem;
+    }
+
+    .menu_footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .menu_footer a {
+        margin-right: 8px;
+        display: inline-block;
+    }
+}
+
+/* Mobile Small (375px) */
+@media (max-width: 375px) {
+    .site__header {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .nav_ac {
+        padding: 4px 8px;
+        font-size: 0.9375rem;
+        height: 40px;
+        line-height: 1.8;
+    }
+
+    .menu__button svg {
+        width: 1.375em;
+        height: 1.375em;
+    }
+
+    .the_menu {
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        padding-left: 4vh;
+    }
+
+    .site__navigation .main__menu_ul li {
+        margin: 6px 0;
+    }
+
+    .site__navigation .main__menu_ul li a {
+        font-size: 1.6rem;
+    }
+
+    .menu_footer {
+        font-size: 11px;
+        padding: 12px;
+    }
+
+    .menu_footer a {
+        margin-right: 6px;
+    }
+}

@@ -184,3 +184,91 @@ body.no-scroll {
 [data-theme="light"] .contact__form .form-control::placeholder {
   color: rgba(0, 0, 0, 0.7);
 }
+
+/* ==============================================
+   RESPONSIVE DESIGN - Mobile First Approach
+   ============================================== */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .contact__form .form-control {
+    padding: 1rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .contact__form input.form-control {
+    margin-bottom: 1.5em;
+    height: calc(2.2em + 0.75rem + 2px);
+  }
+
+  .contact__form textarea.form-control {
+    min-height: 120px;
+    padding: 0.875rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5em;
+  }
+
+  button.btn.ac_btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .co_alert {
+    padding: 0.875rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  .contact__form .form-control {
+    padding: 0.875rem 0.625rem;
+    font-size: 0.9rem;
+  }
+
+  .contact__form input.form-control {
+    margin-bottom: 1.25em;
+    height: calc(2em + 0.75rem + 2px);
+  }
+
+  .contact__form textarea.form-control {
+    min-height: 100px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.25em;
+  }
+
+  button.btn.ac_btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .co_alert {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Small (375px) */
+@media (max-width: 375px) {
+  .contact__form .form-control {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .contact__form input.form-control {
+    margin-bottom: 1em;
+  }
+
+  .contact__form textarea.form-control {
+    min-height: 90px;
+    padding: 0.625rem;
+    font-size: 0.85rem;
+  }
+
+  button.btn.ac_btn {
+    padding: 0.5625rem 1rem;
+    font-size: 0.8rem;
+  }
+}

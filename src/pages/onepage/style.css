@@ -117,7 +117,7 @@ html, body {
   top: 50%;
   transform: translateY(-50%);
   max-width: 31.25rem; /* 500px */
-  animation: slideInLeftBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1) 2.5s both;
+  animation: slideInLeftBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
 }
 
 /* Projects section (top right) */
@@ -126,7 +126,7 @@ html, body {
   right: 3.75rem; /* 60px */
   top: 3.75rem; /* 60px */
   max-width: none; /* Supprimé la limite pour permettre plusieurs colonnes */
-  animation: slideInRightBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1) 2.7s both;
+  animation: slideInRightBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
 }
 
 .name-section {
@@ -135,11 +135,11 @@ html, body {
 }
 
 .name-section .first-name {
-  animation: fadeInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.8s both;
+  animation: fadeInScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
 }
 
 .name-section .last-name {
-  animation: fadeInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 3.0s both;
+  animation: fadeInScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
 }
 
 .first-name,
@@ -170,11 +170,11 @@ html, body {
   background: linear-gradient(90deg, #00ff88, transparent);
   margin-top: 0.5rem; /* 8px */
   margin-bottom: 0.5rem; /* 8px */
-  animation: expandLine 1s cubic-bezier(0.16, 1, 0.3, 1) 3.5s both;
+  animation: expandLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .description-section {
-  animation: fadeInUpSmooth 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3.2s both;
+  animation: fadeInUpSmooth 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
   flex-shrink: 0;
 }
 
@@ -195,10 +195,10 @@ html, body {
   animation: fadeInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.info-list li:nth-child(1) { animation-delay: 3.4s; }
-.info-list li:nth-child(2) { animation-delay: 3.5s; }
-.info-list li:nth-child(3) { animation-delay: 3.6s; }
-.info-list li:nth-child(4) { animation-delay: 3.7s; }
+.info-list li:nth-child(1) { animation-delay: 0.6s; }
+.info-list li:nth-child(2) { animation-delay: 0.7s; }
+.info-list li:nth-child(3) { animation-delay: 0.8s; }
+.info-list li:nth-child(4) { animation-delay: 0.9s; }
 
 .bullet {
   color: #00ff88;
@@ -243,7 +243,7 @@ html, body {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
   opacity: 0;
-  animation: statusAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 3.8s forwards, statusGlow 3s ease-in-out 4.5s infinite;
+  animation: statusAppear 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1s forwards, statusGlow 3s ease-in-out 1.5s infinite;
 }
 
 @keyframes statusGlow {
@@ -268,7 +268,7 @@ html, body {
 .tech-stack {
   margin-top: 1.875rem; /* 30px */
   opacity: 0;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 4.4s both;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;
 }
 
 .stack-title {
@@ -354,14 +354,14 @@ html, body {
   margin-bottom: 0;
   font-weight: 400;
   opacity: 0;
-  animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2.9s both;
+  animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 .scroll-indicator {
   font-size: 1.2rem;
   color: rgba(0, 255, 136, 0.5);
   opacity: 0;
-  animation: scrollBounce 2s ease-in-out 3.5s infinite, fadeIn 0.6s ease 3.2s forwards;
+  animation: scrollBounce 2s ease-in-out 0.8s infinite, fadeIn 0.6s ease 0.75s forwards;
   user-select: none;
 }
 
@@ -455,6 +455,7 @@ html, body {
   display: none;
 }
 
+
 /* Scrolling Banner */
 .scrolling-banner {
   position: fixed;
@@ -468,7 +469,7 @@ html, body {
   align-items: center;
   pointer-events: none;
   opacity: 0;
-  animation: bannerFadeIn 1s ease 4.3s forwards;
+  animation: bannerFadeIn 0.8s ease 0.85s forwards;
 }
 
 /* Banner visible sur tous les écrans */
@@ -527,7 +528,7 @@ html, body {
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
   z-index: 10;
-  animation: footerSlideUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) 4.0s both;
+  animation: footerSlideUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s both;
   height: 3.75rem; /* 60px */
 }
 
@@ -871,7 +872,7 @@ html, body {
     transform: none;
     max-width: 100%;
     margin-bottom: 25px;
-    animation: mobileSlideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.5s both;
+    animation: mobileSlideInLeft 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
   }
 
   .projects-section {
@@ -879,7 +880,16 @@ html, body {
     right: auto;
     top: auto;
     max-width: 100%;
-    animation: mobileSlideInUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 3.3s both;
+    animation: mobileSlideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
+  }
+
+  .projects-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .projects-list-column {
+    width: 100%;
   }
 
   .projects-list {
@@ -891,7 +901,12 @@ html, body {
   }
 
   .project-description {
-    display: none; /* Masquer les descriptions sur mobile */
+    display: block !important; /* Afficher les descriptions sur mobile */
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: #666;
+    margin-top: 0.25rem;
+    padding-left: 28px;
   }
 
   /* Animations spécifiques pour mobile */
@@ -945,11 +960,6 @@ html, body {
     font-size: 3.5rem;
   }
 
-  .project-description {
-    font-size: 0.75rem;
-    max-width: 100%;
-  }
-
   .project-date {
     font-size: 0.7rem;
   }
@@ -971,8 +981,22 @@ html, body {
     margin-bottom: 0.65rem;
   }
 
+  .projects-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .projects-list-column {
+    width: 100%;
+  }
+
   .project-description {
-    display: none;
+    display: block !important;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #666;
+    margin-top: 0.25rem;
+    padding-left: 28px;
   }
 
   .info-section {
@@ -1139,8 +1163,22 @@ html, body {
     margin-bottom: 0.5rem;
   }
 
+  .projects-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .projects-list-column {
+    width: 100%;
+  }
+
   .project-description {
-    display: none;
+    display: block !important;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #666;
+    margin-top: 0.25rem;
+    padding-left: 28px;
   }
 
   .info-section {
@@ -1181,12 +1219,17 @@ html, body {
     padding: 8px 14px;
   }
 
-  .project-link {
-    font-size: 0.82rem;
+  .projects-columns {
+    flex-direction: column;
+    gap: 0;
   }
 
-  .project-description {
-    font-size: 0.68rem;
+  .projects-list-column {
+    width: 100%;
+  }
+
+  .project-link {
+    font-size: 0.82rem;
   }
 
   .project-date {
@@ -1247,7 +1290,12 @@ html, body {
   }
 
   .project-description {
-    display: none;
+    display: block;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #666;
+    margin-top: 0.25rem;
+    padding-left: 28px;
   }
 
   .info-section {
@@ -1287,12 +1335,17 @@ html, body {
     padding: 7px 12px;
   }
 
-  .project-link {
-    font-size: 0.78rem;
+  .projects-columns {
+    flex-direction: column;
+    gap: 0;
   }
 
-  .project-description {
-    font-size: 0.65rem;
+  .projects-list-column {
+    width: 100%;
+  }
+
+  .project-link {
+    font-size: 0.78rem;
   }
 
   .project-date {
@@ -1354,8 +1407,22 @@ html, body {
     margin-bottom: 0.5rem;
   }
 
+  .projects-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .projects-list-column {
+    width: 100%;
+  }
+
   .project-description {
-    display: none;
+    display: block !important;
+    font-size: 0.62rem;
+    line-height: 1.35;
+    color: #666;
+    margin-top: 0.25rem;
+    padding-left: 28px;
   }
 
   .info-section {
