@@ -383,6 +383,11 @@ html, body {
   }
 }
 
+/* Scroll arrow indicator - Mobile only */
+.scroll-arrow-mobile {
+  display: none;
+}
+
 .projects-columns {
   display: flex;
   gap: 2rem; /* 32px entre les colonnes */
@@ -881,11 +886,46 @@ html, body {
     top: auto;
     max-width: 100%;
     animation: mobileSlideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
+    max-height: calc(100vh - 230px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Masquer la scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE et Edge */
+  }
+
+  .projects-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .scroll-arrow-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    color: rgba(0, 255, 136, 0.6);
+    opacity: 0;
+    animation: arrowBounce 2s ease-in-out 1.5s infinite, fadeIn 0.6s ease 1s forwards;
+  }
+
+  .scroll-arrow-mobile svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @keyframes arrowBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
   }
 
   .projects-columns {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 100px; /* Espace supplémentaire pour voir le dernier projet */
   }
 
   .projects-list-column {
@@ -893,7 +933,7 @@ html, body {
   }
 
   .projects-list {
-    max-height: calc(100vh - 230px);
+    max-height: none;
   }
 
   .project-item {
@@ -984,6 +1024,7 @@ html, body {
   .projects-columns {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 100px; /* Espace supplémentaire pour voir le dernier projet */
   }
 
   .projects-list-column {
@@ -1011,6 +1052,20 @@ html, body {
     position: relative;
     right: auto;
     top: auto;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Masquer la scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE et Edge */
+  }
+
+  .projects-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .projects-list {
+    max-height: none;
   }
 
   .stack-grid {
@@ -1166,6 +1221,7 @@ html, body {
   .projects-columns {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 100px; /* Espace supplémentaire pour voir le dernier projet */
   }
 
   .projects-list-column {
@@ -1193,6 +1249,20 @@ html, body {
     position: relative;
     right: auto;
     top: auto;
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Masquer la scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE et Edge */
+  }
+
+  .projects-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .projects-list {
+    max-height: none;
   }
 
   /* Masquer la tech stack sur mobile pour gagner de l'espace */
@@ -1222,6 +1292,7 @@ html, body {
   .projects-columns {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 100px; /* Espace supplémentaire pour voir le dernier projet */
   }
 
   .projects-list-column {
@@ -1310,6 +1381,20 @@ html, body {
     position: relative;
     right: auto;
     top: auto;
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Masquer la scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE et Edge */
+  }
+
+  .projects-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .projects-list {
+    max-height: none;
   }
 
   .tech-stack {
@@ -1338,6 +1423,7 @@ html, body {
   .projects-columns {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 100px; /* Espace supplémentaire pour voir le dernier projet */
   }
 
   .projects-list-column {
@@ -1410,6 +1496,7 @@ html, body {
   .projects-columns {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 100px; /* Espace supplémentaire pour voir le dernier projet */
   }
 
   .projects-list-column {
@@ -1437,6 +1524,20 @@ html, body {
     position: relative;
     right: auto;
     top: auto;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Masquer la scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE et Edge */
+  }
+
+  .projects-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .projects-list {
+    max-height: none;
   }
 
   .tech-stack {

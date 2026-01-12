@@ -4,8 +4,6 @@ import { Contact } from './Contact';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiFirebase, SiGit, SiFigma } from 'react-icons/si';
 import './style.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
-
 export const OnePage = () => {
   const [time, setTime] = useState('');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -47,109 +45,60 @@ export const OnePage = () => {
     { name: "Figma", icon: <SiFigma />, color: "#F24E1E" }
   ];
 
-  // Charger les projets depuis l'API
+  // Projets en dur
   useEffect(() => {
-    const formatDate = (dateString) => {
-      if (!dateString) return 'Bientôt';
-      try {
-        const date = new Date(dateString);
-        const month = date.toLocaleDateString('fr-FR', { month: 'short' });
-        const year = date.getFullYear();
-        return `${month} ${year}`;
-      } catch (e) {
-        return 'Bientôt';
+    const projectsData = [
+      {
+        id: 1,
+        name: "PORTFOLIO",
+        link: "https://github.com/adellkl/portfolio-loukal.git",
+        color: "#00ff88",
+        date: "mars 2025",
+        description: "Portfolio personnel minimaliste avec animations et design moderne"
+      },
+      {
+        id: 2,
+        name: "OPENMAT FRANCE",
+        link: "https://open-mat-france.vercel.app/",
+        color: "#4a9eff",
+        date: "juil. 2025",
+        description: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription"
+      },
+      {
+        id: 3,
+        name: "TEST PSYCHOTECHNIQUE PERMIS",
+        link: "https://www.test-psychotechnique-permis.com/",
+        color: "#ff6b6b",
+        date: "oct. 2025",
+        description: "Plateforme de prise de rendez-vous pour passer un test psychotechnique pour le permis, à Colombes"
+      },
+      {
+        id: 4,
+        name: "RESTAURANT LA MARINE GROIX",
+        link: "https://www.lamarinegroix.com/",
+        color: "#ffa726",
+        date: "déc. 2025",
+        description: "Site pour un restaurant gastronomique situé à Groix dans le morbihan. Site élégant avec une section prise de rendez-vous, un dashboard admin avec pleins d'options"
+      },
+      {
+        id: 5,
+        name: "CYRIANNE ADJEVI - WEBSITE",
+        link: "https://avocat-website-nu.vercel.app/",
+        color: "#ab47bc",
+        date: "sept. 2025",
+        description: "Site réalisé pour une avocate basée à Paris, avec prise de contact"
+      },
+      {
+        id: 6,
+        name: "ALPHA FIGHT CLUB",
+        link: "https://www.alphafightclub.com/",
+        color: "#26c6da",
+        date: "janv. 2026",
+        description: "Site web moderne pour un club de sports de combat avec réservation en ligne"
       }
-    };
-
-    const getDefaultProjects = () => {
-      return [
-        {
-          id: 1,
-          name: "PORTFOLIO",
-          link: "https://github.com/adellkl/portfolio-loukal.git",
-          color: "#4a9eff",
-          date: "Nov 2025",
-          description: "Portfolio personnel minimaliste avec animations et design moderne"
-        },
-        {
-          id: 2,
-          name: "OPENMAT FRANCE",
-          link: "https://open-mat-france.vercel.app/",
-          color: "#4a9eff",
-          date: "Oct 2025",
-          description: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription"
-        },
-        {
-          id: 3,
-          name: "ALPHA FIGHT CLUB",
-          link: "https://alpha-fight-club.vercel.app/",
-          color: "#4a9eff",
-          date: "Sep 2025",
-          description: "Site web moderne pour un club de sports de combat avec réservation en ligne"
-        },
-        {
-          id: 4,
-          name: "TEST PSYCHOTECHNIQUE PERMIS",
-          link: "https://test-psychotechnique-permis.com",
-          color: "#4a9eff",
-          date: "Aou 2025",
-          description: "Plateforme de prise de rendez-vous pour passer un test psychotechnique pour le permis, à Clichy ou Colombes"
-        },
-        {
-          id: 5,
-          name: "REELVIBE",
-          link: null,
-          color: "#4a9eff",
-          date: "Aou 2025",
-          description: "Plateforme sociale pour découvrir, noter, liker et commenter des films, séries, anime et mangas, avec profils et watchlists"
-        },
-        {
-          id: 6,
-          name: "À SUIVRE...",
-          link: null,
-          color: "#888888",
-          date: "Bientôt",
-          description: "Nouveau projet en cours de développement"
-        },
-      ];
-    };
-
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch(`${API_URL}/projects`);
-        if (response.ok) {
-          const data = await response.json();
-          // Filtrer les projets avec ordre entre 1 et 6 et trier par ordre
-          const filteredData = data
-            .filter(p => {
-              const ordre = p.ordre || 0;
-              return ordre >= 1 && ordre <= 6;
-            })
-            .sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
-          
-          // Transformer les données de l'API pour correspondre au format attendu
-          const formattedProjects = filteredData.map((project) => ({
-            id: project.ordre,
-            name: project.titre.toUpperCase(),
-            link: project.lien,
-            color: project.couleur_hover || '#4a9eff',
-            date: formatDate(project.date),
-            description: project.description,
-            img: project.img || null
-          }));
-          
-          setProjects(formattedProjects);
-        } else {
-          setProjects(getDefaultProjects());
-        }
-      } catch (error) {
-        console.warn('Impossible de charger les projets depuis l\'API, utilisation des projets par défaut:', error);
-        // Utiliser les projets par défaut en cas d'erreur
-        setProjects(getDefaultProjects());
-      }
-    };
-
-    fetchProjects();
+    ];
+    
+    setProjects(projectsData);
   }, []);
 
 
@@ -424,6 +373,12 @@ export const OnePage = () => {
           <div className="right-section projects-section">
             <div className="section-header">
               <h2 className="section-title">{t.recentProjects}</h2>
+            </div>
+            <div className="scroll-arrow-mobile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 13L12 18L17 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M7 6L12 11L17 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
             <div className="projects-columns">
               {(() => {

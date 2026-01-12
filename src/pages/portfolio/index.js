@@ -80,52 +80,12 @@ const DraggableImage = ({ src, alt }) => {
   );
 };
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
-
 export const Portfolio = () => {
   const portfolioRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [projects, setProjects] = useState(dataportfolio);
+  const [projects] = useState(dataportfolio);
   const navigate = useNavigate();
   const location = useLocation();
-
-  // Charger les projets depuis l'API
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch(`${API_URL}/projects`);
-        if (response.ok) {
-          const data = await response.json();
-          // Filtrer les projets avec ordre entre 1 et 6 et trier par ordre
-          const filteredData = data
-            .filter(p => {
-              const ordre = p.ordre || 0;
-              return ordre >= 1 && ordre <= 6;
-            })
-            .sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
-          
-          // Transformer les données de l'API pour correspondre au format attendu
-          const formattedProjects = filteredData.map(project => ({
-            ...project,
-            titre: project.titre,
-            link: project.lien || project.link,
-            img: project.img || null,
-            technologies: typeof project.technologies === 'string' 
-              ? JSON.parse(project.technologies || '[]') 
-              : (Array.isArray(project.technologies) ? project.technologies : [])
-          }));
-          if (formattedProjects.length > 0) {
-            setProjects(formattedProjects);
-          }
-        }
-      } catch (error) {
-        console.warn('Impossible de charger les projets depuis l\'API, utilisation des données locales:', error);
-        // En cas d'erreur, on utilise les données locales (déjà définies par défaut)
-      }
-    };
-
-    fetchProjects();
-  }, []);
 
   useEffect(() => {
     const projectName = new URLSearchParams(location.search).get("project");
