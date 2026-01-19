@@ -59,7 +59,7 @@ export const OnePage = () => {
       {
         id: 2,
         name: "OPENMAT FRANCE",
-        link: "https://open-mat-france.vercel.app/",
+        link: "https://www.openmatfrance.fr/",
         color: "#4a9eff",
         date: "juil. 2025",
         description: "Plateforme de gestion d'événements de jiu-jitsu brésilien avec système d'inscription"
@@ -97,7 +97,7 @@ export const OnePage = () => {
         description: "Site web moderne pour un club de sports de combat avec réservation en ligne"
       }
     ];
-    
+
     setProjects(projectsData);
   }, []);
 
@@ -376,8 +376,8 @@ export const OnePage = () => {
             </div>
             <div className="scroll-arrow-mobile">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 13L12 18L17 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 6L12 11L17 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M7 13L12 18L17 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M7 6L12 11L17 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <div className="projects-columns">

@@ -84,7 +84,7 @@ const dataportfolio = [
         img: require("../src/assets/images/Openmat.png"),
         titre: "OpenMat France - Gestion des Open Mats",
         description: "OpenMat France est une application permettant d'ajouter et de consulter des sessions d'Open Mat de Jiu-Jitsu Brésilien et de Grappling en France. Les utilisateurs peuvent créer un événement en remplissant un formulaire.",
-        link: "https://open-mat-france.vercel.app/",
+        link: "https://www.openmatfrance.fr/",
         technologies: ["React", "Tailwind CSS", "Node.js", "Supabase [Base de bonnées]"],
     },
     {
